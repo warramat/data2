@@ -18,7 +18,9 @@
     // padding-top: 10px;
     margin-right: 10px;
 }
-
+.img-header{
+    width: 200px;
+}
 .button-submit{
     background-color: #27AE60;
     color: white;
@@ -58,6 +60,9 @@
     .font-header{
         display: none !important;
     }  
+    .img-header{
+        width: 100px;
+    }
 }
 @media only screen and (max-width: 1024px) {
     .stick {
@@ -76,6 +81,9 @@
     .font-header{
         display: none !important;
     }  
+    .img-header{
+        width: 100px;
+    }
 }
 .layout-row{
     padding: 60px;
