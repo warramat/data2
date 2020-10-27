@@ -381,7 +381,7 @@ const Exhibitors = (props) => {
                             <Form.Item
                                 label="ชื่อ"
                                 name="name"
-                                rules={[{ required: true, message: 'โปรดป้อนชื่อ!' }]}
+                                rules={[{ required: false, message: 'โปรดป้อนชื่อ!' }]}
                             >
                                 <Input onChange={() => onValuesChange("name")}
                                     className="row-flex" placeholder="กรอกข้อมูลชื่อ" />

@@ -378,7 +378,7 @@ const Exhibitors = (props) => {
                                 <Form.Item
                                     label="Name"
                                     name="name"
-                                    rules={[{ required: true, message: 'Please in put name!' }]}
+                                    rules={[{ required: false, message: 'Please in put name!' }]}
                                 >
                                     <Input onChange={() => onValuesChange("name")}
                                         className="row-flex" placeholder="Input name" />
