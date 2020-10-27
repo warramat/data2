@@ -191,9 +191,9 @@ const Exhibitors = (props) => {
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/><br/>
                 </Row>
                 <Row align="middle" justify="center">
-                <p className="font-header" >Welcome to the running race&nbsp;</p>
+                <p className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</p>
                 </Row>
-                {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the running race&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
+                {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
                 <Row align="middle" justify="center" className="layout-row d-flex justify-content-center">
                     <Col lg={12} md={24} >
                         <h1 className="title-font">Online questionnaire for exhibitors</h1>

@@ -91,9 +91,9 @@ const Satisfaction = (props) => {
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/><br/>
                 </Row>
                 <Row align="middle" justify="center">
-                <p className="font-header" >Welcome to the running race&nbsp;</p>
+                <p className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</p>
                 </Row>
-                {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the running race&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
+                {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
                 <Row align="middle" justify="center" className="layout-row d-flex justify-content-center" >
                     <Col lg={12} md={24} className="mb-60">
                         <h2 className="title-font">Questionnaire form for satisfaction level (After the race) at the finish line</h2>

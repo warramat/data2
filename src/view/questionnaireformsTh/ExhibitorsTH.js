@@ -192,7 +192,7 @@ const Exhibitors = (props) => {
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/><br/>
                 </Row>
                 <Row align="middle" justify="center">
-                <p className="font-header" >ยินดีต้อนรับสู่การเเข่งขันวิ่ง&nbsp;</p>
+                <p className="font-header" >ยินดีต้อนรับสู่THAILAND ดอยอินทนนท์&nbsp;</p>
                 </Row>
 
                 <Row align="middle" justify="center" className="layout-row d-flex justify-content-center">

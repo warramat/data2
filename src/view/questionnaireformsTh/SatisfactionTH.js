@@ -90,9 +90,9 @@ const Satisfaction = (props) => {
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/><br/>
                 </Row>
                 <Row align="middle" justify="center">
-                <p className="font-header" >ยินดีต้อนรับสู่การเเข่งขันวิ่ง&nbsp;</p>
+                <p className="font-header" >ยินดีต้อนรับสู่THAILAND ดอยอินทนนท์&nbsp;</p>
                 </Row>
-                {/* <Row align="middle" justify="center"><span className="font-header" >ยินดีต้อนรับสู่การเเข่งขันวิ่ง&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
+                {/* <Row align="middle" justify="center"><span className="font-header" >ยินดีต้อนรับสู่THAILAND ดอยอินทนนท์&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
                 <Row align="middle" justify="center" className="layout-row d-flex justify-content-center" >
                     <Col lg={12} md={24} className="mb-60">
                         <h2 className="title-font">แบบตอบสอบถามระดับความพึงพอใจ (หลังจากจบการแข่งขัน) ที่เส้นชัย</h2>
