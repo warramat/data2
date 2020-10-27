@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState,useRef } from 'react'
-import { Form, Input, Button, Row, Col, Select, Radio, Steps, Card,Skeleton } from 'antd';
+import React, { useEffect, useState, useRef } from 'react'
+import { Form, Input, Button, Row, Col, Select, Radio, Steps, Card, Skeleton } from 'antd';
 import {
     GET_DATA_SPORTMAN,
     GET_DATA_TYPERACE,
@@ -134,7 +134,7 @@ const Exhibitors = (props) => {
             setLoading(false)
             // props.history.push("/exhibitorsEN");
             formRef.current.resetFields()
-        }else{
+        } else {
             setLoading(true)
         }
         console.log('Success:', values);
@@ -172,258 +172,259 @@ const Exhibitors = (props) => {
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
     }
 
-    const handleChangePage = (value) =>{
-        if(value === "th"){
+    const handleChangePage = (value) => {
+        if (value === "th") {
             props.history.push("/exhibitorsTh")
-        }else{
+        } else {
             props.history.push("/exhibitorsEN")
         }
     }
 
     return (
         <Skeleton loading={loading} active>
-        <div className="BG-forms">
-        <Row align="middle" justify="end" className="button-lange">
-        <Button onClick={()=>handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand"/>&nbsp;TH</Button>
-                <Button onClick={()=>handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom"/>&nbsp;EN</Button>
-            </Row>
+            <div className="BG-forms">
+                <Row align="middle" justify="end" className="button-lange">
+                    <Button onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
+                    <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
+                </Row>
+                <Row align="middle" justify="center"><img src={'Logo UTMB-01.png'} width={100} alt="thailand"/></Row>
                 <Row align="middle" justify="center" className="layout-row d-flex justify-content-center">
-                <Col lg={12} md={24} >
-                    <h1 className="title-font">Online questionnaire for exhibitors</h1>
-                    <div className="mb-60 p-10">
-                        <Form layout="vertical" ref={formRef} onFinish={onFinish} >
-                            <Form.Item
-                                id="services"
-                                label="Questionnaire group"
-                                name="evaluatorType"
-                                rules={[{ required: true, message: 'Please select Questionnaire group!' }]}
-                            >
-                                <Select className="row-flex" placeholder="Select Questionnaire group" onChange={() => onValuesChange("evaluatorType")}>
-                                    {list.sportsmanList.map(item => (
-                                        <Option key={item.id} value={item.id} >
-                                            {item.choiceEn}
-                                        </Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
+                    <Col lg={12} md={24} >
+                        <h1 className="title-font">Online questionnaire for exhibitors</h1>
+                        <div className="mb-60 p-10">
+                            <Form layout="vertical" ref={formRef} onFinish={onFinish} >
+                                <Form.Item
+                                    id="services"
+                                    label="Questionnaire group"
+                                    name="evaluatorType"
+                                    rules={[{ required: true, message: 'Please select Questionnaire group!' }]}
+                                >
+                                    <Select className="row-flex" placeholder="Select Questionnaire group" onChange={() => onValuesChange("evaluatorType")}>
+                                        {list.sportsmanList.map(item => (
+                                            <Option key={item.id} value={item.id} >
+                                                {item.choiceEn}
+                                            </Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
 
-                            <Form.Item
-                                label="Competition type"
-                                name="competitionType"
-                                rules={[{ required: false, message: 'Please select Competition type!' }]}
-                            >
-                                <Select className="row-flex" placeholder="Select Competition type" onChange={() => onValuesChange("competitionType")}>
-                                    {list.typeRaceList.map(item => (
-                                        <Option key={item.id} value={item.id}>
-                                            {item.choiceEn}
-                                        </Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
+                                <Form.Item
+                                    label="Competition type"
+                                    name="competitionType"
+                                    rules={[{ required: false, message: 'Please select Competition type!' }]}
+                                >
+                                    <Select className="row-flex" placeholder="Select Competition type" onChange={() => onValuesChange("competitionType")}>
+                                        {list.typeRaceList.map(item => (
+                                            <Option key={item.id} value={item.id}>
+                                                {item.choiceEn}
+                                            </Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
 
-                            <Form.Item
-                                label="Gender"
-                                name="gender"
-                                rules={[{ required: true, message: 'Please Choose Gender!' }]}
-                            >
-                                <Radio.Group className="row-flex" onChange={() => onValuesChange("gender")}>
-                                    <Radio value="male">Male</Radio>
-                                    <Radio value="female">Female</Radio>
-                                </Radio.Group>
-                            </Form.Item>
+                                <Form.Item
+                                    label="Gender"
+                                    name="gender"
+                                    rules={[{ required: true, message: 'Please Choose Gender!' }]}
+                                >
+                                    <Radio.Group className="row-flex" onChange={() => onValuesChange("gender")}>
+                                        <Radio value="male">Male</Radio>
+                                        <Radio value="female">Female</Radio>
+                                    </Radio.Group>
+                                </Form.Item>
 
-                            <Form.Item
-                                label="Age Range"
-                                name="age"
-                                rules={[{ required: true, message: 'Please Choose Age range!' }]}
-                            >
-                                <Select className="row-flex" placeholder="Choose Age range" onChange={() => onValuesChange("age")}>
-                                    {list.ageList.map(item => (
-                                        <Option key={item.id} value={item.id}>
-                                            {item.choiceEn}
-                                        </Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
+                                <Form.Item
+                                    label="Age Range"
+                                    name="age"
+                                    rules={[{ required: true, message: 'Please Choose Age range!' }]}
+                                >
+                                    <Select className="row-flex" placeholder="Choose Age range" onChange={() => onValuesChange("age")}>
+                                        {list.ageList.map(item => (
+                                            <Option key={item.id} value={item.id}>
+                                                {item.choiceEn}
+                                            </Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
 
-                            <Form.Item
-                                label="Career"
-                                name="career"
-                                rules={[{ required: true, message: 'Please selcet Career!' }]}
-                            >
-                                <Select className="row-flex" placeholder="Select Career" onChange={(value) => checkMore(value, "อื่นๆ ระบุ", list.workList)}>
-                                    {list.workList.map(item => (
-                                        <Option key={item.id} value={item.id}>
-                                            {item.choiceEn}
-                                        </Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
-                            {openWorkMore === "อื่นๆ ระบุ" ?
                                 <Form.Item
                                     label="Career"
-                                    name="careerOther"
-                                    rules={[{ required: true, message: 'Please input career!' }]}
+                                    name="career"
+                                    rules={[{ required: true, message: 'Please selcet Career!' }]}
                                 >
-                                    <Input className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="input career" />
-                                </Form.Item>
-                                : null}
-
-                            <Form.Item
-                                label="You currently live in Chiang Mai Province"
-                                name="liveInChiangMai"
-                                rules={[{ required: true, message: 'Please choose you currently live in Chiang Mai Province.!' }]}
-                            >
-                                <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "liveInChiangMai", [])} >
-                                    <Radio value={true}>True</Radio>
-                                    <Radio value={false}>False</Radio>
-                                </Radio.Group>
-                            </Form.Item>
-
-                            {openZone === false ?
-                                <Form.Item
-                                    label="Where are you from "
-                                    name="liveInChiangMaiFalse"
-                                    rules={[{ required: true, message: 'Please select where are you from!' }]}
-                                >
-                                    <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="Select where are you from">
-                                        {list.sectorList.map(item => (
+                                    <Select className="row-flex" placeholder="Select Career" onChange={(value) => checkMore(value, "อื่นๆ ระบุ", list.workList)}>
+                                        {list.workList.map(item => (
                                             <Option key={item.id} value={item.id}>
                                                 {item.choiceEn}
                                             </Option>
                                         ))}
                                     </Select>
                                 </Form.Item>
-                                : null}
+                                {openWorkMore === "อื่นๆ ระบุ" ?
+                                    <Form.Item
+                                        label="Career"
+                                        name="careerOther"
+                                        rules={[{ required: true, message: 'Please input career!' }]}
+                                    >
+                                        <Input className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="input career" />
+                                    </Form.Item>
+                                    : null}
 
-                            <Form.Item
-                                label="Accommodation during the match"
-                                name="aBreakBetweenMatches"
-                                rules={[{ required: true, message: 'Please choose accommodation during the match!' }]}
-                            >
-                                <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "อื่นๆ ... ", list.relaxList)} >
-                                    {list.relaxList.map((item) => (
-                                        <Radio className="radioStyle" key={item.id} value={item.id}>
-                                            {item.choiceEn}
-                                        </Radio>
-                                    ))}
-                                    {openMore === "อื่นๆ ... " ?
-                                        <Form.Item
-                                            label="Accommodation"
-                                            name="aBreakBetweenMatchesOther"
-                                            rules={[{ required: true, message: 'Please input accommodation!' }]}
-                                        >
-                                            <Input className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="ป้อนข้อมูลที่พัก" />
-                                        </Form.Item>
-                                        : null}
-                                </Radio.Group>
-                            </Form.Item>
-
-
-
-                            <Form.Item
-                                label="Expenses incurred during the course of the event, such as housing, meals, belongings, travel expenses (Excluding application fee)"
-                                name="costsDuringCompetition"
-                                rules={[{ required: true, message: 'Please select expenses incurred during the course of the event!' }]}
-                            >
-                                <Select className="row-flex" placeholder="select expenses" listHeight={260}
-                                    onChange={() => onValuesChange("costsDuringCompetition")}>
-                                    {list.payList.map(item => (
-                                        <Option key={item.id} value={item.id} className	>
-                                            {item.choiceEn}
-                                        </Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
-
-
-
-                            <Form.Item
-                                label="Do you have a travel plan in Chiang Mai after the competition ?"
-                                name="chiangMaiTravelPlans"
-                                rules={[{ required: true, message: 'Please select travel plan!' }]}
-                            >
-                                <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "chiangMaiTravelPlans", [])}>
-                                    <Radio value={true}>Have</Radio>
-                                    <Radio value={false}>Don't Have</Radio>
-                                </Radio.Group>
-                            </Form.Item>
-
-                            {openTravel === true ?
                                 <Form.Item
-                                    label="How much did you set the travel budget after the race?"
-                                    name="chiangMaiTravelPlansTrue"
-                                    rules={[{ required: true, message: 'Please select budget of travel!' }]}
+                                    label="You currently live in Chiang Mai Province"
+                                    name="liveInChiangMai"
+                                    rules={[{ required: true, message: 'Please choose you currently live in Chiang Mai Province.!' }]}
                                 >
-                                    <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }}
-                                        placeholder="Select budget of travel" listHeight={250}>
-                                        {list.budgetList.map(item => (
-                                            <Option key={item.id} value={item.id}>
+                                    <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "liveInChiangMai", [])} >
+                                        <Radio value={true}>True</Radio>
+                                        <Radio value={false}>False</Radio>
+                                    </Radio.Group>
+                                </Form.Item>
+
+                                {openZone === false ?
+                                    <Form.Item
+                                        label="Where are you from "
+                                        name="liveInChiangMaiFalse"
+                                        rules={[{ required: true, message: 'Please select where are you from!' }]}
+                                    >
+                                        <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="Select where are you from">
+                                            {list.sectorList.map(item => (
+                                                <Option key={item.id} value={item.id}>
+                                                    {item.choiceEn}
+                                                </Option>
+                                            ))}
+                                        </Select>
+                                    </Form.Item>
+                                    : null}
+
+                                <Form.Item
+                                    label="Accommodation during the match"
+                                    name="aBreakBetweenMatches"
+                                    rules={[{ required: true, message: 'Please choose accommodation during the match!' }]}
+                                >
+                                    <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "อื่นๆ ... ", list.relaxList)} >
+                                        {list.relaxList.map((item) => (
+                                            <Radio className="radioStyle" key={item.id} value={item.id}>
+                                                {item.choiceEn}
+                                            </Radio>
+                                        ))}
+                                        {openMore === "อื่นๆ ... " ?
+                                            <Form.Item
+                                                label="Accommodation"
+                                                name="aBreakBetweenMatchesOther"
+                                                rules={[{ required: true, message: 'Please input accommodation!' }]}
+                                            >
+                                                <Input className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="ป้อนข้อมูลที่พัก" />
+                                            </Form.Item>
+                                            : null}
+                                    </Radio.Group>
+                                </Form.Item>
+
+
+
+                                <Form.Item
+                                    label="Expenses incurred during the course of the event, such as housing, meals, belongings, travel expenses (Excluding application fee)"
+                                    name="costsDuringCompetition"
+                                    rules={[{ required: true, message: 'Please select expenses incurred during the course of the event!' }]}
+                                >
+                                    <Select className="row-flex" placeholder="select expenses" listHeight={260}
+                                        onChange={() => onValuesChange("costsDuringCompetition")}>
+                                        {list.payList.map(item => (
+                                            <Option key={item.id} value={item.id} className	>
                                                 {item.choiceEn}
                                             </Option>
                                         ))}
                                     </Select>
                                 </Form.Item>
-                                : null}
 
-                            <p style={{ fontWeight: '600' }}>Enter your name and contact number to win prizes : </p >
-                            <Form.Item
-                                label="Name"
-                                name="name"
-                                rules={[{ required: true, message: 'Please in put name!' }]}
-                            >
-                                <Input onChange={() => onValuesChange("name")}
-                                    className="row-flex" placeholder="Input name" />
-                            </Form.Item>
-                            <Form.Item
-                                label="Tel"
-                                name="tell"
-                                rules={[{ required: true, message: 'Please input tel!' },
-                                ({ getFieldValue }) => ({
-                                    validator(rule, value) {
-                                        const regexTH = NumberRegX('number');
-                                        if (regexTH.test(value)) {
-                                            return Promise.reject('input tel!');
+
+
+                                <Form.Item
+                                    label="Do you have a travel plan in Chiang Mai after the competition ?"
+                                    name="chiangMaiTravelPlans"
+                                    rules={[{ required: true, message: 'Please select travel plan!' }]}
+                                >
+                                    <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "chiangMaiTravelPlans", [])}>
+                                        <Radio value={true}>Have</Radio>
+                                        <Radio value={false}>Don't Have</Radio>
+                                    </Radio.Group>
+                                </Form.Item>
+
+                                {openTravel === true ?
+                                    <Form.Item
+                                        label="How much did you set the travel budget after the race?"
+                                        name="chiangMaiTravelPlansTrue"
+                                        rules={[{ required: true, message: 'Please select budget of travel!' }]}
+                                    >
+                                        <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }}
+                                            placeholder="Select budget of travel" listHeight={250}>
+                                            {list.budgetList.map(item => (
+                                                <Option key={item.id} value={item.id}>
+                                                    {item.choiceEn}
+                                                </Option>
+                                            ))}
+                                        </Select>
+                                    </Form.Item>
+                                    : null}
+
+                                <p style={{ fontWeight: '600' }}>Enter your name and contact number to win prizes : </p >
+                                <Form.Item
+                                    label="Name"
+                                    name="name"
+                                    rules={[{ required: true, message: 'Please in put name!' }]}
+                                >
+                                    <Input onChange={() => onValuesChange("name")}
+                                        className="row-flex" placeholder="Input name" />
+                                </Form.Item>
+                                <Form.Item
+                                    label="Tel"
+                                    name="tell"
+                                    rules={[{ required: true, message: 'Please input tel!' },
+                                    ({ getFieldValue }) => ({
+                                        validator(rule, value) {
+                                            const regexTH = NumberRegX('number');
+                                            if (regexTH.test(value)) {
+                                                return Promise.reject('input tel!');
+                                            }
+                                            return Promise.resolve()
                                         }
-                                        return Promise.resolve()
-                                    }
-                                })
-                                ]}
-                            >
-                                <Input onChange={() => onValuesChange("tell")} className="row-flex" placeholder="Input tel" />
-                            </Form.Item>
+                                    })
+                                    ]}
+                                >
+                                    <Input onChange={() => onValuesChange("tell")} className="row-flex" placeholder="Input tel" />
+                                </Form.Item>
 
-                            <Row justify="center" align="middle">
-                                <Button type="primary" htmlType="submit">
-                                    Submit
+                                <Row justify="center" align="middle">
+                                    <Button type="primary" htmlType="submit">
+                                        Submit
                                 </Button>
-                            </Row>
+                                </Row>
 
-                        </Form>
-                    </div>
-                </Col>
-                <Col className="stick">
-                    <Card style={{ top: 0,width:350 }} className="card-stick ml-50">
-                        <Steps progressDot direction="vertical" >                    
-                            <Step className="item" title={`${current.evaluatorType} evaluatorType`} status={current.evaluatorType} />
-                            <Step title={`${current.competitionType} competitionType`} status={current.competitionType} />
-                            <Step title={`${current.gender} gender`} status={current.gender} />
-                            <Step title={`${current.age} age`} status={current.age} />
-                            <Step title={`${current.career} career`} status={current.career} />
-                            <Step title={`${current.liveInChiangMai} liveInChiangMai`} status={current.liveInChiangMai} />
-                            <Step title={`${current.aBreakBetweenMatches} aBreakBetweenMatches`} status={current.aBreakBetweenMatches} />
-                            <Step title={`${current.costsDuringCompetition} costsDuringCompetition`} status={current.costsDuringCompetition} />
-                            <Step title={`${current.chiangMaiTravelPlans} chiangMaiTravelPlans`} status={current.chiangMaiTravelPlans} />
-                            <Step title={`${current.name} name`} status={current.name} />
-                            <Step title={`${current.tell} tell`} status={current.tell} />
-                        </Steps>
-                    </Card>
-                </Col>
-            </Row>
+                            </Form>
+                        </div>
+                    </Col>
+                    <Col className="stick">
+                        <Card style={{ top: 0, width: 350 }} className="card-stick ml-50">
+                            <Steps progressDot direction="vertical" >
+                                <Step className="item" title={`${current.evaluatorType} evaluatorType`} status={current.evaluatorType} />
+                                <Step title={`${current.competitionType} competitionType`} status={current.competitionType} />
+                                <Step title={`${current.gender} gender`} status={current.gender} />
+                                <Step title={`${current.age} age`} status={current.age} />
+                                <Step title={`${current.career} career`} status={current.career} />
+                                <Step title={`${current.liveInChiangMai} liveInChiangMai`} status={current.liveInChiangMai} />
+                                <Step title={`${current.aBreakBetweenMatches} aBreakBetweenMatches`} status={current.aBreakBetweenMatches} />
+                                <Step title={`${current.costsDuringCompetition} costsDuringCompetition`} status={current.costsDuringCompetition} />
+                                <Step title={`${current.chiangMaiTravelPlans} chiangMaiTravelPlans`} status={current.chiangMaiTravelPlans} />
+                                <Step title={`${current.name} name`} status={current.name} />
+                                <Step title={`${current.tell} tell`} status={current.tell} />
+                            </Steps>
+                        </Card>
+                    </Col>
+                </Row>
                 {/* </Col>
             </Row> */}
-            
-        </div>
+
+            </div>
         </Skeleton>
     )
 }

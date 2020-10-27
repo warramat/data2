@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React,{useState,useRef} from 'react'
-import { Form, Button, Card, Row, Col,Radio,Steps,Skeleton } from 'antd';
+import React, { useState, useRef } from 'react'
+import { Form, Button, Card, Row, Col, Radio, Steps, Skeleton } from 'antd';
 import {
     POST_SATISFACTION,
 } from '../../service/api'
@@ -20,10 +20,10 @@ const Satisfaction = (props) => {
     const onFinish = async values => {
         console.log('Success:', values);
         const dataPost = {
-            qA:values.qA,
-            qB:values.qB,
-            qC:values.qC,
-            qD:values.qD,
+            qA: values.qA,
+            qB: values.qB,
+            qC: values.qC,
+            qD: values.qD,
             language: "en"
         }
         const res = await POST_SATISFACTION(dataPost)
@@ -38,7 +38,7 @@ const Satisfaction = (props) => {
             setLoading(false)
             // props.history.push("/satisfactionEN");
             formRef.current.resetFields()
-        }else{
+        } else {
             setLoading(true)
         }
         console.log('Success: res', res);
@@ -49,10 +49,10 @@ const Satisfaction = (props) => {
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
     }
 
-    const handleChangePage = (value) =>{
-        if(value === "th"){
+    const handleChangePage = (value) => {
+        if (value === "th") {
             props.history.push("/satisfactionTh")
-        }else{
+        } else {
             props.history.push("/satisfactionEN")
         }
     }
@@ -82,14 +82,15 @@ const Satisfaction = (props) => {
 
     return (
         <Skeleton loading={loading} active>
-        <div className="BG-forms">
-        <Row align="middle" justify="end" className="button-lange">
-        <Button onClick={()=>handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand"/>&nbsp;TH</Button>
-                <Button onClick={()=>handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom"/>&nbsp;EN</Button>
-            </Row>
-            <Row align="middle" justify="center" className="layout-row d-flex justify-content-center" >
-                <Col lg={12} md={24} className="mb-60">
-                    <h2 className="title-font">Questionnaire form for satisfaction level (After the race) at the finish line</h2>
+            <div className="BG-forms">
+                <Row align="middle" justify="end" className="button-lange">
+                    <Button onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
+                    <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
+                </Row>
+                <Row align="middle" justify="center"><img src={'Logo UTMB-01.png'} width={100} alt="thailand"/></Row>
+                <Row align="middle" justify="center" className="layout-row d-flex justify-content-center" >
+                    <Col lg={12} md={24} className="mb-60">
+                        <h2 className="title-font">Questionnaire form for satisfaction level (After the race) at the finish line</h2>
                         <Form
                             layout="vertical"
                             initialValues={{ remember: true }}
@@ -102,21 +103,21 @@ const Satisfaction = (props) => {
                                 rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qA")}>
-                                {data.map((item, idx) =>
-                                    <Radio key={idx} value={item.id}>{item.title}</Radio>)
-                                }
+                                    {data.map((item, idx) =>
+                                        <Radio key={idx} value={item.id}>{item.title}</Radio>)
+                                    }
                                 </Radio.Group>
                             </Form.Item>
-                            
+
                             <Form.Item
                                 label={<span className="font-overflow">Satisfaction level Getting into the competition</span>}
                                 name="qB"
                                 rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qB")}>
-                                {data.map((item, idx) =>
-                                    <Radio key={idx} value={item.id}>{item.title}</Radio>)
-                                }
+                                    {data.map((item, idx) =>
+                                        <Radio key={idx} value={item.id}>{item.title}</Radio>)
+                                    }
                                 </Radio.Group>
                             </Form.Item>
 
@@ -125,10 +126,10 @@ const Satisfaction = (props) => {
                                 name="qC"
                                 rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
-                                <Radio.Group  className="row-flex" onChange={() => onValuesChange("qC")}>
-                                {data.map((item, idx) =>
-                                    <Radio key={idx} value={item.id}>{item.title}</Radio>)
-                                }
+                                <Radio.Group className="row-flex" onChange={() => onValuesChange("qC")}>
+                                    {data.map((item, idx) =>
+                                        <Radio key={idx} value={item.id}>{item.title}</Radio>)
+                                    }
                                 </Radio.Group>
                             </Form.Item>
 
@@ -138,32 +139,32 @@ const Satisfaction = (props) => {
                                 rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qD")}>
-                                {data.map((item, idx) =>
-                                    <Radio key={idx} value={item.id}>{item.title}</Radio>)
-                                }
+                                    {data.map((item, idx) =>
+                                        <Radio key={idx} value={item.id}>{item.title}</Radio>)
+                                    }
                                 </Radio.Group>
                             </Form.Item>
 
                             <Row justify="center">
-                            <Button type="primary" htmlType="submit">
-                                Submit
+                                <Button type="primary" htmlType="submit">
+                                    Submit
                             </Button>
                             </Row>
                         </Form>
 
-                </Col>
-                <Col lg={4} className="stick">
-                    <Card style={{ top: 0,width:400 }} className="card-stick ml-50">
-                        <Steps progressDot direction="vertical" >                    
-                            <Step className="item" title={`${current.qA} OverallSatisfaction`} status={current.qA} />
-                            <Step title={`${current.qB} SatisfactionCompetition`} status={current.qB} />
-                            <Step title={`${current.qC} SatisfactionAccommodation`} status={current.qC} />
-                            <Step title={`${current.qD} SatisfactionRelations`} status={current.qD} />
-                        </Steps>
-                    </Card>
-                </Col>
-            </Row>
-        </div>
+                    </Col>
+                    <Col lg={4} className="stick">
+                        <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
+                            <Steps progressDot direction="vertical" >
+                                <Step className="item" title={`${current.qA} OverallSatisfaction`} status={current.qA} />
+                                <Step title={`${current.qB} SatisfactionCompetition`} status={current.qB} />
+                                <Step title={`${current.qC} SatisfactionAccommodation`} status={current.qC} />
+                                <Step title={`${current.qD} SatisfactionRelations`} status={current.qD} />
+                            </Steps>
+                        </Card>
+                    </Col>
+                </Row>
+            </div>
         </Skeleton>
     )
 }
