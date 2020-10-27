@@ -173,6 +173,18 @@ const Exhibitors = (props) => {
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
     }
 
+    const [sportTh,setSportTh] = useState("")
+
+    const onCheckSportMan = (value,key) =>{
+        setCurrent((prev) => ({ ...prev, [key]: "finish" }))
+        const result = list.sportsmanList.find((item) => item.id === value)
+        if(result.choiceTh==="นักกีฬาต่างชาติ "||result.choiceTh==="นักกีฬาไทย"){
+            setSportTh(result.choiceTh)
+        }else{
+            setSportTh("")
+        }
+    }
+
     const handleChangePage = (value) =>{
         if(value === "th"){
             props.history.push("/exhibitorsTh")
@@ -207,7 +219,8 @@ const Exhibitors = (props) => {
                                 name="evaluatorType"
                                 rules={[{ required: true, message: 'โปรดเลือกกลุ่มผู้ตอบเเบบสอบถาม!' }]}
                             >
-                                <Select className="row-flex" placeholder="เลือกกลุ่มผู้ตอบเเบบสอบถาม" onChange={() => onValuesChange("evaluatorType")}>
+                                {/* <Select className="row-flex" placeholder="เลือกกลุ่มผู้ตอบเเบบสอบถาม" onChange={() => onValuesChange("evaluatorType")}> */}
+                                <Select className="row-flex" placeholder="เลือกกลุ่มผู้ตอบเเบบสอบถาม" onChange={(e) => onCheckSportMan(e,"evaluatorType")}>
                                     {list.sportsmanList.map(item => (
                                         <Option key={item.id} value={item.id} >
                                             {item.choiceTh}
@@ -215,11 +228,12 @@ const Exhibitors = (props) => {
                                     ))}
                                 </Select>
                             </Form.Item>
-
+                                    
+                            {sportTh === "นักกีฬาต่างชาติ " ||sportTh === "นักกีฬาไทย" ? 
                             <Form.Item
                                 label="ประเภทการแข่งขัน"
                                 name="competitionType"
-                                rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
+                                rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Select className="row-flex" placeholder="เลือกประเภทการแข่งขัน" onChange={() => onValuesChange("competitionType")}>
                                     {list.typeRaceList.map(item => (
@@ -229,6 +243,7 @@ const Exhibitors = (props) => {
                                     ))}
                                 </Select>
                             </Form.Item>
+                            : null}
 
                             <Form.Item
                                 label="เพศ"
@@ -291,11 +306,11 @@ const Exhibitors = (props) => {
 
                             {openZone === false ?
                                 <Form.Item
-                                    label="ภูมิภาคนักกีฬาไทย "
+                                    label="ภูมิภาคไทย"
                                     name="liveInChiangMaiFalse"
-                                    rules={[{ required: true, message: 'โปรดเลือกภูมิภาคนักกีฬาไทย!' }]}
+                                    rules={[{ required: true, message: 'โปรดเลือกภูมิภาคไทย!' }]}
                                 >
-                                    <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="เลือกภูมิภาคนักกีฬาไทย">
+                                    <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="เลือกภูมิภาคไทย">
                                         {list.sectorList.map(item => (
                                             <Option key={item.id} value={item.id}>
                                                 {item.choiceTh}
@@ -407,7 +422,7 @@ const Exhibitors = (props) => {
                     <Card style={{ top: 0,width:350 }} className="card-stick ml-50">
                         <Steps progressDot direction="vertical" >                    
                             <Step className="item" title={`${current.evaluatorType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} กลุ่มผู้ตอบเเบบสอบถาม`} status={current.evaluatorType} />
-                            <Step title={`${current.competitionType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ประเภทการแข่งขัน`} status={current.competitionType} />
+                            {sportTh === "นักกีฬาต่างชาติ " ||sportTh === "นักกีฬาไทย" ? <Step title={`${current.competitionType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ประเภทการแข่งขัน`} status={current.competitionType} /> : null}
                             <Step title={`${current.gender==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} เพศ`} status={current.gender} />
                             <Step title={`${current.age==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ช่วงอายุ`} status={current.age} />
                             <Step title={`${current.career==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} อาชีพ`} status={current.career} />

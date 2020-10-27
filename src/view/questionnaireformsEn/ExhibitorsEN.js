@@ -172,6 +172,18 @@ const Exhibitors = (props) => {
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
     }
 
+    const [sportTh,setSportTh] = useState("")
+
+    const onCheckSportMan = (value,key) =>{
+        setCurrent((prev) => ({ ...prev, [key]: "finish" }))
+        const result = list.sportsmanList.find((item) => item.id === value)
+        if(result.choiceEn==="Thai athletes"||result.choiceEn==="Foreign athletes"){
+            setSportTh(result.choiceEn)
+        }else{
+            setSportTh("")
+        }
+    }
+
     const handleChangePage = (value) => {
         if (value === "th") {
             props.history.push("/exhibitorsTh")
@@ -206,7 +218,8 @@ const Exhibitors = (props) => {
                                     name="evaluatorType"
                                     rules={[{ required: true, message: 'Please select Questionnaire group!' }]}
                                 >
-                                    <Select className="row-flex" placeholder="Select Questionnaire group" onChange={() => onValuesChange("evaluatorType")}>
+                                    {/* <Select className="row-flex" placeholder="Select Questionnaire group" onChange={() => onValuesChange("evaluatorType")}> */}
+                                    <Select className="row-flex" placeholder="Select Questionnaire group" onChange={(e) => onCheckSportMan(e,"evaluatorType")}>
                                         {list.sportsmanList.map(item => (
                                             <Option key={item.id} value={item.id} >
                                                 {item.choiceEn}
@@ -215,6 +228,7 @@ const Exhibitors = (props) => {
                                     </Select>
                                 </Form.Item>
 
+                                {sportTh === "Thai athletes" ||sportTh === "Foreign athletes" ?
                                 <Form.Item
                                     label="Competition type"
                                     name="competitionType"
@@ -228,6 +242,7 @@ const Exhibitors = (props) => {
                                         ))}
                                     </Select>
                                 </Form.Item>
+                                : null}
 
                                 <Form.Item
                                     label="Gender"
@@ -404,7 +419,9 @@ const Exhibitors = (props) => {
                         <Card style={{ top: 0, width: 350 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
                                 <Step className="item" title={`${current.evaluatorType==="wait" ? "(Wait)" : "(Finish)"} Evaluator`} status={current.evaluatorType} />
+                                {sportTh === "Thai athletes" ||sportTh === "Foreign athletes" ? 
                                 <Step title={`${current.competitionType==="wait" ? "(Wait)" : "(Finish)"} Competition`} status={current.competitionType} />
+                                : null}
                                 <Step title={`${current.gender==="wait" ? "(Wait)" : "(Finish)"} Gender`} status={current.gender} />
                                 <Step title={`${current.age==="wait" ? "(Wait)" : "(Finish)"} Age`} status={current.age} />
                                 <Step title={`${current.career==="wait" ? "(Wait)" : "(Finish)"} Career`} status={current.career} />
