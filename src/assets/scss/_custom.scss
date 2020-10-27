@@ -1,7 +1,9 @@
 .BG-forms{
     background: #f6f6fa;
 }
-
+.font-header{
+    font-size: 50px;
+}   
 .font-overflow {
     white-space: nowrap; 
     width: 670px; 
@@ -53,6 +55,9 @@
         font-size: 15px;
         height: 40px;
     }
+    .font-header{
+        display: none !important;
+    }  
 }
 @media only screen and (max-width: 1024px) {
     .stick {
@@ -68,6 +73,9 @@
         font-size: 15px;
         height: 40px;
     }
+    .font-header{
+        display: none !important;
+    }  
 }
 .layout-row{
     padding: 60px;
