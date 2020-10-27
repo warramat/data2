@@ -14,7 +14,7 @@ import {
     POST_EVALUTION
 } from '../../service/api'
 import Swal from "sweetalert2";
-import { _isEmpty, NumberRegX } from '../../tools/util'
+import { _isEmpty, /*NumberRegX*/ } from '../../tools/util'
 const { Option } = Select;
 const { Step } = Steps;
 
@@ -169,7 +169,6 @@ const Exhibitors = (props) => {
     }
 
     const onValuesChange = (changedVal) => {
-        console.log("key", changedVal)
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
     }
 
@@ -387,19 +386,9 @@ const Exhibitors = (props) => {
                                 <Form.Item
                                     label="Tel"
                                     name="tell"
-                                    rules={[{ required: true, message: 'Please input tel!' },
-                                    ({ getFieldValue }) => ({
-                                        validator(rule, value) {
-                                            const regexTH = NumberRegX('number');
-                                            if (regexTH.test(value)) {
-                                                return Promise.reject('input tel!');
-                                            }
-                                            return Promise.resolve()
-                                        }
-                                    })
-                                    ]}
+                                    rules={[{ required: false, message: 'Please input tel!' }]}
                                 >
-                                    <Input onChange={() => onValuesChange("tell")} className="row-flex" placeholder="Input tel" />
+                                    <Input type="number" onChange={() => onValuesChange("tell")} className="row-flex" placeholder="Input tel" />
                                 </Form.Item>
 
                                 <Row justify="center" align="middle">

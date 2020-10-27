@@ -13,7 +13,7 @@ import {
     GET_DATA_RELAX,
     POST_EVALUTION
 } from '../../service/api'
-import { _isEmpty, NumberRegX } from '../../tools/util'
+import { _isEmpty } from '../../tools/util'
 import Swal from "sweetalert2";
 const { Option } = Select;
 const { Step } = Steps;
@@ -170,7 +170,6 @@ const Exhibitors = (props) => {
     }
 
     const onValuesChange = (changedVal) => {
-        console.log("key", changedVal)
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
     }
 
@@ -286,7 +285,7 @@ const Exhibitors = (props) => {
                             >
                                 <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "liveInChiangMai", [])} >
                                     <Radio value={true}>ใช่</Radio>
-                                    <Radio value={false}>ไม่ใช้</Radio>
+                                    <Radio value={false}>ไม่ใช่</Radio>
                                 </Radio.Group>
                             </Form.Item>
 
@@ -390,19 +389,9 @@ const Exhibitors = (props) => {
                             <Form.Item
                                 label="เบอร์โทรศัพท์"
                                 name="tell"
-                                rules={[{ required: true, message: 'โปรดป้อนเบอร์โทรศัพท์!' },
-                                ({ getFieldValue }) => ({
-                                    validator(rule, value) {
-                                        const regexTH = NumberRegX('number');
-                                        if (regexTH.test(value)) {
-                                            return Promise.reject('กรุณาป้อนตัวเลข!');
-                                        }
-                                        return Promise.resolve()
-                                    }
-                                })
-                                ]}
+                                rules={[{ required: false, message: 'โปรดป้อนเบอร์โทรศัพท์!' }]}
                             >
-                                <Input onChange={() => onValuesChange("tell")} className="row-flex" placeholder="กรอกข้อมูลเบอร์โทรศัพท์" />
+                                <Input type="number" onChange={() => onValuesChange("tell")} className="row-flex" placeholder="กรอกข้อมูลเบอร์โทรศัพท์" />
                             </Form.Item>
 
                             <Row justify="center" align="middle">
