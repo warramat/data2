@@ -412,17 +412,17 @@ const Exhibitors = (props) => {
                     <Col className="stick">
                         <Card style={{ top: 0, width: 350 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
-                                <Step className="item" title={`${current.evaluatorType} evaluatorType`} status={current.evaluatorType} />
-                                <Step title={`${current.competitionType} competitionType`} status={current.competitionType} />
-                                <Step title={`${current.gender} gender`} status={current.gender} />
-                                <Step title={`${current.age} age`} status={current.age} />
-                                <Step title={`${current.career} career`} status={current.career} />
-                                <Step title={`${current.liveInChiangMai} liveInChiangMai`} status={current.liveInChiangMai} />
-                                <Step title={`${current.aBreakBetweenMatches} aBreakBetweenMatches`} status={current.aBreakBetweenMatches} />
-                                <Step title={`${current.costsDuringCompetition} costsDuringCompetition`} status={current.costsDuringCompetition} />
-                                <Step title={`${current.chiangMaiTravelPlans} chiangMaiTravelPlans`} status={current.chiangMaiTravelPlans} />
-                                <Step title={`${current.name} name`} status={current.name} />
-                                <Step title={`${current.tell} tell`} status={current.tell} />
+                                <Step className="item" title={`${current.evaluatorType==="wait" ? "(Wait)" : "(Finish)"} Evaluator`} status={current.evaluatorType} />
+                                <Step title={`${current.competitionType==="wait" ? "(Wait)" : "(Finish)"} Competition`} status={current.competitionType} />
+                                <Step title={`${current.gender==="wait" ? "(Wait)" : "(Finish)"} Gender`} status={current.gender} />
+                                <Step title={`${current.age==="wait" ? "(Wait)" : "(Finish)"} Age`} status={current.age} />
+                                <Step title={`${current.career==="wait" ? "(Wait)" : "(Finish)"} Career`} status={current.career} />
+                                <Step title={`${current.liveInChiangMai==="wait" ? "(Wait)" : "(Finish)"} Live In ChiangMai`} status={current.liveInChiangMai} />
+                                <Step title={`${current.aBreakBetweenMatches==="wait" ? "(Wait)" : "(Finish)"} A Break Between Matches`} status={current.aBreakBetweenMatches} />
+                                <Step title={`${current.costsDuringCompetition==="wait" ? "(Wait)" : "(Finish)"} Costs During Competition`} status={current.costsDuringCompetition} />
+                                <Step title={`${current.chiangMaiTravelPlans==="wait" ? "(Wait)" : "(Finish)"} ChiangMai Travel Plans`} status={current.chiangMaiTravelPlans} />
+                                <Step title={`${current.name==="wait" ? "(Wait)" : "(Finish)"} Name`} status={current.name} />
+                                <Step title={`${current.tell==="wait" ? "(Wait)" : "(Finish)"} Tell`} status={current.tell} />
                             </Steps>
                         </Card>
                     </Col>

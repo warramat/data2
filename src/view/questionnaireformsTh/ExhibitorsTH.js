@@ -414,17 +414,17 @@ const Exhibitors = (props) => {
                 <Col className="stick">
                     <Card style={{ top: 0,width:350 }} className="card-stick ml-50">
                         <Steps progressDot direction="vertical" >                    
-                            <Step className="item" title={`${current.evaluatorType} กลุ่มผู้ตอบเเบบสอบถาม`} status={current.evaluatorType} />
-                            <Step title={`${current.competitionType} ประเภทการแข่งขัน`} status={current.competitionType} />
-                            <Step title={`${current.gender} เพศ`} status={current.gender} />
-                            <Step title={`${current.age} ช่วงอายุ`} status={current.age} />
-                            <Step title={`${current.career} อาชีพ`} status={current.career} />
-                            <Step title={`${current.liveInChiangMai} ปัจจุบันท่านพำนักอาศัยอยู่ในจังหวัดเชียงใหม่`} status={current.liveInChiangMai} />
-                            <Step title={`${current.aBreakBetweenMatches} การพักระหว่างการแข่งขัน`} status={current.aBreakBetweenMatches} />
-                            <Step title={`${current.costsDuringCompetition} ค่าใช้จ่ายที่เกิดขึ้นระหว่างการเข้าร่วมการแข่งขัน`} status={current.costsDuringCompetition} />
-                            <Step title={`${current.chiangMaiTravelPlans} แพลนการท่องเที่ยวในจังหวัดเชียงใหม่หลังจากการแข่งขัน`} status={current.chiangMaiTravelPlans} />
-                            <Step title={`${current.name} ชื่อ`} status={current.name} />
-                            <Step title={`${current.tell} เบอร์โทรศัพท์`} status={current.tell} />
+                            <Step className="item" title={`${current.evaluatorType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} กลุ่มผู้ตอบเเบบสอบถาม`} status={current.evaluatorType} />
+                            <Step title={`${current.competitionType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ประเภทการแข่งขัน`} status={current.competitionType} />
+                            <Step title={`${current.gender==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} เพศ`} status={current.gender} />
+                            <Step title={`${current.age==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ช่วงอายุ`} status={current.age} />
+                            <Step title={`${current.career==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} อาชีพ`} status={current.career} />
+                            <Step title={`${current.liveInChiangMai==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ปัจจุบันท่านพำนักอาศัยอยู่ในจังหวัดเชียงใหม่`} status={current.liveInChiangMai} />
+                            <Step title={`${current.aBreakBetweenMatches==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} การพักระหว่างการแข่งขัน`} status={current.aBreakBetweenMatches} />
+                            <Step title={`${current.costsDuringCompetition==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ค่าใช้จ่ายที่เกิดขึ้นระหว่างการเข้าร่วมการแข่งขัน`} status={current.costsDuringCompetition} />
+                            <Step title={`${current.chiangMaiTravelPlans==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} แพลนการท่องเที่ยวในจังหวัดเชียงใหม่หลังจากการแข่งขัน`} status={current.chiangMaiTravelPlans} />
+                            <Step title={`${current.name==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ชื่อ`} status={current.name} />
+                            <Step title={`${current.tell==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} เบอร์โทรศัพท์`} status={current.tell} />
                         </Steps>
                     </Card>
                 </Col>

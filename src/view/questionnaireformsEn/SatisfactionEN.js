@@ -162,10 +162,10 @@ const Satisfaction = (props) => {
                     <Col lg={4} className="stick">
                         <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
-                                <Step className="item" title={`${current.qA} OverallSatisfaction`} status={current.qA} />
-                                <Step title={`${current.qB} SatisfactionCompetition`} status={current.qB} />
-                                <Step title={`${current.qC} SatisfactionAccommodation`} status={current.qC} />
-                                <Step title={`${current.qD} SatisfactionRelations`} status={current.qD} />
+                                <Step className="item" title={`${current.qA==="wait" ? "(Wait)" : "(Finish)"} OverallSatisfaction`} status={current.qA} />
+                                <Step title={`${current.qB==="wait" ? "(Wait)" : "(Finish)"} SatisfactionCompetition`} status={current.qB} />
+                                <Step title={`${current.qC==="wait" ? "(Wait)" : "(Finish)"} SatisfactionAccommodation`} status={current.qC} />
+                                <Step title={`${current.qD==="wait" ? "(Wait)" : "(Finish)"} SatisfactionRelations`} status={current.qD} />
                             </Steps>
                         </Card>
                     </Col>

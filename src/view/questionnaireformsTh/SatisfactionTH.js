@@ -164,10 +164,10 @@ const Satisfaction = (props) => {
                     <Col lg={4} className="stick">
                         <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
-                                <Step className="item" title={`${current.qA} ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน`} status={current.qA} />
-                                <Step title={`${current.qB} ระดับความพึงพอใจการเดินทางเข้ามาในการแข่งขัน`} status={current.qB} />
-                                <Step title={`${current.qC} ระดับความพึงพอใจสถานที่การจัดการแข่งขันและที่พัก`} status={current.qC} />
-                                <Step title={`${current.qD} ระดับความพึงพอใจด้านข้อมูลก่อนการจัดการแข่งขัน`} status={current.qD} />
+                                <Step className="item" title={`${current.qA==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน`} status={current.qA} />
+                                <Step title={`${current.qB==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจการเดินทางเข้ามาในการแข่งขัน`} status={current.qB} />
+                                <Step title={`${current.qC==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจสถานที่การจัดการแข่งขันและที่พัก`} status={current.qC} />
+                                <Step title={`${current.qD==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจด้านข้อมูลก่อนการจัดการแข่งขัน`} status={current.qD} />
                             </Steps>
                         </Card>
                     </Col>
