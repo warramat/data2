@@ -7,7 +7,7 @@ import {
     GET_DATA_AGE,
     GET_DATA_WORK,
     GET_DATA_SPORTMAN_SECTOR,
-    GET_DATA_SPORTMAN_LANDMASS,
+    // GET_DATA_SPORTMAN_LANDMASS,
     GET_DATA_PAYRANGE,
     GET_DATA_BUDGET,
     GET_DATA_RELAX,
@@ -73,7 +73,7 @@ const Exhibitors = (props) => {
             const age = await GET_DATA_AGE()
             const work = await GET_DATA_WORK()
             const sector = await GET_DATA_SPORTMAN_SECTOR()
-            const landmass = await GET_DATA_SPORTMAN_LANDMASS()
+            // const landmass = await GET_DATA_SPORTMAN_LANDMASS()
             const payrange = await GET_DATA_PAYRANGE()
             const budget = await GET_DATA_BUDGET()
             const relax = await GET_DATA_RELAX()
@@ -90,7 +90,7 @@ const Exhibitors = (props) => {
                 payList: CheckEmptyValue(payrange.result[0].choices),
                 budgetList: CheckEmptyValue(budget.result[0].choices),
                 sectorList: CheckEmptyValue(sector.result[0].choices),
-                landmassList: CheckEmptyValue(landmass.result[0].choices),
+                // landmassList: CheckEmptyValue(landmass.result[0].choices),
                 relaxList: CheckEmptyValue(relax.result[0].choices),
             })
 
@@ -333,7 +333,7 @@ const Exhibitors = (props) => {
 
 
                             <Form.Item
-                                label={<span className="font-overflow">ค่าใช้จ่ายที่เกิดขึ้นระหว่างการเข้าร่วมการแข่งขัน เช่นค่าที่พัก ค่าอาหาร ค่าของที่ระลึก ค่าเดินทาง เป็นต้น (ไม่รวมค่าสมัคร)</span>}
+                                label="ค่าใช้จ่ายที่เกิดขึ้นระหว่างการเข้าร่วมการแข่งขัน เช่นค่าที่พัก ค่าอาหาร ค่าของที่ระลึก ค่าเดินทาง เป็นต้น (ไม่รวมค่าสมัคร)"
                                 name="costsDuringCompetition"
                                 rules={[{ required: true, message: 'โปรดเลือกค่าใช้จ่าย!' }]}
                             >
@@ -350,7 +350,7 @@ const Exhibitors = (props) => {
 
 
                             <Form.Item
-                                label={<span className="font-overflow">ท่านมีแพลนการท่องเที่ยวในจังหวัดเชียงใหม่หลังจากการแข่งขันหรือไม่</span>}
+                                label="ท่านมีแพลนการท่องเที่ยวในจังหวัดเชียงใหม่หลังจากการแข่งขันหรือไม่"
                                 name="chiangMaiTravelPlans"
                                 rules={[{ required: true, message: 'โปรดเลือกแพลนการท่องเที่ยว!' }]}
                             >
@@ -362,7 +362,7 @@ const Exhibitors = (props) => {
 
                             {openTravel === true ?
                                 <Form.Item
-                                    label="ท่านได้ตั้งงบประมาณการท่องเที่ยวหลังการแข่งขันประมาณเท่าไร  "
+                                    label="ท่านได้ตั้งงบประมาณการท่องเที่ยวหลังการแข่งขันประมาณเท่าไร"
                                     name="chiangMaiTravelPlansTrue"
                                     rules={[{ required: true, message: 'โปรดเลือกงบประมาณการท่องเที่ยว!' }]}
                                 >

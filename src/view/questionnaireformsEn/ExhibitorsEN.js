@@ -6,7 +6,7 @@ import {
     GET_DATA_TYPERACE,
     GET_DATA_AGE,
     GET_DATA_WORK,
-    GET_DATA_SPORTMAN_SECTOR,
+    // GET_DATA_SPORTMAN_SECTOR,
     GET_DATA_SPORTMAN_LANDMASS,
     GET_DATA_PAYRANGE,
     GET_DATA_BUDGET,
@@ -72,7 +72,7 @@ const Exhibitors = (props) => {
             const typerace = await GET_DATA_TYPERACE()
             const age = await GET_DATA_AGE()
             const work = await GET_DATA_WORK()
-            const sector = await GET_DATA_SPORTMAN_SECTOR()
+            // const sector = await GET_DATA_SPORTMAN_SECTOR()
             const landmass = await GET_DATA_SPORTMAN_LANDMASS()
             const payrange = await GET_DATA_PAYRANGE()
             const budget = await GET_DATA_BUDGET()
@@ -89,7 +89,7 @@ const Exhibitors = (props) => {
                 workList: CheckEmptyValue(work.result[0].choices),
                 payList: CheckEmptyValue(payrange.result[0].choices),
                 budgetList: CheckEmptyValue(budget.result[0].choices),
-                sectorList: CheckEmptyValue(sector.result[0].choices),
+                // sectorList: CheckEmptyValue(sector.result[0].choices),
                 landmassList: CheckEmptyValue(landmass.result[0].choices),
                 relaxList: CheckEmptyValue(relax.result[0].choices),
             })
@@ -295,7 +295,7 @@ const Exhibitors = (props) => {
                                         rules={[{ required: true, message: 'Please select where are you from!' }]}
                                     >
                                         <Select className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="Select where are you from">
-                                            {list.sectorList.map(item => (
+                                            {list.landmassList.map(item => (
                                                 <Option key={item.id} value={item.id}>
                                                     {item.choiceEn}
                                                 </Option>
