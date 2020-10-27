@@ -187,7 +187,7 @@ const Exhibitors = (props) => {
                     <Button onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
                     <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
                 </Row>
-                <Row align="middle" justify="center"><img src={'Logo UTMB-01.png'} width={100} alt="thailand"/></Row>
+                <Row align="middle" justify="center"><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row>
                 <Row align="middle" justify="center" className="layout-row d-flex justify-content-center">
                     <Col lg={12} md={24} >
                         <h1 className="title-font">Online questionnaire for exhibitors</h1>
