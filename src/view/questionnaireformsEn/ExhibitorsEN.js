@@ -188,7 +188,8 @@ const Exhibitors = (props) => {
                     <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
                 </Row>
                 <Row align="middle" justify="center">
-                    <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/><br/>
+                    <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
+                    <img src={'SAT-LOGO.png'} className="img-header" alt="thailand"/>
                 </Row>
                 <Row align="middle" justify="center">
                 <p className="font-header" >Welcome to the competition THAILAND Doi Inthanon&nbsp;</p>
@@ -401,8 +402,8 @@ const Exhibitors = (props) => {
                                 </Form.Item>
 
                                 <Row justify="center" align="middle">
-                                    <Button type="primary" htmlType="submit">
-                                        Submit
+                                <Button className="button-submit" htmlType="submit" >
+                                    Submit
                                 </Button>
                                 </Row>
 

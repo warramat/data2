@@ -128,7 +128,7 @@ const Exhibitors = (props) => {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Data have been saved",
+                title: "บันทึกข้อมูลสำเร็จ",
                 showConfirmButton: false,
                 timer: 1500
             });
@@ -189,7 +189,8 @@ const Exhibitors = (props) => {
                 <Button onClick={()=>handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom"/>&nbsp;EN</Button>
             </Row>
                 <Row align="middle" justify="center">
-                    <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/><br/>
+                    <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
+                    <img src={'SAT-LOGO.png'} className="img-header" alt="thailand"/>
                 </Row>
                 <Row align="middle" justify="center">
                 <p className="font-header" >ยินดีต้อนรับสู่มหกรรมการเเข่งขัน THAILAND ดอยอินทนนท์&nbsp;</p>
@@ -269,8 +270,9 @@ const Exhibitors = (props) => {
                             </Form.Item>
                             {openWorkMore === "อื่นๆ ระบุ" ?
                                 <Form.Item
+                                    label="อาชีพ"
                                     name="careerOther"
-                                    rules={[{ required: true, message: 'ที่พักระหว่างการแข่งขัน!' }]}
+                                    rules={[{ required: true, message: 'โปรดป้อนข้อมูลอาชีพ!' }]}
                                 >
                                     <Input className="row-flex" style={{ width: '95%', marginLeft: '20px' }} placeholder="ป้อนข้อมูลอาชีพ" />
                                 </Form.Item>
