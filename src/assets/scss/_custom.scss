@@ -21,19 +21,24 @@
 .img-header{
     width: 200px;
 }
-.button-submit{
-    background-color: #27AE60;
-    color: white;
-    width: 15%;
+// .ant-btn {
+//     background-color: #27AE60 !important;
+//     color: white !important;
+//     border-color: #d9d9d9;
+// }
+
+.button-submit.ant-btn{
+    background-color: #27AE60 !important;
+    color: white !important;
+    width: auto;
     font-size: 18px;
     height: 40px;
     border-radius: 5px;
 }
 
-.button-submit:hover{
+.button-submit.ant-btn:hover{
     background-color: #229954;
     color: white;
-    width: 15%;
 }
 
 @media only screen and (max-width: 812px) {
@@ -51,10 +56,8 @@
         padding-top: 10px;
         // margin-right: 10px;
     }
-    .button-submit{
-        background-color: #27AE60;
-        color: white;
-        width: 40%;
+    .button-submit.ant-btn{
+        width: auto;
         font-size: 15px;
         height: 40px;
     }
@@ -73,10 +76,8 @@
     .layout-row{
         padding: 60px;
     }
-    .button-submit{
-        background-color: #27AE60;
-        color: white;
-        width: 40%;
+    .button-submit.ant-btn{
+        width: auto;
         font-size: 15px;
         height: 40px;
     }

@@ -19,25 +19,25 @@ const Satisfaction = (props) => {
 
     const data = [
         {
-            id: 1,
-            title: "1 ไม่พอใจอย่างยิ่ง"
-        },
-        {
-            id: 2,
-            title: "2 ไม่พอใจ"
-        },
-        {
-            id: 3,
-            title: "3 ปกติ"
+            id: 5,
+            title: "5 พอใจมากที่สุด"
         },
         {
             id: 4,
             title: "4 พอใจ"
         },
         {
-            id: 5,
-            title: "5 พอใจมากที่สุด"
+            id: 3,
+            title: "3 ปกติ"
         },
+        {
+            id: 2,
+            title: "2 ไม่พอใจ"
+        },     
+        {
+            id: 1,
+            title: "1 ไม่พอใจอย่างยิ่ง"
+        },      
     ]
     const onFinish = async values => {
         console.log('Success:', values);

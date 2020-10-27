@@ -78,10 +78,6 @@ const Exhibitors = (props) => {
             const budget = await GET_DATA_BUDGET()
             const relax = await GET_DATA_RELAX()
 
-            console.log("sportman", sportman)
-            console.log("typerace", typerace)
-            console.log("age", age)
-            console.log("work", work)
             setList({
                 sportsmanList: CheckEmptyValue(sportman.result[0].choices),
                 typeRaceList: CheckEmptyValue(typerace.result[0].choices),
@@ -133,14 +129,19 @@ const Exhibitors = (props) => {
                 timer: 1500
             });
             setLoading(false)
-            // props.history.push("/exhibitorsTh");
-            formRef.current.resetFields()
+            resetField()
         }else{
             setLoading(true)
         }
-        console.log('Success:', values);
-        console.log('Success:', res);
     };
+
+    const resetField=()=>{
+        formRef.current.resetFields()
+        setOpenMore("")
+        setOpenWorkMore("")
+        setOpenZone(true)
+        setOpenTravel(false)
+    }
 
     const checkMore = (value, word, list) => {
         if (word === "อื่นๆ ... ") {

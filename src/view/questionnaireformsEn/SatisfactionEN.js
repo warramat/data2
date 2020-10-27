@@ -59,25 +59,26 @@ const Satisfaction = (props) => {
 
     const data = [
         {
-            id: 1,
-            title: "1 Extremely dissatisfied"
-        },
-        {
-            id: 2,
-            title: "2 Dissatisfied"
-        },
-        {
-            id: 3,
-            title: "3 Normal"
+            id: 5,
+            title: "5 Most satisfied"
         },
         {
             id: 4,
             title: "4 Satisfied"
         },
         {
-            id: 5,
-            title: "5 Most satisfied"
+            id: 3,
+            title: "3 Normal"
         },
+        {
+            id: 2,
+            title: "2 Dissatisfied"
+        },
+        {
+            id: 1,
+            title: "1 Extremely dissatisfied"
+        },  
+       
     ]
 
     return (
