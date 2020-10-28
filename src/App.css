@@ -37,3 +37,15 @@
   }
 }
 
+.alert-custom{
+  color: white !important;
+  font-size: 18px !important;
+}
+.alert-img{
+  width: 12px;
+  height: auto;
+}
+.alert-custom-title{
+  color: white !important;
+  font-size: 20px !important;
+}

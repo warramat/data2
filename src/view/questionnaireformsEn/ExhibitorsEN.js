@@ -135,11 +135,13 @@ const Exhibitors = (props) => {
     };
 
     const resetField=()=>{
-        formRef.current.resetFields()
+        // formRef.current.resetFields()  
         setOpenMore("")
         setOpenWorkMore("")
         setOpenZone(true)
         setOpenTravel(false)
+        props.history.push("/exhibitorsEN");
+        window.scrollTo(0,0)
     }
 
     const checkMore = (value, word, list) => {
@@ -192,12 +194,58 @@ const Exhibitors = (props) => {
         }
     }
 
+    const onFinishFailed = (errorInfo) =>{
+        if(errorInfo.errorFields){
+            // Swal.fire({
+            //     position: 'center',
+            //     // icon: 'warning',
+            //     title: 'You have not entered all information!',
+            //     text:'Please enter all information.',
+            //     showConfirmButton: false,
+            //     timer: 1500,
+            //     width: 350,
+            //     background: '#214252',
+            //     // background: '#f5a25d',
+            //     padding: 20,
+            //     customClass: {
+            //         title: 'alert-custom-title',
+            //         icon: 'alert-img',
+            //         content: 'alert-custom',
+            //         actions: 'alert-custom',
+            //       }
+            //   })
+            Toast.fire({
+                icon: 'error',
+                title: 'You have not entered all information!',
+                background: '#214252',
+                customClass: {
+                            title: 'alert-custom-title',
+                            icon: 'alert-img',
+                            content: 'alert-custom',
+                            actions: 'alert-custom',
+                          }
+              })
+        }
+    }
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
     return (
         <Skeleton loading={loading} active>
             <div className="BG-forms">
                 <Row align="middle" justify="end" className="button-lange">
-                    <Button onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
-                    <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
+                    <Button className="button-lange-radius" onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
+                    <Button className="button-lange-radius" onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
                 </Row>
                 <Row align="middle" justify="center">
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
@@ -211,7 +259,7 @@ const Exhibitors = (props) => {
                     <Col lg={12} md={24} >
                         <h1 className="title-font">Online questionnaire for exhibitors</h1>
                         <div className="mb-60 p-10">
-                            <Form layout="vertical" ref={formRef} onFinish={onFinish} >
+                            <Form layout="vertical" ref={formRef} onFinish={onFinish} onFinishFailed={onFinishFailed}>
                                 <Form.Item
                                     id="services"
                                     label="Questionnaire group"
@@ -232,7 +280,7 @@ const Exhibitors = (props) => {
                                 <Form.Item
                                     label="Competition type"
                                     name="competitionType"
-                                    rules={[{ required: false, message: 'Please select Competition type!' }]}
+                                    rules={[{ required: true, message: 'Please select Competition type!' }]}
                                 >
                                     <Select className="row-flex" placeholder="Select Competition type" onChange={() => onValuesChange("competitionType")}>
                                         {list.typeRaceList.map(item => (
@@ -298,8 +346,8 @@ const Exhibitors = (props) => {
                                     rules={[{ required: true, message: 'Please choose you currently live in Chiang Mai Province.!' }]}
                                 >
                                     <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "liveInChiangMai", [])} >
-                                        <Radio value={true}>True</Radio>
-                                        <Radio value={false}>False</Radio>
+                                        <Radio value={true}>Yes</Radio>
+                                        <Radio value={false}>No</Radio>
                                     </Radio.Group>
                                 </Form.Item>
 
@@ -320,9 +368,9 @@ const Exhibitors = (props) => {
                                     : null}
 
                                 <Form.Item
-                                    label="Accommodation during the match"
+                                    label="Accommadation type during the event"
                                     name="aBreakBetweenMatches"
-                                    rules={[{ required: true, message: 'Please choose accommodation during the match!' }]}
+                                    rules={[{ required: true, message: 'Please choose Accommadation type during the event!' }]}
                                 >
                                     <Radio.Group className="row-flex" onChange={(e) => checkMore(e.target.value, "อื่นๆ ... ", list.relaxList)} >
                                         {list.relaxList.map((item) => (
@@ -341,8 +389,6 @@ const Exhibitors = (props) => {
                                             : null}
                                     </Radio.Group>
                                 </Form.Item>
-
-
 
                                 <Form.Item
                                     label="Expenses incurred during the course of the event, such as housing, meals, belongings, travel expenses (Excluding application fee)"
@@ -389,7 +435,7 @@ const Exhibitors = (props) => {
                                     </Form.Item>
                                     : null}
 
-                                <p style={{ fontWeight: '600' }}>Enter your name and contact number to win prizes : </p >
+                                <p style={{ fontWeight: '600' }}>Enter your name and contact number to win prizes (Can be left blank in case of not participating in the prize) : </p >
                                 <Form.Item
                                     label="Name"
                                     name="name"
@@ -407,9 +453,11 @@ const Exhibitors = (props) => {
                                 </Form.Item>
 
                                 <Row justify="center" align="middle">
+                                <Col lg={4} md={5} xs={10}>
                                 <Button className="button-submit" htmlType="submit" >
                                     Submit
                                 </Button>
+                                </Col>
                                 </Row>
 
                             </Form>

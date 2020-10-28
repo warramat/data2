@@ -136,11 +136,13 @@ const Exhibitors = (props) => {
     };
 
     const resetField=()=>{
-        formRef.current.resetFields()
+        // formRef.current.resetFields()
         setOpenMore("")
         setOpenWorkMore("")
         setOpenZone(true)
         setOpenTravel(false)
+        props.history.push("/exhibitorsTh");
+        window.scrollTo(0,0)
     }
 
     const checkMore = (value, word, list) => {
@@ -193,12 +195,39 @@ const Exhibitors = (props) => {
         }
     }
 
+    const onFinishFailed = (errorInfo) =>{
+        if(errorInfo.errorFields){
+            Toast.fire({
+                icon: 'error',
+                title: 'คุณป้อนข้อมูลไม่ครบ !',
+                background: '#214252',
+                customClass: {
+                            title: 'alert-custom-title',
+                            icon: 'alert-img',
+                            content: 'alert-custom',
+                            actions: 'alert-custom',
+                          }
+              })
+        }
+    }
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
     return (
         <Skeleton loading={loading} active>
         <div className="BG-forms">
             <Row align="middle" justify="end" className="button-lange">
-                <Button onClick={()=>handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand"/>&nbsp;TH</Button>
-                <Button onClick={()=>handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom"/>&nbsp;EN</Button>
+                <Button className="button-lange-radius" onClick={()=>handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand"/>&nbsp;TH</Button>
+                <Button className="button-lange-radius" onClick={()=>handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom"/>&nbsp;EN</Button>
             </Row>
                 <Row align="middle" justify="center">
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
@@ -212,7 +241,8 @@ const Exhibitors = (props) => {
                 <Col lg={12} md={24}>
                     <h1 className="title-font">แบบสอบถามออนไลน์สำหรับผู้เข้าร่วมงาน</h1>
                     <div className="mb-60 p-10">
-                        <Form layout="vertical" ref={formRef} onFinish={onFinish} >
+
+                        <Form layout="vertical" ref={formRef} onFinish={onFinish} onFinishFailed={onFinishFailed}>
                             <Form.Item
                                 id="services"
                                 label="กลุ่มผู้ตอบเเบบสอบถาม "
@@ -251,8 +281,8 @@ const Exhibitors = (props) => {
                                 rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("gender")}>
-                                    <Radio value="male">ผู้ชาย</Radio>
-                                    <Radio value="female">ผู้หญิง</Radio>
+                                    <Radio value="male">ชาย</Radio>
+                                    <Radio value="female">หญิง</Radio>
                                 </Radio.Group>
                             </Form.Item>
 
@@ -392,7 +422,7 @@ const Exhibitors = (props) => {
                                 </Form.Item>
                                 : null}
 
-                            <p style={{ fontWeight: '600' }}>กรอกชื่อและเบอร์โทรติดต่อ เพื่อร่วมลุ้นรับรางวัล : </p >
+                            <p style={{ fontWeight: '600' }}>กรอกชื่อและเบอร์โทรติดต่อ เพื่อร่วมลุ้นรับรางวัล (สามารถเว้นว่างในกรณีไม่เข้าร่วมลัุ้นรางวัล) :</p >
                             <Form.Item
                                 label="ชื่อ"
                                 name="name"
@@ -410,9 +440,11 @@ const Exhibitors = (props) => {
                             </Form.Item>
 
                             <Row justify="center" align="middle">
+                                <Col lg={4} md={5} xs={10}>
                                 <Button className="button-submit" htmlType="submit" >
                                     ตกลง
                                 </Button>
+                                </Col>
                             </Row>
 
                         </Form>

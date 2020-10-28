@@ -59,8 +59,9 @@ const Satisfaction = (props) => {
                 timer: 1500
             });
             setLoading(false)
-            // props.history.push("/satisfactionTh");
-            formRef.current.resetFields()
+            props.history.push("/satisfactionTh");
+            // formRef.current.resetFields()
+            window.scrollTo(0,0)
         } else {
             setLoading(true)
         }
@@ -79,12 +80,39 @@ const Satisfaction = (props) => {
         }
     }
 
+    const onFinishFailed = (errorInfo) =>{
+        if(errorInfo.errorFields){
+            Toast.fire({
+                icon: 'error',
+                title: 'คุณป้อนข้อมูลไม่ครบ !',
+                background: '#214252',
+                customClass: {
+                            title: 'alert-custom-title',
+                            icon: 'alert-img',
+                            content: 'alert-custom',
+                            actions: 'alert-custom',
+                          }
+              })
+        }
+    }
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
     return (
         <Skeleton loading={loading} active>
             <div className="BG-forms">
                 <Row align="middle" justify="end" className="button-lange">
-                    <Button onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
-                    <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
+                    <Button className="button-lange-radius" onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
+                    <Button className="button-lange-radius" onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
                 </Row>
                 <Row align="middle" justify="center">
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
@@ -102,9 +130,22 @@ const Satisfaction = (props) => {
                             ref={formRef}
                             initialValues={{ remember: true }}
                             onFinish={onFinish}
-                        >
+                            onFinishFailed={onFinishFailed}
+                        >   
+                        
                             <Form.Item
-                                label={<span>ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน :</span>}
+                                label="ท่านคือผู้เข้าเเข่งขันหรือไม่"
+                                name="qE"
+                                rules={[{ required: true, message: 'โปรดเลือกคำตอบ!' }]}
+                            >
+                                <Radio.Group className="row-flex">
+                                    <Radio value={true}>ใช่</Radio>
+                                    <Radio value={false}>ไม่ใช่</Radio>
+                                </Radio.Group>
+                            </Form.Item>
+
+                            <Form.Item
+                                label="ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน :"
                                 name="qA"
                                 rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
@@ -117,7 +158,7 @@ const Satisfaction = (props) => {
 
 
                             <Form.Item
-                                label={<span>ระดับความพึงพอใจ การเดินทางเข้ามาในการแข่งขัน :</span>}
+                                label="ระดับความพึงพอใจ การเดินทางเข้ามาในการแข่งขัน :"
                                 name="qB"
                                 rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
@@ -130,7 +171,7 @@ const Satisfaction = (props) => {
 
 
                             <Form.Item
-                                label={<span>ระดับความพึงพอใจ สถานที่การจัดการแข่งขันและที่พัก :</span>}
+                                label="ระดับความพึงพอใจ สถานที่การจัดการแข่งขันและที่พัก :"
                                 name="qC"
                                 rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
@@ -143,7 +184,7 @@ const Satisfaction = (props) => {
 
 
                             <Form.Item
-                                label={<span>ระดับความพึงพอใจ ด้านการประชาสัมพันธ์ก่อนการจัดการแข่งขัน และการให้ข้อมูลที่เป็นประโยชน์ระหว่างการแข่งขัน :</span>}
+                                label="ระดับความพึงพอใจ ด้านการประชาสัมพันธ์ก่อนการจัดการแข่งขัน และการให้ข้อมูลที่เป็นประโยชน์ระหว่างการแข่งขัน :"
                                 name="qD"
                                 rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
@@ -155,17 +196,19 @@ const Satisfaction = (props) => {
                             </Form.Item>
 
                             <Row justify="center">
-                            <Button className="button-submit" htmlType="submit" >
+                            <Col lg={4} md={5} xs={10}>
+                                <Button className="button-submit" htmlType="submit" >
                                     ตกลง
                                 </Button>
+                                </Col>
                             </Row>
                         </Form>
 
                     </Col>
-                    <Col lg={4} className="stick">
+                    <Col lg={4} className="stick-second">
                         <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
-                                <Step className="item" title={`${current.qA==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน`} status={current.qA} />
+                                <Step title={`${current.qA==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน`} status={current.qA} />
                                 <Step title={`${current.qB==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจการเดินทางเข้ามาในการแข่งขัน`} status={current.qB} />
                                 <Step title={`${current.qC==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจสถานที่การจัดการแข่งขันและที่พัก`} status={current.qC} />
                                 <Step title={`${current.qD==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจด้านข้อมูลก่อนการจัดการแข่งขัน`} status={current.qD} />

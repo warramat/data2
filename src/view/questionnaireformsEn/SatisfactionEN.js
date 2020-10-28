@@ -36,8 +36,9 @@ const Satisfaction = (props) => {
                 timer: 1500
             });
             setLoading(false)
-            // props.history.push("/satisfactionEN");
-            formRef.current.resetFields()
+            props.history.push("/satisfactionEN");
+            // formRef.current.resetFields()
+            window.scrollTo(0,0)
         } else {
             setLoading(true)
         }
@@ -81,12 +82,41 @@ const Satisfaction = (props) => {
        
     ]
 
+    const onFinishFailed = (errorInfo) =>{
+        if(errorInfo.errorFields){
+            Toast.fire({
+                icon: 'error',
+                title: 'You have not entered all information!',
+                text:'Please enter all information.',
+                background: '#214252',
+                customClass: {
+                    title: 'alert-custom-title',
+                    icon: 'alert-img',
+                    content: 'alert-custom',
+                    actions: 'alert-custom',
+                    }
+              })
+        }
+    }
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
     return (
         <Skeleton loading={loading} active>
             <div className="BG-forms">
                 <Row align="middle" justify="end" className="button-lange">
-                    <Button onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
-                    <Button onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
+                    <Button className="button-lange-radius" onClick={() => handleChangePage("th")}> <img src={'thailand.png'} width={20} alt="thailand" />&nbsp;TH</Button>
+                    <Button className="button-lange-radius" onClick={() => handleChangePage("en")}><img src={'united-kingdom.png'} width={20} alt="united-kingdom" />&nbsp;EN</Button>
                 </Row>
                 <Row align="middle" justify="center">
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
@@ -104,11 +134,24 @@ const Satisfaction = (props) => {
                             initialValues={{ remember: true }}
                             onFinish={onFinish}
                             ref={formRef}
-                        >
+                            onFinishFailed={onFinishFailed}
+                        >   
+
                             <Form.Item
-                                label={<span className="font-overflow">Overall satisfaction level of the tournament organizer</span>}
+                                label="Are you a contestant ?"
+                                name="qE"
+                                rules={[{ required: true, message: 'โปรดเลือกคำตอบ!' }]}
+                            >
+                                <Radio.Group className="row-flex">
+                                    <Radio value={true}>Yes</Radio>
+                                    <Radio value={false}>No</Radio>
+                                </Radio.Group>
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Satisfaction level for getting into the event distinatio"
                                 name="qA"
-                                rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
+                                rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qA")}>
                                     {data.map((item, idx) =>
@@ -118,9 +161,9 @@ const Satisfaction = (props) => {
                             </Form.Item>
 
                             <Form.Item
-                                label={<span className="font-overflow">Satisfaction level Getting into the competition</span>}
+                                label="Satisfaction level Getting into the competition"
                                 name="qB"
-                                rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
+                                rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qB")}>
                                     {data.map((item, idx) =>
@@ -130,9 +173,9 @@ const Satisfaction = (props) => {
                             </Form.Item>
 
                             <Form.Item
-                                label={<span className="font-overflow">Satisfaction level Venue and accommodation</span>}
+                                label="Satisfaction level for venue and accomandation of the event"
                                 name="qC"
-                                rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
+                                rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qC")}>
                                     {data.map((item, idx) =>
@@ -142,9 +185,9 @@ const Satisfaction = (props) => {
                             </Form.Item>
 
                             <Form.Item
-                                label={<span className="font-overflow"> Satisfaction level Public relations before the competition And providing useful information during the competition</span>}
+                                label="Satisfaction level for public relations before the event And providing useful information during the event"
                                 name="qD"
-                                rules={[{ required: false, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
+                                rules={[{ required: true, message: 'โปรดเลือกประเภทการแข่งขัน!' }]}
                             >
                                 <Radio.Group className="row-flex" onChange={() => onValuesChange("qD")}>
                                     {data.map((item, idx) =>
@@ -154,14 +197,16 @@ const Satisfaction = (props) => {
                             </Form.Item>
 
                             <Row justify="center">
+                            <Col lg={4} md={5} xs={10}>
                             <Button className="button-submit" htmlType="submit" >
                                     Submit
                                 </Button>
+                                </Col>
                             </Row>
                         </Form>
 
                     </Col>
-                    <Col lg={4} className="stick">
+                    <Col lg={4} className="stick-second">
                         <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
                                 <Step className="item" title={`${current.qA==="wait" ? "(Wait)" : "(Finish)"} OverallSatisfaction`} status={current.qA} />
