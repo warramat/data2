@@ -6,7 +6,7 @@ import {
     GET_DATA_TYPERACE,
     GET_DATA_AGE,
     GET_DATA_WORK,
-    // GET_DATA_SPORTMAN_SECTOR,
+    GET_DATA_COST_BEFORE,
     GET_DATA_SPORTMAN_LANDMASS,
     GET_DATA_PAYRANGE,
     GET_DATA_BUDGET,
@@ -34,7 +34,8 @@ const Exhibitors = (props) => {
         budgetList: [],
         sectorList: [],
         landmassList: [],
-        relaxList: []
+        relaxList: [],
+        costBeforeList: []
     })
     const [current, setCurrent] = useState({
         evaluatorType: "wait",
@@ -47,6 +48,7 @@ const Exhibitors = (props) => {
         liveInChiangMaiFalse: "wait",
         aBreakBetweenMatches: "wait",
         aBreakBetweenMatchesOther: "wait",
+        costsBeforeCompetition: "wait",
         costsDuringCompetition: "wait",
         chiangMaiTravelPlans: "wait",
         chiangMaiTravelPlansTrue: "wait",
@@ -72,7 +74,7 @@ const Exhibitors = (props) => {
             const typerace = await GET_DATA_TYPERACE()
             const age = await GET_DATA_AGE()
             const work = await GET_DATA_WORK()
-            // const sector = await GET_DATA_SPORTMAN_SECTOR()
+            const costbefore = await GET_DATA_COST_BEFORE()
             const landmass = await GET_DATA_SPORTMAN_LANDMASS()
             const payrange = await GET_DATA_PAYRANGE()
             const budget = await GET_DATA_BUDGET()
@@ -85,7 +87,7 @@ const Exhibitors = (props) => {
                 workList: CheckEmptyValue(work.result[0].choices),
                 payList: CheckEmptyValue(payrange.result[0].choices),
                 budgetList: CheckEmptyValue(budget.result[0].choices),
-                // sectorList: CheckEmptyValue(sector.result[0].choices),
+                costBeforeList: CheckEmptyValue(costbefore.result[0].choices),
                 landmassList: CheckEmptyValue(landmass.result[0].choices),
                 relaxList: CheckEmptyValue(relax.result[0].choices),
             })
@@ -109,6 +111,7 @@ const Exhibitors = (props) => {
             liveInChiangMaiFalse: values.liveInChiangMaiFalse,
             aBreakBetweenMatches: values.aBreakBetweenMatches,
             aBreakBetweenMatchesOther: values.aBreakBetweenMatchesOther,
+            costsBeforeCompetition: values.costsBeforeCompetition,
             costsDuringCompetition: values.costsDuringCompetition,
             chiangMaiTravelPlans: values.chiangMaiTravelPlans,
             chiangMaiTravelPlansTrue: values.chiangMaiTravelPlansTrue,
@@ -391,6 +394,21 @@ const Exhibitors = (props) => {
                                 </Form.Item>
 
                                 <Form.Item
+                                    label="Expenses incurred in preparing to attend the event"
+                                    name="costsBeforeCompetition"
+                                    rules={[{ required: true, message: 'Please select expenses incurred during the course of the event!' }]}
+                                >
+                                    <Select className="row-flex" placeholder="select expenses" listHeight={260}
+                                        onChange={() => onValuesChange("costsBeforeCompetition")}>
+                                        {list.costBeforeList.map(item => (
+                                            <Option key={item.id} value={item.id} className	>
+                                                {item.choiceEn}
+                                            </Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
+
+                                <Form.Item
                                     label="Expenses incurred during the course of the event, such as housing, meals, belongings, travel expenses (Excluding application fee)"
                                     name="costsDuringCompetition"
                                     rules={[{ required: true, message: 'Please select expenses incurred during the course of the event!' }]}
@@ -466,7 +484,7 @@ const Exhibitors = (props) => {
                     <Col className="stick">
                         <Card style={{ top: 0, width: 350 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
-                                <Step className="item" title={`${current.evaluatorType==="wait" ? "(Wait)" : "(Finish)"} Evaluator`} status={current.evaluatorType} />
+                                <Step  title={`${current.evaluatorType==="wait" ? "(Wait)" : "(Finish)"} Evaluator`} status={current.evaluatorType} />
                                 {sportTh === "Thai athletes" ||sportTh === "Foreign athletes" ? 
                                 <Step title={`${current.competitionType==="wait" ? "(Wait)" : "(Finish)"} Competition`} status={current.competitionType} />
                                 : null}
@@ -475,6 +493,7 @@ const Exhibitors = (props) => {
                                 <Step title={`${current.career==="wait" ? "(Wait)" : "(Finish)"} Career`} status={current.career} />
                                 <Step title={`${current.liveInChiangMai==="wait" ? "(Wait)" : "(Finish)"} Live In ChiangMai`} status={current.liveInChiangMai} />
                                 <Step title={`${current.aBreakBetweenMatches==="wait" ? "(Wait)" : "(Finish)"} A Break Between Matches`} status={current.aBreakBetweenMatches} />
+                                <Step title={`${current.costsBeforeCompetition==="wait" ? "(Wait)" : "(Finish)"} Costs Before Competition`} status={current.costsBeforeCompetition} />
                                 <Step title={`${current.costsDuringCompetition==="wait" ? "(Wait)" : "(Finish)"} Costs During Competition`} status={current.costsDuringCompetition} />
                                 <Step title={`${current.chiangMaiTravelPlans==="wait" ? "(Wait)" : "(Finish)"} ChiangMai Travel Plans`} status={current.chiangMaiTravelPlans} />
                                 <Step title={`${current.name==="wait" ? "(Wait)" : "(Finish)"} Name`} status={current.name} />

@@ -284,3 +284,19 @@ label.ant-radio-wrapper.ant-radio-wrapper-checked {
     transform: .3s;
     cursor: pointer;
 }
+
+/////////////////antd//////////////////@at-root
+.ant-steps-vertical > .ant-steps-item > .ant-steps-item-container > .ant-steps-item-tail::after {
+    width: 2px;
+    height: 100%;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
+    background-color: red;
+}
+
+// .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+//     background: #22149e;
+//     width: 9px; //custom
+//     height: 8px; //custom
+// }

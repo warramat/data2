@@ -15,6 +15,7 @@ const Satisfaction = (props) => {
         qB: "wait",
         qC: "wait",
         qD: "wait",
+        qE: "wait",
     });
 
     const data = [
@@ -46,6 +47,7 @@ const Satisfaction = (props) => {
             qB: values.qB,
             qC: values.qC,
             qD: values.qD,
+            qE: values.qE,
             language: "th"
         }
         setLoading(true)
@@ -138,7 +140,7 @@ const Satisfaction = (props) => {
                                 name="qE"
                                 rules={[{ required: true, message: 'โปรดเลือกคำตอบ!' }]}
                             >
-                                <Radio.Group className="row-flex">
+                                <Radio.Group className="row-flex" onChange={() => onValuesChange("qE")}>
                                     <Radio value={true}>ใช่</Radio>
                                     <Radio value={false}>ไม่ใช่</Radio>
                                 </Radio.Group>
@@ -208,6 +210,7 @@ const Satisfaction = (props) => {
                     <Col lg={4} className="stick-second">
                         <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
+                                <Step title={`${current.qE==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ท่านคือผู้เข้าเเข่งขันหรือไม่`} status={current.qE} />
                                 <Step title={`${current.qA==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจโดยรวมของผู้จัดการแข่งขัน`} status={current.qA} />
                                 <Step title={`${current.qB==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจการเดินทางเข้ามาในการแข่งขัน`} status={current.qB} />
                                 <Step title={`${current.qC==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ระดับความพึงพอใจสถานที่การจัดการแข่งขันและที่พัก`} status={current.qC} />

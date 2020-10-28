@@ -7,7 +7,7 @@ import {
     GET_DATA_AGE,
     GET_DATA_WORK,
     GET_DATA_SPORTMAN_SECTOR,
-    // GET_DATA_SPORTMAN_LANDMASS,
+    GET_DATA_COST_BEFORE,
     GET_DATA_PAYRANGE,
     GET_DATA_BUDGET,
     GET_DATA_RELAX,
@@ -34,7 +34,8 @@ const Exhibitors = (props) => {
         budgetList: [],
         sectorList: [],
         landmassList: [],
-        relaxList: []
+        relaxList: [],
+        costBeforeList: []
     })
     const [current, setCurrent] = useState({
         evaluatorType: "wait",
@@ -47,6 +48,7 @@ const Exhibitors = (props) => {
         liveInChiangMaiFalse: "wait",
         aBreakBetweenMatches: "wait",
         aBreakBetweenMatchesOther: "wait",
+        costsBeforeCompetition: "wait",
         costsDuringCompetition: "wait",
         chiangMaiTravelPlans: "wait",
         chiangMaiTravelPlansTrue: "wait",
@@ -73,7 +75,7 @@ const Exhibitors = (props) => {
             const age = await GET_DATA_AGE()
             const work = await GET_DATA_WORK()
             const sector = await GET_DATA_SPORTMAN_SECTOR()
-            // const landmass = await GET_DATA_SPORTMAN_LANDMASS()
+            const costbefore = await GET_DATA_COST_BEFORE()
             const payrange = await GET_DATA_PAYRANGE()
             const budget = await GET_DATA_BUDGET()
             const relax = await GET_DATA_RELAX()
@@ -86,7 +88,7 @@ const Exhibitors = (props) => {
                 payList: CheckEmptyValue(payrange.result[0].choices),
                 budgetList: CheckEmptyValue(budget.result[0].choices),
                 sectorList: CheckEmptyValue(sector.result[0].choices),
-                // landmassList: CheckEmptyValue(landmass.result[0].choices),
+                costBeforeList: CheckEmptyValue(costbefore.result[0].choices),
                 relaxList: CheckEmptyValue(relax.result[0].choices),
             })
 
@@ -109,6 +111,7 @@ const Exhibitors = (props) => {
             liveInChiangMaiFalse: values.liveInChiangMaiFalse,
             aBreakBetweenMatches: values.aBreakBetweenMatches,
             aBreakBetweenMatchesOther: values.aBreakBetweenMatchesOther,
+            costsBeforeCompetition: values.costsBeforeCompetition,
             costsDuringCompetition: values.costsDuringCompetition,
             chiangMaiTravelPlans: values.chiangMaiTravelPlans,
             chiangMaiTravelPlansTrue: values.chiangMaiTravelPlansTrue,
@@ -375,7 +378,20 @@ const Exhibitors = (props) => {
                                 </Radio.Group>
                             </Form.Item>
 
-
+                            <Form.Item
+                                label="ค่าใช้จ่ายที่เกิดขึ้นในการเตรียมตัวเข้าร่วมงาน"
+                                name="costsBeforeCompetition"
+                                rules={[{ required: true, message: 'โปรดเลือกค่าใช้จ่าย!' }]}
+                            >
+                                <Select className="row-flex" placeholder="เลือกค่าใช้จ่าย" listHeight={260}
+                                    onChange={() => onValuesChange("costsBeforeCompetition")}>
+                                    {list.costBeforeList.map(item => (
+                                        <Option key={item.id} value={item.id} className	>
+                                            {item.choiceTh}
+                                        </Option>
+                                    ))}
+                                </Select>
+                            </Form.Item>
 
                             <Form.Item
                                 label="ค่าใช้จ่ายที่เกิดขึ้นระหว่างการเข้าร่วมการแข่งขัน เช่นค่าที่พัก ค่าอาหาร ค่าของที่ระลึก ค่าเดินทาง เป็นต้น (ไม่รวมค่าสมัคร)"
@@ -391,8 +407,6 @@ const Exhibitors = (props) => {
                                     ))}
                                 </Select>
                             </Form.Item>
-
-
 
                             <Form.Item
                                 label="ท่านมีแพลนการท่องเที่ยวในจังหวัดเชียงใหม่หลังจากการแข่งขันหรือไม่"
@@ -422,7 +436,7 @@ const Exhibitors = (props) => {
                                 </Form.Item>
                                 : null}
 
-                            <p style={{ fontWeight: '600' }}>กรอกชื่อและเบอร์โทรติดต่อ เพื่อร่วมลุ้นรับรางวัล (สามารถเว้นว่างในกรณีไม่เข้าร่วมลัุ้นรางวัล) :</p >
+                            <p style={{ fontWeight: '600' }}>กรอกชื่อและเบอร์โทรติดต่อ เพื่อร่วมลุ้นรับรางวัล (สามารถเว้นว่างในกรณีไม่เข้าร่วมลุ้นรางวัล) :</p >
                             <Form.Item
                                 label="ชื่อ"
                                 name="name"
@@ -453,13 +467,14 @@ const Exhibitors = (props) => {
                 <Col className="stick">
                     <Card style={{ top: 0,width:350 }} className="card-stick ml-50">
                         <Steps progressDot direction="vertical" >                    
-                            <Step className="item" title={`${current.evaluatorType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} กลุ่มผู้ตอบเเบบสอบถาม`} status={current.evaluatorType} />
+                            <Step  title={`${current.evaluatorType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} กลุ่มผู้ตอบเเบบสอบถาม`} status={current.evaluatorType} />
                             {sportTh === "นักกีฬาต่างชาติ " ||sportTh === "นักกีฬาไทย" ? <Step title={`${current.competitionType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ประเภทการแข่งขัน`} status={current.competitionType} /> : null}
                             <Step title={`${current.gender==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} เพศ`} status={current.gender} />
                             <Step title={`${current.age==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ช่วงอายุ`} status={current.age} />
                             <Step title={`${current.career==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} อาชีพ`} status={current.career} />
                             <Step title={`${current.liveInChiangMai==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ปัจจุบันท่านพำนักอาศัยอยู่ในจังหวัดเชียงใหม่`} status={current.liveInChiangMai} />
                             <Step title={`${current.aBreakBetweenMatches==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} การพักระหว่างการแข่งขัน`} status={current.aBreakBetweenMatches} />
+                            <Step title={`${current.costsBeforeCompetition==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ค่าใช้จ่ายที่เกิดขึ้นในการเตรียมตัวเข้าร่วมงาน`} status={current.costsBeforeCompetition} />
                             <Step title={`${current.costsDuringCompetition==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ค่าใช้จ่ายที่เกิดขึ้นระหว่างการเข้าร่วมการแข่งขัน`} status={current.costsDuringCompetition} />
                             <Step title={`${current.chiangMaiTravelPlans==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} แพลนการท่องเที่ยวในจังหวัดเชียงใหม่หลังจากการแข่งขัน`} status={current.chiangMaiTravelPlans} />
                             <Step title={`${current.name==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ชื่อ`} status={current.name} />

@@ -48,6 +48,11 @@ export const GET_DATA_RELAX = async (data) => {
 
   return res;
 };
+export const GET_DATA_COST_BEFORE = async (data) => {
+  const res = await Fetch("GET", `${apiV1}/dropdown/question/19`, data);
+
+  return res;
+};
 export const POST_EVALUTION = async (data) => {
   const res = await Fetch("POST", `${apiV1}/evaluation`, data);
 

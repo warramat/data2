@@ -15,6 +15,7 @@ const Satisfaction = (props) => {
         qB: "wait",
         qC: "wait",
         qD: "wait",
+        qE: "wait",
     });
 
     const onFinish = async values => {
@@ -24,6 +25,7 @@ const Satisfaction = (props) => {
             qB: values.qB,
             qC: values.qC,
             qD: values.qD,
+            qE: values.qE,
             language: "en"
         }
         const res = await POST_SATISFACTION(dataPost)
@@ -142,7 +144,7 @@ const Satisfaction = (props) => {
                                 name="qE"
                                 rules={[{ required: true, message: 'โปรดเลือกคำตอบ!' }]}
                             >
-                                <Radio.Group className="row-flex">
+                                <Radio.Group className="row-flex" onChange={() => onValuesChange("qE")}>
                                     <Radio value={true}>Yes</Radio>
                                     <Radio value={false}>No</Radio>
                                 </Radio.Group>
@@ -209,7 +211,8 @@ const Satisfaction = (props) => {
                     <Col lg={4} className="stick-second">
                         <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
                             <Steps progressDot direction="vertical" >
-                                <Step className="item" title={`${current.qA==="wait" ? "(Wait)" : "(Finish)"} OverallSatisfaction`} status={current.qA} />
+                                <Step title={`${current.qE==="wait" ? "(Wait)" : "(Finish)"} Are you a contestant ?`} status={current.qE} />
+                                <Step title={`${current.qA==="wait" ? "(Wait)" : "(Finish)"} OverallSatisfaction`} status={current.qA} />
                                 <Step title={`${current.qB==="wait" ? "(Wait)" : "(Finish)"} SatisfactionCompetition`} status={current.qB} />
                                 <Step title={`${current.qC==="wait" ? "(Wait)" : "(Finish)"} SatisfactionAccommodation`} status={current.qC} />
                                 <Step title={`${current.qD==="wait" ? "(Wait)" : "(Finish)"} SatisfactionRelations`} status={current.qD} />
