@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form, Input, Button, Row, Col, Select, Radio, Steps, Card, Skeleton } from 'antd';
 import {
     GET_DATA_SPORTMAN,
@@ -14,12 +14,12 @@ import {
     POST_EVALUTION
 } from '../../service/api'
 import Swal from "sweetalert2";
-import { _isEmpty, /*NumberRegX*/ } from '../../tools/util'
+import { _isEmpty} from '../../tools/util'
 const { Option } = Select;
 const { Step } = Steps;
 
 const Exhibitors = (props) => {
-    const formRef = useRef();
+    const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const [openZone, setOpenZone] = useState(true);
     const [openTravel, setOpenTravel] = useState(false);
@@ -121,8 +121,10 @@ const Exhibitors = (props) => {
             },
             language: "en"
         }
+        setLoading(true)
         const res = await POST_EVALUTION(dataPost)
         if (res.code === 200) {
+            resetField()
             Swal.fire({
                 position: "center",
                 icon: "success",
@@ -131,20 +133,18 @@ const Exhibitors = (props) => {
                 timer: 1500
             });
             setLoading(false)
-            resetField()
         } else {
             setLoading(true)
         }
     };
 
     const resetField=()=>{
-        // formRef.current.resetFields()  
         setOpenMore("")
         setOpenWorkMore("")
         setOpenZone(true)
         setOpenTravel(false)
-        props.history.push("/exhibitorsEN");
-        window.scrollTo(0,0)
+        form.resetFields();
+        window.scrollTo({top: 0, behavior: 'smooth'});    
     }
 
     const checkMore = (value, word, list) => {
@@ -199,24 +199,6 @@ const Exhibitors = (props) => {
 
     const onFinishFailed = (errorInfo) =>{
         if(errorInfo.errorFields){
-            // Swal.fire({
-            //     position: 'center',
-            //     // icon: 'warning',
-            //     title: 'You have not entered all information!',
-            //     text:'Please enter all information.',
-            //     showConfirmButton: false,
-            //     timer: 1500,
-            //     width: 350,
-            //     background: '#214252',
-            //     // background: '#f5a25d',
-            //     padding: 20,
-            //     customClass: {
-            //         title: 'alert-custom-title',
-            //         icon: 'alert-img',
-            //         content: 'alert-custom',
-            //         actions: 'alert-custom',
-            //       }
-            //   })
             Toast.fire({
                 icon: 'error',
                 title: 'You have not entered all information!',
@@ -233,7 +215,7 @@ const Exhibitors = (props) => {
 
     const Toast = Swal.mixin({
         toast: true,
-        position: 'center',
+        position: 'top-end',
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
@@ -259,10 +241,10 @@ const Exhibitors = (props) => {
                 </Row>
                 {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
                 <Row justify="center" className="layout-row d-flex justify-content-center">
-                    <Col lg={12} md={24} >
+                    <Col xl={12} lg={24} md={23} xs={24} >
                         <h1 className="title-font">Online questionnaire for exhibitors</h1>
                         <div className="mb-60 p-10">
-                            <Form layout="vertical" ref={formRef} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+                            <Form layout="vertical" form={form} onFinish={onFinish} onFinishFailed={onFinishFailed}>
                                 <Form.Item
                                     id="services"
                                     label="Questionnaire group"

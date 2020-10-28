@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form, Input, Button, Row, Col, Select, Radio, Steps, Card,Skeleton } from 'antd';
 import {
     GET_DATA_SPORTMAN,
@@ -19,7 +19,7 @@ const { Option } = Select;
 const { Step } = Steps;
 
 const Exhibitors = (props) => {
-    const formRef = useRef();
+    const [form] = Form.useForm();
     const [openZone, setOpenZone] = useState(true);
     const [openTravel, setOpenTravel] = useState(false);
     const [openMore, setOpenMore] = useState("");
@@ -124,6 +124,7 @@ const Exhibitors = (props) => {
         setLoading(true)
         const res = await POST_EVALUTION(dataPost)
         if (res.code === 200) {
+            resetField()
             Swal.fire({
                 position: "center",
                 icon: "success",
@@ -132,20 +133,21 @@ const Exhibitors = (props) => {
                 timer: 1500
             });
             setLoading(false)
-            resetField()
+            
         }else{
             setLoading(true)
         }
     };
 
-    const resetField=()=>{
-        // formRef.current.resetFields()
+    const resetField=()=>{   
         setOpenMore("")
         setOpenWorkMore("")
         setOpenZone(true)
         setOpenTravel(false)
-        props.history.push("/exhibitorsTh");
-        window.scrollTo(0,0)
+        form.resetFields();
+        // props.history.push("/exhibitorsTh");
+        // window.location.reload()
+        window.scrollTo({top: 0, behavior: 'smooth'}); 
     }
 
     const checkMore = (value, word, list) => {
@@ -241,11 +243,10 @@ const Exhibitors = (props) => {
                 </Row>
 
                 <Row  justify="center" className="layout-row d-flex justify-content-center">
-                <Col lg={12} md={24}>
+                <Col xl={12} lg={24} md={23} xs={24}>
                     <h1 className="title-font">แบบสอบถามออนไลน์สำหรับผู้เข้าร่วมงาน</h1>
                     <div className="mb-60 p-10">
-
-                        <Form layout="vertical" ref={formRef} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+                        <Form layout="vertical" form={form} onFinish={onFinish} onFinishFailed={onFinishFailed}>
                             <Form.Item
                                 id="services"
                                 label="กลุ่มผู้ตอบเเบบสอบถาม "

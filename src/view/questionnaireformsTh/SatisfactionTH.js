@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Form, Button, Card, Row, Col, Radio, Steps, Skeleton } from 'antd';
 import {
     POST_SATISFACTION,
@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const { Step } = Steps;
 
 const Satisfaction = (props) => {
-    const formRef = useRef();
+    const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const [current, setCurrent] = useState({
         qA: "wait",
@@ -53,6 +53,7 @@ const Satisfaction = (props) => {
         setLoading(true)
         const res = await POST_SATISFACTION(dataPost)
         if (res.code === 200) {
+            resetField()
             Swal.fire({
                 position: "center",
                 icon: "success",
@@ -60,15 +61,18 @@ const Satisfaction = (props) => {
                 showConfirmButton: false,
                 timer: 1500
             });
-            setLoading(false)
-            props.history.push("/satisfactionTh");
-            // formRef.current.resetFields()
-            window.scrollTo(0,0)
+            setLoading(false)     
+            
         } else {
             setLoading(true)
         }
         console.log('Success: res', res);
     };
+
+    const resetField=()=>{
+        form.resetFields();
+        window.scrollTo({top: 0, behavior: 'smooth'});   
+    }
 
     const onValuesChange = (changedVal) => {
         setCurrent((prev) => ({ ...prev, [changedVal]: "finish" }))
@@ -125,11 +129,11 @@ const Satisfaction = (props) => {
                 </Row>
                 {/* <Row align="middle" justify="center"><span className="font-header" >ยินดีต้อนรับสู่การเเข่งขัน THAILAND ดอยอินทนนท์&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
                 <Row  justify="center" className="layout-row d-flex justify-content-center" >
-                    <Col lg={12} md={24} className="mb-60">
+                    <Col xl={12} lg={24} md={23} xs={24} className="mb-60">
                         <h2 className="title-font">แบบสอบถามระดับความพึงพอใจ</h2>
                         <Form
                             layout="vertical"
-                            ref={formRef}
+                            form={form}
                             initialValues={{ remember: true }}
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}

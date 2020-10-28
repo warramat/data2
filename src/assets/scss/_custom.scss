@@ -86,6 +86,14 @@
     }
 }
 @media only screen and (max-width: 1024px) {
+    .button-lange{
+        position: unset !important;
+        position: unset !important;
+        top: 10px;
+        // display: none !important;
+        padding-top: 10px;
+        // margin-right: 10px;
+    }
     .stick {
         display: none; 
     }

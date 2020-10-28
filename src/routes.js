@@ -4,10 +4,10 @@ import ExhibitorsEN from "./view/questionnaireformsEn/ExhibitorsEN"
 import SatisfactionEN from "./view/questionnaireformsEn/SatisfactionEN"
 
 export const routes = [
-  { path: "/", exact: true, name: "Exhibitors", component: ExhibitorsTH  },
-  { path: "/exhibitorsTh", name: "Exhibitors", component: ExhibitorsTH, exact: true },
-  { path: "/satisfactionTh", name: "Satisfaction", component: SatisfactionTH, exact: true },
-  { path: "/exhibitorsEN", name: "Satisfaction", component: ExhibitorsEN, exact: true },
-  { path: "/satisfactionEN", name: "Satisfaction", component: SatisfactionEN, exact: true },
+  { path: "/", exact: true, name: "ExhibitorsTH", component: ExhibitorsTH  },
+  { path: "/exhibitorsTh", name: "ExhibitorsTH", component: ExhibitorsTH, exact: true },
+  { path: "/satisfactionTh", name: "SatisfactionTH", component: SatisfactionTH, exact: true },
+  { path: "/exhibitorsEN", name: "ExhibitorsEN", component: ExhibitorsEN, exact: true },
+  { path: "/satisfactionEN", name: "SatisfactionEN", component: SatisfactionEN, exact: true },
 ];
 
