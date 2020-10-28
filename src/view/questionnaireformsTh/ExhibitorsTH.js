@@ -236,11 +236,11 @@ const Exhibitors = (props) => {
                     <img src={'Logo UTMB-01.png'} className="img-header" alt="thailand"/>
                     <img src={'SAT-LOGO.png'} className="img-header" alt="thailand"/>
                 </Row>
-                <Row align="middle" justify="center">
+                <Row align="middle" justify="center" >
                 <p className="font-header" >ยินดีต้อนรับสู่มหกรรมการเเข่งขัน THAILAND ดอยอินทนนท์&nbsp;</p>
                 </Row>
 
-                <Row align="middle" justify="center" className="layout-row d-flex justify-content-center">
+                <Row  justify="center" className="layout-row d-flex justify-content-center">
                 <Col lg={12} md={24}>
                     <h1 className="title-font">แบบสอบถามออนไลน์สำหรับผู้เข้าร่วมงาน</h1>
                     <div className="mb-60 p-10">
@@ -464,8 +464,8 @@ const Exhibitors = (props) => {
                         </Form>
                     </div>
                 </Col>
-                <Col className="stick">
-                    <Card style={{ top: 0,width:350 }} className="card-stick ml-50">
+                <Col>
+                    <Card style={{ width:350 }} className="stick card-stick ml-50">
                         <Steps progressDot direction="vertical" >                    
                             <Step  title={`${current.evaluatorType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} กลุ่มผู้ตอบเเบบสอบถาม`} status={current.evaluatorType} />
                             {sportTh === "นักกีฬาต่างชาติ " ||sportTh === "นักกีฬาไทย" ? <Step title={`${current.competitionType==="wait" ? "(รอ)" : "(เสร็จสิ้น)"} ประเภทการแข่งขัน`} status={current.competitionType} /> : null}
@@ -488,5 +488,6 @@ const Exhibitors = (props) => {
         </Skeleton>
     )
 }
+
 
 export default Exhibitors

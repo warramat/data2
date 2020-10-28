@@ -258,7 +258,7 @@ const Exhibitors = (props) => {
                 <p className="font-header" >Welcome to the competition THAILAND Doi Inthanon&nbsp;</p>
                 </Row>
                 {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
-                <Row align="middle" justify="center" className="layout-row d-flex justify-content-center">
+                <Row justify="center" className="layout-row d-flex justify-content-center">
                     <Col lg={12} md={24} >
                         <h1 className="title-font">Online questionnaire for exhibitors</h1>
                         <div className="mb-60 p-10">
@@ -481,8 +481,8 @@ const Exhibitors = (props) => {
                             </Form>
                         </div>
                     </Col>
-                    <Col className="stick">
-                        <Card style={{ top: 0, width: 350 }} className="card-stick ml-50">
+                    <Col>
+                        <Card style={{ width: 350}} className="stick card-stick ml-50">
                             <Steps progressDot direction="vertical" >
                                 <Step  title={`${current.evaluatorType==="wait" ? "(Wait)" : "(Finish)"} Evaluator`} status={current.evaluatorType} />
                                 {sportTh === "Thai athletes" ||sportTh === "Foreign athletes" ? 
@@ -499,7 +499,7 @@ const Exhibitors = (props) => {
                                 <Step title={`${current.name==="wait" ? "(Wait)" : "(Finish)"} Name`} status={current.name} />
                                 <Step title={`${current.tell==="wait" ? "(Wait)" : "(Finish)"} Tell`} status={current.tell} />
                             </Steps>
-                        </Card>
+                        </Card>                                                   
                     </Col>
                 </Row>
                 {/* </Col>

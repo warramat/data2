@@ -128,7 +128,7 @@ const Satisfaction = (props) => {
                 <p className="font-header" >Welcome to the competition THAILAND Doi Inthanon&nbsp;</p>
                 </Row>
                 {/* <Row align="middle" justify="center"><span className="font-header" >Welcome to the THAILAND Doi Inthanon&nbsp;</span><img src={'Logo UTMB-01.png'} width={150} alt="thailand"/></Row> */}
-                <Row align="middle" justify="center" className="layout-row d-flex justify-content-center" >
+                <Row justify="center" className="layout-row d-flex justify-content-center" >
                     <Col lg={12} md={24} className="mb-60">
                         <h2 className="title-font">Satisfaction level questionnaire</h2>
                         <Form
@@ -208,8 +208,8 @@ const Satisfaction = (props) => {
                         </Form>
 
                     </Col>
-                    <Col lg={4} className="stick-second">
-                        <Card style={{ top: 0, width: 400 }} className="card-stick ml-50">
+                    <Col >
+                        <Card style={{ width: 400 }} className="stick card-stick ml-50">
                             <Steps progressDot direction="vertical" >
                                 <Step title={`${current.qE==="wait" ? "(Wait)" : "(Finish)"} Are you a contestant ?`} status={current.qE} />
                                 <Step title={`${current.qA==="wait" ? "(Wait)" : "(Finish)"} OverallSatisfaction`} status={current.qA} />
