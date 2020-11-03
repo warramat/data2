@@ -4,8 +4,8 @@ export const Fetch = async (
   method = "POST",
   path,
   data = {},
-  Basic = null,
-  token
+  // Basic = null,
+  // token
 ) => {
   try {
     const url = `${apiURL}${path}`;
