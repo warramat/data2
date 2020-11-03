@@ -60,7 +60,7 @@ const Test = () => {
   };
 
   return (
-    <div className="BG-forms">
+    <div className="BG-forms p-15">
       <Row>NAVBAR</Row>
       <Row>SUB NAVBAR</Row>
       <Row>
