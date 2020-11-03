@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
-import { GET_DATA } from '../../service/api'
+import { GET_DATA_TYPE_PEOPLE } from '../../service/api'
 import { Bar } from "react-chartjs-2";
-import moment from 'moment'
+import {Col,Row,Card} from 'antd'
 
 const Test = () => {
   const [labelChartOne, setLabelChartOne] = useState([])
@@ -14,7 +14,7 @@ const Test = () => {
 
   const GetData = async () => {
     try {
-      const res = await GET_DATA()
+      const res = await GET_DATA_TYPE_PEOPLE()
       console.log("RES>>>", res)
 
       if (res.code === 200) {
@@ -66,6 +66,7 @@ const Test = () => {
       <Row>
         <Col lg={4}>
           <Card>
+            1
             {
               labelChartOne.map((item, index) => {
                 return <div key={index}>{item}</div>
