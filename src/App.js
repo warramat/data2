@@ -6,6 +6,7 @@ import { routes } from '../src/routes'
 // import 'antd/dist/antd.css';
 import "../src/assets/scss/style.scss";
 
+
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
 const App =()=> {

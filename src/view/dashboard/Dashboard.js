@@ -4,8 +4,8 @@ import {Row, Col, Skeleton,Card } from 'antd';
 import {
     GET_DATA_SPORTMAN,
 } from '../../service/api'
-import Swal from "sweetalert2";
-import { _isEmpty} from '../../tools/util'
+// import Swal from "sweetalert2";
+// import { _isEmpty} from '../../tools/util'
 // import { Bar } from "react-chartjs-2";
 
 const Dashboard = (props) => {
