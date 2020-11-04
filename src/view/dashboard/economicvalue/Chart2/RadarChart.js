@@ -9,7 +9,7 @@ const data = {
       data: [4.9, 4.2, 4.0, 4.0, 4.1],
       borderColor: '#13EECC',
       backgroundColor: '#13EECC70',
-      borderWidth: 1,
+      borderWidth: 2,
       display: false,
       
     },
