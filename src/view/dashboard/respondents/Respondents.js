@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { Col, Row, Card } from 'antd'
+import BarResidence from './bar/Bar'
+
 
 
 const Respondents = () => {
@@ -34,7 +36,7 @@ const Respondents = () => {
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2</Card>
+                    <Card><BarResidence /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
@@ -54,5 +56,6 @@ const Respondents = () => {
         </div >
     )
 }
+
 
 export default Respondents
