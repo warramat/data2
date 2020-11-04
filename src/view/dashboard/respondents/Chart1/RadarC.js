@@ -1,9 +1,32 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react'
 import {Doughnut, Chart} from 'react-chartjs-2';
+import {GET_RADAR} from '../../../../service/api'
 
-const Donut = ({labelChartOne , dataRadar}) => {
-   
-    
+const RadarC = () => {
+    const [labelChartOne,setLabelChartOne] = useState([])
+    const [dataInfo, setDataInfo] = useState([[]])
+
+    useEffect(()=>{
+        GetRadar()
+    },[])
+
+    const GetRadar = async () => {
+       try{
+        const res = await GET_RADAR() 
+        if(res.code === 200){
+            setLabelChartOne(res.result[0].residence.label)
+            setDataInfo(res.result[0].residence.data)
+            console.log("ERROR",res.result[0].residence.data)
+        }else{
+            alert("ERROR")
+        }
+        console.log("RES>>>",res)
+       }catch(error){
+           console.log(error)
+       }
+
+    }
     var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
 Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
   draw: function() {
@@ -35,10 +58,10 @@ const data = {
     labels: labelChartOne,
     datasets: [
       {
-        data: dataRadar,
+        data: dataInfo,
         backgroundColor: ['#13EECC'],
         borderColor: ['#13EECC', ],
-        borderWidth: 2,
+        borderWidth: 0,
         hoverBorderWidth: 5,
         borderAlign: 'inner'
       },
@@ -53,7 +76,7 @@ const data = {
       display: false ,
       borderAlign: 'inner'
    }, 
-   cutoutPercentage: 70,
+   cutoutPercentage: 75,
    rotation: 50,
    borderAlign: 'inner'
   
@@ -61,23 +84,21 @@ const data = {
       
 
     return (
-            <div className="BG-forms">
-               {
+            <div style={{height: 245 }}>
+               <div style={{fontSize: 20}}>
+                <b>คนในพื้นที่เชียงใหม่</b>
+              </div >
+
+               {/* {
                    labelChartOne.map((item,index)=>{
                    return <div key={index}>{item}</div>
                    })
-               }
-               <div className='header'>
-                <h1 style={{fontSize: 20}}>คนในพื้นที่เชียงใหม่</h1>
-              </div>
-               <Doughnut data={data}  options={options} />
+               } */}
+               
+               <Doughnut  data={data}  options={options} />
+               
             </div>
     )
 }
 
-export default Donut
-
-
-
-
-
+export default RadarC
