@@ -4,14 +4,20 @@ import { Col} from "antd";
 
 
 
-const Residence = ({ dataSource }) => {
-  console.log("dataSource>>", dataSource.residence)
+const BarSatisfaction = ({ dataSource }) => {
+     const labelSatisfaction = ""
+  const dataSatisfaction = ""
+  if(dataSource.satisfaction) {
+    labelSatisfaction = dataSource.satisfaction.label 
+    dataSatisfaction = dataSource.satisfaction.data
+  }
+ 
   const data = {
-    labels: "",
+    labels: labelSatisfaction,
     datasets: [
       {
         barThickness: 25,
-        data: "",
+        data: dataSatisfaction,
         backgroundColor: "#13eecc",
       },
     ],
@@ -28,12 +34,9 @@ const Residence = ({ dataSource }) => {
       yAxes: [
         {
           ticks: {
-            callback: function (value, index, values) {
-              return value + "K";
-            },
             min: 0,
-            max: 10,
-            stepSize: 2,
+            max: 5,
+            stepSize: 1,
           },
         },
       ],
@@ -42,13 +45,13 @@ const Residence = ({ dataSource }) => {
 
   return (
     <Col >
-      <h1 style={{ fontSize: "25px", color: "#171717", }}>ที่พักอาศัย</h1>
+      <h1 style={{ fontSize: "25px", color: "#171717", }}>แบบสอบถาม</h1>
       <h6 style={{
         fontSize: "16px",
         color: "#292766",
         paddingLeft:"30px",
         opacity: 0.5,
-     }}>คน</h6>
+     }}>ระดับ</h6>
       <div style={{ marginRight: "50px" }}>
         <Bar data={data} options={option} />
       </div>
@@ -60,11 +63,11 @@ const Residence = ({ dataSource }) => {
         transform: "rotate(-90deg)",
         transformOrigin: "2% 90%",
         marginLeft: "325px",
-        width:"50px",
+        width:"100px",
         marginTop:"-40px"
-      }}>สถานที่</div>
+      }}>ความพึงพอใจ</div>
     </Col>
   );
 };
 
-export default Residence;
+export default BarSatisfaction;
