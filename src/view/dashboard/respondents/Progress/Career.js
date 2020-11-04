@@ -16,7 +16,7 @@ const Job = () => {
       <b className="text-toppic">อาชีพ</b>
       {dataSource.map((item, index) => {
         return (
-          <Row style={{ marginBottom: 10 }} key={index}>
+          <Row style={{ marginBottom: 12 }} key={index}>
             <Col className="col-job">
               <div className="text-title">{item.job}</div>
             </Col>
