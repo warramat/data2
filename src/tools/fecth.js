@@ -1,4 +1,5 @@
 import { apiURL } from "../config/ApiServer";
+import { _isEmpty } from "../tools/util"
 // import * as btoa from 'btoa'
 export const Fetch = async (
   method = "POST",
@@ -23,25 +24,11 @@ export const Fetch = async (
   }
 };
 
-// export const FetchFormData = async (
-//   method = "POST",
-//   path,
-//   data = {},
-//   token
-// ) => {
-//   try {
-//     const url = `${apiURL}${path}`;
-//     const res = await fetch(url, {
-//       headers: {
-//         Authorization: token !== "" ? "Bearer " + token : "",
-//       },
-//       method: method || "POST",
-//       body: method === "POST" ? data : null,
-//     });
-//     const datas = await res.json();
-//     return datas;
-//   } catch (err) {
-//     return err;
-//   }
-// };
+export const convertSearchParams = (param = {}) => {
+  if (!param) return "";
+  const newParam = new URLSearchParams(Object.entries(param)).toString();
+  return !_isEmpty(param) ? "?" + newParam : "";
+};
 
+export const defultFunction = (res) => {
+};
