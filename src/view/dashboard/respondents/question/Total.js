@@ -10,7 +10,7 @@ const Total = ({toppic, num, image}) => {
             </Col>
         </Row>
         <Row >
-        <Col span={12}>
+        <Col span={12} style={{marginTop:20}}>
             <span className="f-13">{num}</span>
             <span className="f-1">คน</span>
             <h5 className="f-1">+15%</h5>

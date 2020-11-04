@@ -1,6 +1,7 @@
 import React from 'react'
+import { Row, Col } from "antd"
 
-const ValueEco = () => {
+const ValueEco = ({toppic, num, image}) => {
     return (
         <>
         <Row >    
