@@ -9,8 +9,6 @@ import { GET_RESPONDENT } from "../../../service/api"
 const Respondents = () => {
 
     const [dataSource, setDataSource] = useState({})
-
-
     useEffect(() => {
         GetRespondent()
     }, [])
@@ -29,7 +27,6 @@ const Respondents = () => {
         } catch (error) {
             console.log(error)
         }
-
     }
 
     return (
