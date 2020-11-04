@@ -7,8 +7,4 @@ export const GET_DATA_TYPE_PEOPLE = async (data) => {
   return res;
 };
 
-// export const GET_DATA = async(data) =>{
-//   const res = await Fetch('GET',`${apiV1}/dashboard/evaluation`, data)
-//   return res
-// }
-////////////////////////////////////USER GROUP///////////////////////////
+

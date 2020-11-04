@@ -1,120 +1,46 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react'
-import { GET_DATA_TYPE_PEOPLE } from '../../service/api'
-import { Bar } from "react-chartjs-2";
-import {Col,Row,Card} from 'antd'
+import React, { useState } from 'react'
+import Respondents from "./respondents/Respondents"
+import EconomicValue from "./economicvalue/EconomicValue"
+import Satisfaction from "./satisfaction/Satisfaction"
+import { Row, Col, Radio, } from 'antd'
+import Doiintanon from '../../assets/image/logo/doiintanon.svg'
+import iSat from '../../assets/image/logo/Sat.svg'
 
-const Test = () => {
-  const [labelChartOne, setLabelChartOne] = useState([])
-  const [dataInfo, setDataInfo] = useState([])
-
-  useEffect(() => {
-    GetData()
-  }, [])
-
-  const GetData = async () => {
-    try {
-      const res = await GET_DATA_TYPE_PEOPLE()
-      console.log("RES>>>", res)
-
-      if (res.code === 200) {
-        setLabelChartOne(res.result[0].residence.label)
-        setDataInfo(res.result[0].residence.data)
-        // console.log("res>>>",res.result[0].residence.label)
-      } else {
-        alert("ERROR", res)
-      }
-
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  const data = {
-    labels: labelChartOne,
-    datasets: [
-      {
-        barThickness: 25,
-        data: dataInfo,
-        backgroundColor: "#13eecc",
-      },
-    ],
-  };
-
-  const option = {
-    legend: {
-      display: false,
-    },
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            min: 0,
-            max: 5,
-            stepSize: 2000,
-          },
-
-        },
-      ],
-    },
-  };
+const Dashboard = () => {
+  const [key, setKey] = useState("respon")
 
   return (
-    <div className="BG-forms p-15">
-      <Row>NAVBAR</Row>
-      <Row>SUB NAVBAR</Row>
-      <Row>
-        <Col lg={4}>
-          <Card>
-            1
-            {
-              labelChartOne.map((item, index) => {
-                return <div key={index}>{item}</div>
-              })
-            }</Card>
+    <div className="BG-forms font-kanit">
+
+      <Row className="w-100 nav p-15" justify={"center"} align={"middle"}>
+        <Col lg={6}>
+          <div className="pl-40">
+            <img src={iSat} alt="iSat" width={"60%"} />
+            <img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
+          </div>
         </Col>
-        <Col lg={4}>
-          <Card>2</Card>
+        <Col lg={12} className="d-flex justify-content-center">
+          <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} >
+            <Radio.Button value="respon">ผู้ตอบแบบสอบถาม</Radio.Button>
+            <Radio.Button value="economic">มูลค่าทางเศรษฐกิจ</Radio.Button>
+            <Radio.Button value="satis">ระดับความพึงพอใจ</Radio.Button>
+          </Radio.Group>
         </Col>
-        <Col lg={4}>
-          <Card>3</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>4</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>5</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>6</Card>
-        </Col>
+        <Col lg={6}></Col>
       </Row>
-      <Row>
-        <Col lg={8}>
-          <Card>
-            <Bar data={data} options={option} />
-          </Card>
-        </Col>
-        <Col lg={8}>
-          <Card>2</Card>
-        </Col>
-        <Col lg={8}>
-          <Card>3</Card>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={8}>
-          <Card>1</Card>
-        </Col>
-        <Col lg={8}>
-          <Card>2</Card>
-        </Col>
-        <Col lg={8}>
-          <Card>3</Card>
-        </Col>
-      </Row>
+      <div className="p-layout">
+        <Row >
+          <h5 className="pt-3 pb-3">ผู้ตอบแบบสอบถาม</h5>
+        </Row>
+        {
+          key === "respon" ? <Respondents />
+            : key === "economic" ? <EconomicValue />
+              : <Satisfaction />
+        }
+      </div>
     </div>
   )
 }
 
-export default Test
+export default Dashboard

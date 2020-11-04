@@ -1,3 +1,43 @@
-.BG-forms{
-    background: #f6f6fa;
+.BG-forms {
+  background: #f6f6fa;
+}
+
+.nav {
+  background: white;
+}
+
+.decoration .decoration-inside {
+  height: 100px; /* ความสูงของเส้น */
+  width: 1px; /* ความหนาของเส้น */
+  background-color: black; /* สีของเส้น */
+  display: block;
+}
+
+.f-13 {
+  font-size: 1.3rem !important;
+}
+
+.p-layout {
+  padding: 0px 40px 1rem 40px;
+}
+.hr-herizon {
+  border-left: 1px solid #d9d9d9;
+}
+
+label.ant-radio-button-wrapper {
+  font-size: 1.25rem !important;
+  color: #dee2ec;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color: $primary !important;
+}
+.h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $primary !important;
 }

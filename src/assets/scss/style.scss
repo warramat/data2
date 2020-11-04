@@ -2,43 +2,52 @@
 @import "variables";
 
 // If you want to add something do it here
+
+@import "theme_color";
+
 @import "custom";
 
 @import "layout";
 
 @import "~antd/dist/antd.css";
 
-@font-face {
-    font-family: "Kanit";
-    src: url("../fonts/kanit/Kanit-Regular.eot");
-    src: url("../fonts/kanit/Kanit-Regular.eot?#iefix")
-        format("embedded-opentype"),
-      url("../fonts/kanit/Kanit-Regular.woff2") format("woff2"),
-      url("../fonts/kanit/Kanit-Regular.woff") format("woff"),
-      url("../fonts/kanit/Kanit-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "Kanit-Medium";
-    src: url("../fonts/kanit/Kanit-Medium.eot");
-    src: url("../fonts/kanit/Kanit-Medium.eot?#iefix") format("embedded-opentype"),
-      url("../fonts/kanit/Kanit-Medium.woff2") format("woff2"),
-      url("../fonts/kanit/Kanit-Medium.woff") format("woff"),
-      url("../fonts/kanit/Kanit-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  body {
-    height: auto !important;
-    min-height: 100vh !important;
-  
-    margin: 0;
-    font-family: "Kanit", "Kanit-Medium", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // background-color: #f7f7f7 !important;
-  }
+@import "variables";
 
+@import "custom_antd";
+
+.font-kanit {
+  font-family: Kanit;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/kanit/Kanit-Regular.eot");
+  src: url("../fonts/kanit/Kanit-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/kanit/Kanit-Regular.woff2") format("woff2"),
+    url("../fonts/kanit/Kanit-Regular.woff") format("woff"),
+    url("../fonts/kanit/Kanit-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kanit-Medium";
+  src: url("../fonts/kanit/Kanit-Medium.eot");
+  src: url("../fonts/kanit/Kanit-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/kanit/Kanit-Medium.woff2") format("woff2"),
+    url("../fonts/kanit/Kanit-Medium.woff") format("woff"),
+    url("../fonts/kanit/Kanit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  height: auto !important;
+  min-height: 100vh !important;
+
+  margin: 0;
+  font-family: "Kanit", "Kanit-Medium", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background-color: #f7f7f7 !important;
+}

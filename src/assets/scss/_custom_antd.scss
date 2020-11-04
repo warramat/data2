@@ -1,0 +1,38 @@
+.ant-select-selector {
+  height: 45px !important;
+  border-radius: 10px !important;
+  border: unset !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ant-select-selection-search {
+  display: flex;
+  align-items: center;
+}
+.ant-select-selection-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.ant-card.ant-card-bordered {
+  border-radius: 8px !important;
+  border: unset;
+}
+
+label.ant-radio-button-wrapper {
+  border: unset !important;
+}
+
+.ant-radio-button-wrapper:first-child {
+  border-left: unset !important;
+}
+
+.ant-radio-button-wrapper:not(:first-child)::before {
+  display: none;
+}
+
+.ant-radio-button.ant-radio-button-checked:focus-within {
+  display: none;
+}
