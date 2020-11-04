@@ -31,13 +31,14 @@ function Spending() {
       {infoSource.map((item, index) => {
         return (
           <Card
+            key={index}
             style={{
               marginTop: 18,
               borderRadius: 9,
               background: "rgba(253, 253, 253, 1)",
             }}
           >
-            <Row style={{ marginBottom: 20 }} key={index}>
+            <Row style={{ marginBottom: 20 }} >
               <Col className="col-job">
                 <div className="text-toppic">
                   <b>{item.toppic}</b>

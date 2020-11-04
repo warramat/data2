@@ -4,6 +4,7 @@ import RadarChart from "./Chart2/RadarChart";
 import StackedBar from "./Chart2/StackBar";
 import Spending from "./Spending";
 
+
 const EconomicValue = () => {
   return (
     <div>
