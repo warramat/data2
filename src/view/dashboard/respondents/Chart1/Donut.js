@@ -62,11 +62,6 @@ const data = {
 
     return (
             <div className="BG-forms">
-               {
-                   labelChartOne.map((item,index)=>{
-                   return <div key={index}>{item}</div>
-                   })
-               }
                <div className='header'>
                 <h1 style={{fontSize: 20}}>คนในพื้นที่เชียงใหม่</h1>
               </div>

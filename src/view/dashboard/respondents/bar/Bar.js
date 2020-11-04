@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
-import { Row } from "antd";
+import { Col, Row } from "antd";
+import { GET_BARDATA,} from '../../../../service/api'
 
-const BarResidence = ({labelBarChart,dataBar}) => {
+
+const BarResidence = () => {
+     const [labelBarChart, setlabelBarChart] = useState([]);
+     const [dataBar, setDataBar] = useState([]);
+
+     useEffect(() => {
+          GetDataResource();
+     }, []);
+  
+      const GetDataResource =async()=>{
+          await GetBarData()
+      };
+  
+      const GetBarData = async () => {
+          try {
+              const res = await GET_BARDATA();
+                  if (res.code === 200) {
+                      setlabelBarChart(res.result[0].residence.label);
+                      setDataBar(res.result[0].residence.data);
+                  } else {
+                      alert("ERROR");
+                  }
+                  console.log("RES>>>", res);
+                  } catch (error) {
+              console.log(error);
+          }
+      };
+
   const data = {
     labels: labelBarChart,
     datasets: [
@@ -34,46 +62,27 @@ const BarResidence = ({labelBarChart,dataBar}) => {
   };
 
   return (
-    <Row
-     //  className="font"
-      style={{ fontFamily: "Sukhumvit Set",width: "785px", height: "431px", border: "1px solid black" }}>
-     <div  style={{
-            fontSize: "25px",
-            color: "#171717",
-            marginLeft: "20px",
-            paddingBottom: "20px",
-            paddingTop: "5px",
-     }}>ที่พักอาศัย</div>
-     <div
-            style={{
-              fontSize: "16px",
-              color: "#292766",
-              paddingTop: "50px",
-              marginLeft: "-75px",
-              opacity: 0.5,
-          //     paddingBottom:"30px",
-            }}
-          >
-            คน
-          </div>
-      <Row style={{ width: "725px", height: "235px",marginLeft:"30px",marginTop:"-10px" }}>
-        <Bar  data={data} options={option}/>
-      </Row>
-      <span
-            style={{
-               height:"21px",
-              fontSize: "16px",
-              color: "#292766",
-              paddingTop:"350px",
-              marginLeft: "-35px",
-              opacity:"50%",
-              transform: "rotate(-90deg)",
-              transformOrigin: "2% 90%",
-            }}
-          >
-            สถานที่
-          </span>
-    </Row>
+     <Col >
+     <h1  style={{fontSize: "25px",color: "#171717",}}>ที่พักอาศัย</h1>
+     <h6 style={{
+          fontSize: "16px",
+          color: "#292766",
+          opacity: 0.5,
+         
+     }}>คน</h6>
+     <div style={{marginRight:"50px"}}>
+          <Bar  data={data} options={option}/>
+     </div>
+     
+     <div style={{
+          fontSize: "16px",
+          color: "#292766",
+          opacity:"50%",
+          transform: "rotate(-90deg)",
+          transformOrigin: "2% 90%",
+          marginLeft:"350px",
+     }}>สถานที่</div>
+    </Col>
   );
 };
 
