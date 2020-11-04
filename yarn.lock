@@ -1360,6 +1360,13 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.5.4.tgz#de25b5da9f727985a3757fd59b5d028aba75841a"
   integrity sha512-ZpKr+WTb8zsajqgDkvCEWgp6d5eJT6Q63Ng2neTbzBO76Lbe91vX/iVIW9dikq+Fs3yEo+ls4cxeXABD2LtcbQ==
 
+"@reactchartjs/react-chart.js@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@reactchartjs/react-chart.js/-/react-chart.js-1.0.0-rc.2.tgz#ec1577a728744f171af4e7177c4652aed4e000f3"
+  integrity sha512-VJHA8qbuxpp78m0zAU8EWSrYpZgND22Rmc9Jf+ZYl6yExr+sAtZkEKwpaMpETSMUQj0WzPeWaA8p0ZKQ78L5KA==
+  dependencies:
+    lodash "^4.17.19"
+
 "@restart/context@^2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@restart/context/-/context-2.1.4.tgz#a99d87c299a34c28bd85bb489cb07bfd23149c02"

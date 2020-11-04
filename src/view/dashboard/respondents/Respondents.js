@@ -1,11 +1,34 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Col, Row, Card } from 'antd'
 import BarResidence from './bar/Bar'
 import RadarC from './Chart1/RadarC'
+import { GET_RESPONDENT } from "../../../service/api"
 
 
 const Respondents = () => {
+
+    const [dataSource, setDataSource] = useState({})
+
+
+    useEffect(() => {
+        GetRespondent()
+    }, [])
+
+    const GetRespondent = async () => {
+        try {
+            const res = await GET_RESPONDENT()
+            if (res.code === 200) {
+                setDataSource(res.result[0])
+            } else {
+                alert("ERROR")
+            }
+            console.log("RES>>>", res)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
 
     return (
         <div >
@@ -36,7 +59,7 @@ const Respondents = () => {
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><BarResidence /></Card>
+                    <Card><BarResidence dataSource={dataSource} /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
@@ -44,7 +67,7 @@ const Respondents = () => {
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>
-                    <Card><RadarC /></Card>
+                    <Card><RadarC dataSource={dataSource} /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>2</Card>

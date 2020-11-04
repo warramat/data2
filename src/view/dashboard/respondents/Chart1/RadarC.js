@@ -1,32 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Doughnut, Chart } from 'react-chartjs-2';
-import { GET_RADAR } from '../../../../service/api'
 
-const RadarC = () => {
-  const [labelChartOne, setLabelChartOne] = useState([])
-  const [dataInfo, setDataInfo] = useState([[]])
 
-  useEffect(() => {
-    GetRadar()
-  }, [])
-
-  const GetRadar = async () => {
-    try {
-      const res = await GET_RADAR()
-      if (res.code === 200) {
-        setLabelChartOne(res.result[0].residence.label)
-        setDataInfo(res.result[0].residence.data)
-        console.log("ERROR", res.result[0].residence.data)
-      } else {
-        alert("ERROR")
-      }
-      console.log("RES>>>", res)
-    } catch (error) {
-      console.log(error)
-    }
-
-  }
+const RadarC = ({ dataSource }) => {
+  console.log("dataSource>>", dataSource)
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
   Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
     draw: function () {
@@ -55,10 +33,10 @@ const RadarC = () => {
   });
 
   const data = {
-    labels: labelChartOne,
+    labels: "",
     datasets: [
       {
-        data: dataInfo,
+        data: "",
         backgroundColor: ['#13EECC'],
         borderColor: ['#13EECC',],
         borderWidth: 0,
