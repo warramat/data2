@@ -1,11 +1,38 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row, Card } from 'antd'
+import { GET_BARDATA } from '../../../service/api'
+import BarResidence from './bar/Bar'
 
 
 
 const Respondents = () => {
 
+    const [labelBarChart, setlabelBarChart] = useState([]);
+    const [dataBar, setDataBar] = useState([]);
+
+    useEffect(() => {
+        GetDataBarResource();
+    }, []);
+
+    const GetDataBarResource =async()=>{
+        await GetBarData()
+    };
+
+    const GetBarData = async () => {
+        try {
+            const res = await GET_BARDATA();
+                if (res.code === 200) {
+                    setlabelBarChart(res.result[0].residence.label);
+                    setDataBar(res.result[0].residence.data);
+                } else {
+                    alert("ERROR");
+                }
+                console.log("RES>>>", res);
+                } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <div >
@@ -36,7 +63,7 @@ const Respondents = () => {
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2</Card>
+                    <Card><BarResidence labelBarChart={labelBarChart} dataBar={dataBar} /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
