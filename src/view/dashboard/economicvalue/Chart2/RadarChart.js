@@ -3,12 +3,13 @@ import { Radar } from '@reactchartjs/react-chart.js'
 import {  Col, Row } from 'react-bootstrap';
 
 const data = {
-  labels: ['', '', '', ''],
+  labels: ['ผู้จัดการแข่งขัน ', 'นักกีฬาต่างชาติ', 'ผู้ติดตาม / ผู้ชม / ร้านอาหาร', 'อาสาสมัคร' , 'นักกีฬาไทย'],
   datasets: [
     {
-      data: [10, 6, 3, 6],
+      data: [4.9, 4.2, 4.0, 4.0, 4.1],
       borderColor: '#13EECC',
-      borderWidth: 2,
+      backgroundColor: '#13EECC70',
+      borderWidth: 1,
       display: false,
       
     },
@@ -33,13 +34,15 @@ const options = {
 
 const RadarChart = () => (
  
-  <Row style={{ width: "1000px", height: "180px" }}>
+  <Row style={{ width: "450px", height: "250px" }}>
     
-    <Col xs={6} style={{width:200 }}>
+    <Col >
     <div className='header'>
-    <h1 style={{font: "normal normal bold 15px/35px Sukhumvit Set" , color: "#171717", marginLeft: 20 }}>ความพึงพอใจ</h1></div>
-
+    <b style={{font: "normal normal bold 15px/35px Sukhumvit Set" , color: "#292766", marginLeft: 20 }}>ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
+    <b style={{font: "normal normal bold 10px/25px Sukhumvit Set" , color: "#292766", marginLeft: 20 }}>ตามประเภทผู้ประเมิน</b>
+   
     <div><Radar  data={data} options={options}  /></div>
+
     </Col>
 
 
