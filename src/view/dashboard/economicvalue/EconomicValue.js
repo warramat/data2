@@ -32,7 +32,7 @@ const EconomicValue = () => {
                 </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2</Card>
+                    <Card>2222</Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
