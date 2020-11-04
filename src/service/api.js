@@ -7,4 +7,12 @@ export const GET_RADAR = async (data) => {
   return res;
 };
 
+export const GET_BARDATA = async (data) => {
+  const res = await Fetch("GET", `${apiV1}/dashboard/evaluation/demo`, data);
+
+  return res;
+};
+
+
+
 

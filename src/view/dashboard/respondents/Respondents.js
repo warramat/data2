@@ -1,22 +1,49 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React ,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row, Card } from 'antd'
+import { GET_BARDATA,GET_RADAR } from '../../../service/api'
+import BarResidence from './bar/Bar'
 import Donut from './Chart1/Donut'
-import {GET_RADAR} from '../../../service/api'
+
 
 
 
 const Respondents = () => {
-  
-        const [labelChartOne,setLabelChartOne] = useState([])
-        const [dataRadar, setDataRadar] = useState([[]])
-    
-        useEffect(()=>{
-            GetDataResource()
-        },[])
-        const GetDataResource  = async()=>{
-                await GetRadar ()
+
+    const [labelBarChart, setlabelBarChart] = useState([]);
+    const [dataBar, setDataBar] = useState([]);
+
+    const [labelChartOne,setLabelChartOne] = useState([])
+    const [dataRadar, setDataRadar] = useState([[]])
+
+    useEffect(() => {
+        GetDataResource();
+    }, []);
+
+    const GetDataResource =async()=>{
+        await GetBarData()
+        await GetRadar()
+    };
+
+    const GetBarData = async () => {
+        try {
+            const res = await GET_BARDATA();
+                if (res.code === 200) {
+                    setlabelBarChart(res.result[0].residence.label);
+                    setDataBar(res.result[0].residence.data);
+                } else {
+                    alert("ERROR");
+                }
+                console.log("RES>>>", res);
+                } catch (error) {
+            console.log(error);
         }
+    };
+  
+      
+    
+  
+   
     
         const GetRadar = async () => {
            try{
@@ -64,7 +91,7 @@ const Respondents = () => {
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2</Card>
+                    <Card><BarResidence labelBarChart={labelBarChart} dataBar={dataBar} /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
