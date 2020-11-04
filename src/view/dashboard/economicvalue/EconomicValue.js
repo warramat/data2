@@ -33,7 +33,7 @@ const EconomicValue = () => {
                 </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><RadarChart /></Card>
+                    <Card><RadarChart  /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Row, Col } from "antd"
-import  Artboard1  from "../../../../assets/image/Artboard1.png"
+
 
 const Amount = ({toppic, num, image}) => {
+    console.log(image)
     return (
         <>
             <Row >    
@@ -17,7 +18,7 @@ const Amount = ({toppic, num, image}) => {
                 </Col>
                     
                 <Col span={12}>
-                    <img src="../../../../assets/image/Artboard1.png" className="rounded float-right"></img>
+                    <img src={image} className="rounded float-right"></img>
                 </Col>
             </Row>
         </>

@@ -12,11 +12,12 @@ const Total = ({toppic, num, image}) => {
         <Row >
         <Col span={12}>
             <span className="f-13">{num}</span>
-            <span className="text-sport">คน</span>
+            <span className="f-1">คน</span>
+            <h5 className="f-1">+15%</h5>
         </Col>
 
         <Col span={12}>
-            <img src={`./${image}`} className="rounded float-right"></img>
+            <img src={image} className="rounded float-right"></img>
         </Col>
     </Row>
         </>
