@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { Col, Row, Card } from 'antd'
-import BarResidence from './bar/Bar'
+import Residence from './bar/Bar'
+import Region from './pie/Region'
 
 
 
@@ -38,7 +39,7 @@ const Respondents = () => {
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><BarResidence /></Card>
+                    <Card><Residence /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
@@ -49,7 +50,7 @@ const Respondents = () => {
                     <Card>1</Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2</Card>
+                    <Card><Region/></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
