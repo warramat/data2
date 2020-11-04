@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import {Doughnut, Chart} from 'react-chartjs-2';
 import {GET_RADAR} from '../../../../service/api'
+import {  Col } from 'react-bootstrap';
 
 const RadarC = () => {
     const [labelChartOne,setLabelChartOne] = useState([])
@@ -81,22 +82,20 @@ const data = {
    borderAlign: 'inner'
   
   }
-      
-
+    
     return (
-            <div style={{height: 245 }}>
-               <div style={{fontSize: 20}}>
-                <b>คนในพื้นที่เชียงใหม่</b>
-              </div >
-
+            <div style={{width:300}}>
                {/* {
                    labelChartOne.map((item,index)=>{
                    return <div key={index}>{item}</div>
                    })
                } */}
-               
-               <Doughnut  data={data}  options={options} />
-               
+                <div style={{fontSize: 20}}>
+                <b>คนในพื้นที่เชียงใหม่</b>
+              </div>
+              <Col style={{left: 70}}>
+                   <Doughnut  data={data}  options={options} />
+              </Col>
             </div>
     )
 }

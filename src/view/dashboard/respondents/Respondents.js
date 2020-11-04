@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { Col, Row, Card } from 'antd'
 import RadarC from './Chart1/RadarC'
