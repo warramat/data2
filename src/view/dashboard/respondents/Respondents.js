@@ -2,7 +2,7 @@
 import React from 'react'
 import { Col, Row, Card } from 'antd'
 import BarResidence from './bar/Bar'
-
+import RadarC from './Chart1/RadarC'
 
 
 const Respondents = () => {
@@ -44,7 +44,7 @@ const Respondents = () => {
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>
-                    <Card>1</Card>
+                    <Card><RadarC /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>2</Card>
