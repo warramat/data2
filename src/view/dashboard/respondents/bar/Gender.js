@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HorizontalBar } from "react-chartjs-2";
-import { Card } from "antd";
+
 import { GET_RESPONDENT } from "../../../../service/api";
 
 const Gender = () => {
@@ -73,19 +73,9 @@ const Gender = () => {
     },
   };
   return (
-    <Card
-      style={{
-        width: 609,
-        height: 430,
-        borderBlockColor: "black",
-        borderRadius: 10,
-        background: "#FFFFFF",
-        margin: 20,
-        fontFamily: "Sukhumvit Set",
-      }}
-    >
+    <>
       <HorizontalBar data={data} options={options} />
-    </Card>
+    </>
   );
 };
 

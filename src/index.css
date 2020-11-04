@@ -11,4 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.col-job{
+  width: 55%;
+}
+.col-job2{
+  width: 45%;
+}
+.text-toppic{
+  font-size: 22px;
+font-family:"Sukhumvit Set";
+  margin-bottom: 15px;
+  color: #292766;
+}
+.text-title{
+  font-size: 16px;
+  font-family:"Sukhumvit Set";
+  color: #292766;
 
+}
+.text-percent{
+
+  position: relative;
+  float: right;
+  font-size: 19px;
+  font-family:"Sukhumvit Set";
+  color: #292766;
+}

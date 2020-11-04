@@ -55,8 +55,6 @@ const options = {
 const StackedBar = () => (
   <Card
     style={{
-      width: 609,
-      height: 430,
       borderBlockColor: "black",
       borderRadius: 10,
       background: "#FFFFFF",

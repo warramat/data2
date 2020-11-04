@@ -1,51 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Card } from "antd";
-
 import BarResidence from "./bar/Bar";
-import Donut from "./Chart1/RadarC";
+import RadarC from "./Chart1/RadarC";
+import { GET_RESPONDENT } from "../../../service/api";
 import Job from "./Progress/Career";
 import Gender from "./bar/Gender";
-import { GET_RESPONDENT } from "../../../service/api";
 
 const Respondents = () => {
-  const [labelBarChart, setlabelBarChart] = useState([]);
-  const [dataBar, setDataBar] = useState([]);
-
-  const [labelChartOne, setLabelChartOne] = useState([]);
-  const [dataRadar, setDataRadar] = useState([[]]);
+  const [dataSource, setDataSource] = useState({});
 
   useEffect(() => {
-    GetDataResource();
+    GetRespondent();
   }, []);
 
-  const GetDataResource = async () => {
-    await GetBarData();
-    await GetRadar();
-  };
-
-  const GetBarData = async () => {
+  const GetRespondent = async () => {
     try {
       const res = await GET_RESPONDENT();
       if (res.code === 200) {
-        setlabelBarChart(res.result[0].residence.label);
-        setDataBar(res.result[0].residence.data);
-      } else {
-        alert("ERROR");
-      }
-      console.log("RES>>>", res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const GetRadar = async () => {
-    try {
-      const res = await GET_RESPONDENT();
-      if (res.code === 200) {
-        setLabelChartOne(res.result[0].residence.label);
-        setDataRadar(res.result[0].residence.data);
-        console.log("ERROR", res.result[0].residence.data);
+        setDataSource(res.result[0]);
       } else {
         alert("ERROR");
       }
@@ -85,7 +58,7 @@ const Respondents = () => {
         </Col>
         <Col lg={8}>
           <Card>
-            <BarResidence labelBarChart={labelBarChart} dataBar={dataBar} />
+            <BarResidence dataSource={dataSource} />
           </Card>
         </Col>
         <Col lg={8}>
@@ -97,7 +70,7 @@ const Respondents = () => {
       <Row justify={"center"} gutter={[15, 15]}>
         <Col lg={8}>
           <Card>
-            <Donut labelChartOne={labelChartOne} dataRadar={dataRadar} />
+            <RadarC dataSource={dataSource} />
           </Card>
         </Col>
         <Col lg={8}>
