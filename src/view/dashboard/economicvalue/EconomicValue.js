@@ -1,5 +1,6 @@
-import React from 'react'
+import React  from 'react'
 import { Row, Col, Card } from "antd"
+import RadarChart from './Chart2/RadarChart'
 
 const EconomicValue = () => {
     return (
@@ -32,7 +33,7 @@ const EconomicValue = () => {
                 </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2222</Card>
+                    <Card><RadarChart /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
