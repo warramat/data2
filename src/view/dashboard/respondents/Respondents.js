@@ -4,6 +4,7 @@ import { Col, Row, Card } from 'antd'
 import { GET_BARDATA,GET_RADAR } from '../../../service/api'
 import BarResidence from './bar/Bar'
 import Donut from './Chart1/Donut'
+import Total from './question/Total'
 
 
 
@@ -66,22 +67,34 @@ const Respondents = () => {
         <div >
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={4}>
-                    <Card>1</Card>
+                    <Card>
+                        <Total toppic="ทั้งหมดแบบสอบถาม" num="12461" image={'Artboard1.png'}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>2</Card>
+                    <Card>
+                        <Total toppic="นักกีฬาไทย" num="12461" image={'Artboard4.png'}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>3</Card>
+                    <Card>
+                        <Total toppic="นักกีฬาต่างชาติ" num="12461" image={'Artboard3.png'}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>4</Card>
+                    <Card>
+                        <Total toppic="ผู้จัดการแข่งขัน" num="12461" image={'Artboard5.png'}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>5</Card>
+                    <Card>
+                        <Total toppic="อาสาสมัคร" num="12461" image={'Artboard6.png'}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>6</Card>
+                    <Card>
+                        <Total toppic="ผู้ติดตาม/ผู้ชม/ร้านอาหาร" num="12461" image={'Artboard7.png'}></Total>
+                    </Card>
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
