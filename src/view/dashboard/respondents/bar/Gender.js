@@ -1,36 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { HorizontalBar } from "react-chartjs-2";
 
-import { GET_RESPONDENT } from "../../../../service/api";
-
 const Gender = () => {
-  const [dataInfo, setDataInfo] = useState([]);
-  const [labelInfo, setLabelInfo] = useState([]);
-  useEffect(() => {
-    GetData();
-  }, []);
-  const GetData = async () => {
-    try {
-      const res = await GET_RESPONDENT();
-      console.log("RES>>>", res);
-      if (res.code === 200) {
-        setLabelInfo(res.result[0].residence.label);
-        setDataInfo(res.result[0].residence.data);
-      } else {
-        alert("ERROR", res);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
   const data = {
-    labels: labelInfo,
+    labels: ["มากกว่า 60 ปี", "41-60", "31-40", "21-30", "ต่ำกว่า 20 ปี"],
     datasets: [
       {
         barPercentage: 0.5,
         barThickness: 20,
         label: "ชาย",
-        data: dataInfo,
+        data: [5, 10, 15, 13, 10],
         backgroundColor: "#3B88FD",
       },
       {
@@ -48,7 +27,15 @@ const Gender = () => {
       position: "top",
       align: "end",
       fullWidth: true,
-      // display: false,
+      display: false,
+    },
+    layout: {
+      padding: {
+        left: 50,
+        right: 50,
+        top: 50,
+        bottom: 50,
+      },
     },
     scales: {
       yAxes: [

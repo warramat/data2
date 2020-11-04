@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Card, Row } from "antd";
+import { Col, Row } from "antd";
 import { Progress } from "antd";
 
 const Job = () => {

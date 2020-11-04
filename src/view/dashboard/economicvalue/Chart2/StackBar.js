@@ -10,26 +10,32 @@ const data = {
       barThickness: 20,
       label: "ก่อนการแข่งขัน",
       data: [50],
-      backgroundColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(242, 230, 53, 1)",
     },
     {
       barPercentage: 0.5,
       barThickness: 20,
       label: "ระหว่างการแข่งขัน",
       data: [15],
-      backgroundColor: "rgb(54, 162, 235)",
+      backgroundColor: "rgba(59, 136, 253, 1)",
     },
     {
       barPercentage: 0.5,
       barThickness: 20,
       label: "หลังการแข่งขัน",
       data: [30],
-      backgroundColor: "rgb(75, 192, 192)",
+      backgroundColor: "rgba(19, 238, 204, 1)",
     },
   ],
 };
 
 const options = {
+  legend: {
+    position: "top",
+    align: "end",
+    fullWidth: true,
+    display: false,
+  },
   scales: {
     yAxes: [
       {
@@ -53,15 +59,7 @@ const options = {
 };
 
 const StackedBar = () => (
-  <Card
-    style={{
-      borderBlockColor: "black",
-      borderRadius: 10,
-      background: "#FFFFFF",
-      margin: 20,
-      fontFamily: "Sukhumvit Set",
-    }}
-  >
+  <Card>
     <Bar data={data} options={options} />
   </Card>
 );

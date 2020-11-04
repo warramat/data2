@@ -37,7 +37,7 @@ function Spending() {
               background: "rgba(253, 253, 253, 1)",
             }}
           >
-            <Row style={{ marginBottom: 20 }}>
+            <Row style={{ marginBottom: 20 }} key={index}>
               <Col className="col-job">
                 <div className="text-toppic">
                   <b>{item.toppic}</b>
