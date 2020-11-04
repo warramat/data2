@@ -5,19 +5,14 @@ import { Col} from "antd";
 
 
 const BarSatisfaction = ({ dataSource }) => {
-     const labelSatisfaction = ""
-  const dataSatisfaction = ""
-  if(dataSource.satisfaction) {
-    labelSatisfaction = dataSource.satisfaction.label 
-    dataSatisfaction = dataSource.satisfaction.data
-  }
+     
  
   const data = {
-    labels: labelSatisfaction,
+    labels: "",
     datasets: [
       {
         barThickness: 25,
-        data: dataSatisfaction,
+        data: "",
         backgroundColor: "#13eecc",
       },
     ],
@@ -49,23 +44,37 @@ const BarSatisfaction = ({ dataSource }) => {
       <h6 style={{
         fontSize: "16px",
         color: "#292766",
-        paddingLeft:"30px",
+        paddingLeft:"20px",
         opacity: 0.5,
      }}>ระดับ</h6>
-      <div style={{ marginRight: "50px" }}>
-        <Bar data={data} options={option} />
+      <div style={{ marginRight: "40px" }}>
+          <Col style={{ marginRight: "40px",paddingTop:"30px",paddingBottom:"30px",paddingRight:"30px"}}>
+               <Bar data={data} options={option} />
+          </Col>
+          <Col>
+               <div style={{
+                    fontSize: "16px",
+                    color: "#292766",
+                    opacity: "50%",
+                    transform: "rotate(-90deg)",
+                    transformOrigin: "2% 90%",
+                    marginLeft: "100%",
+                    width:"100px",
+                    marginTop:"-55px"
+               }}>ความพึงพอใจ</div>
+          </Col>
       </div>
 
-      <div style={{
+      {/* <div style={{
         fontSize: "16px",
         color: "#292766",
         opacity: "50%",
         transform: "rotate(-90deg)",
         transformOrigin: "2% 90%",
-        marginLeft: "325px",
+        marginLeft: "100%",
         width:"100px",
         marginTop:"-40px"
-      }}>ความพึงพอใจ</div>
+      }}>ความพึงพอใจ</div> */}
     </Col>
   );
 };

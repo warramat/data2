@@ -23,14 +23,15 @@ const Residence = ({ dataSource }) => {
     ],
   };
   const option = {
-    labels:{
-          textAlign: 'center',
-
-    },
     legend: {
       display: false,
     },
     scales: {
+      xAxes:[{
+          label:{
+
+          },
+      }],
       yAxes: [
         {
           ticks: {
@@ -56,19 +57,21 @@ const Residence = ({ dataSource }) => {
         opacity: 0.5,
      }}>คน</h6>
       <div style={{ marginRight: "50px" }}>
-        <Bar data={data} options={option} />
+        <Col style={{ marginRight: "50px" }}><Bar data={data} options={option} /></Col>
+        <Col>
+          <div style={{
+            fontSize: "16px",
+            color: "#292766",
+            opacity: "50%",
+            transform: "rotate(-90deg)",
+            transformOrigin: "2% 90%",
+            marginLeft: "325px",
+            width:"50px",
+            marginTop:"-40px"
+          }}>สถานที่</div>
+        </Col>
+        
       </div>
-
-      <div style={{
-        fontSize: "16px",
-        color: "#292766",
-        opacity: "50%",
-        transform: "rotate(-90deg)",
-        transformOrigin: "2% 90%",
-        marginLeft: "325px",
-        width:"50px",
-        marginTop:"-40px"
-      }}>สถานที่</div>
     </Col>
   );
 };

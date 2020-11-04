@@ -5,7 +5,7 @@ import { Row,Col,Card } from "antd";
 const Region = ({dataSource}) => {
      const labelRegion = ""
      const dataRegion = ""
-     let sumDataRegion = ""
+     const sumDataRegion = ""
      if(dataSource.region) {
           labelRegion = dataSource.region.label 
           dataRegion = dataSource.region.data

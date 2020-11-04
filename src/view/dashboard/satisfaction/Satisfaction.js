@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Row, Col } from "antd"
+import BarSatisfaction from './bar/BarSatisfaction'
 
 const Satisfaction = () => {
     return (
@@ -20,7 +21,7 @@ const Satisfaction = () => {
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={24}>
                     <Card>
-                        1
+                    <BarSatisfaction/>
                 </Card>
                 </Col>
             </Row>
