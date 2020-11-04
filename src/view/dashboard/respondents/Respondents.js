@@ -17,7 +17,9 @@ const Respondents = () => {
 
     const GetRespondent = async () => {
         try {
-            const res = await GET_RESPONDENT()
+
+            const qrs = { evaluatortype: "all" }
+            const res = await GET_RESPONDENT(qrs)
             if (res.code === 200) {
                 setDataSource(res.result[0])
             } else {
