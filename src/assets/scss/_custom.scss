@@ -20,13 +20,9 @@
 .p-layout {
   padding: 0px 40px 1rem 40px;
 }
-.hr-herizon {
-  border-left: 1px solid #d9d9d9;
-}
-
-label.ant-radio-button-wrapper {
-  font-size: 1.25rem !important;
-  color: #dee2ec;
+.hr-horizon {
+  border-left: 1px solid #707070 !important;
+  opacity: 10%;
 }
 
 .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
@@ -40,4 +36,8 @@ h5,
 h6,
 p {
   color: $primary !important;
+}
+
+.f-left {
+  float: left !important;
 }

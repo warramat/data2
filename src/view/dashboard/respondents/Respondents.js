@@ -3,9 +3,7 @@ import React from 'react'
 import { Col, Row, Card } from 'antd'
 
 
-
 const Respondents = () => {
-
 
     return (
         <div >
