@@ -5,12 +5,12 @@ import { Col } from 'react-bootstrap';
 
 
 const RadarC = ({ dataSource }) => {
-  let rest = ""
-  let liveInChiangMai = ""
-  if (dataSource.live) {
-    rest = dataSource.live.liveInChiangMai.all - dataSource.live.liveInChiangMai.count
-    liveInChiangMai = dataSource.live.liveInChiangMai.count
-  }
+  // let rest = ""
+  // let liveInChiangMai = ""
+  // if (dataSource.live) {
+  //   rest = dataSource.live.liveInChiangMai.all - dataSource.live.liveInChiangMai.count
+  //   liveInChiangMai = dataSource.live.liveInChiangMai.count
+  // }
 
 
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
@@ -44,7 +44,7 @@ const RadarC = ({ dataSource }) => {
     labels: "",
     datasets: [
       {
-        data: [rest, liveInChiangMai],
+        data: ["", ""],
         backgroundColor: ['#13EECC'],
         borderColor: ['#13EECC',],
         borderWidth: 0,
