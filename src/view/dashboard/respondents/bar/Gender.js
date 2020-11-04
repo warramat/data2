@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { HorizontalBar } from "react-chartjs-2";
 import { Card } from "antd";
-import { GET_RADAR } from "../../../../service/api";
+import { GET_RESPONDENT } from "../../../../service/api";
+
 const Gender = () => {
   const [dataInfo, setDataInfo] = useState([]);
   const [labelInfo, setLabelInfo] = useState([]);
@@ -10,7 +11,7 @@ const Gender = () => {
   }, []);
   const GetData = async () => {
     try {
-      const res = await GET_RADAR();
+      const res = await GET_RESPONDENT();
       console.log("RES>>>", res);
       if (res.code === 200) {
         setLabelInfo(res.result[0].residence.label);

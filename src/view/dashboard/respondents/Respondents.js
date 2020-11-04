@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Col, Row, Card } from "antd";
-import { GET_BARDATA, GET_RADAR } from "../../../service/api";
+
 import BarResidence from "./bar/Bar";
-import Donut from "./Chart1/Donut";
+import Donut from "./Chart1/RadarC";
 import Job from "./Progress/Career";
 import Gender from "./bar/Gender";
+import { GET_RESPONDENT } from "../../../service/api";
 
 const Respondents = () => {
   const [labelBarChart, setlabelBarChart] = useState([]);
@@ -25,7 +26,7 @@ const Respondents = () => {
 
   const GetBarData = async () => {
     try {
-      const res = await GET_BARDATA();
+      const res = await GET_RESPONDENT();
       if (res.code === 200) {
         setlabelBarChart(res.result[0].residence.label);
         setDataBar(res.result[0].residence.data);
@@ -40,7 +41,7 @@ const Respondents = () => {
 
   const GetRadar = async () => {
     try {
-      const res = await GET_RADAR();
+      const res = await GET_RESPONDENT();
       if (res.code === 200) {
         setLabelChartOne(res.result[0].residence.label);
         setDataRadar(res.result[0].residence.data);
