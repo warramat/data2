@@ -1,22 +1,32 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Col, Row } from "antd";
+import { Col} from "antd";
 
 
 
-const BarResidence = ({ dataSource }) => {
-  console.log("dataSource>>", dataSource)
+const BarSatisfaction = ({ dataSource }) => {
+     const labelSatisfaction = ""
+  const dataSatisfaction = ""
+  if(dataSource.satisfaction) {
+    labelSatisfaction = dataSource.satisfaction.label 
+    dataSatisfaction = dataSource.satisfaction.data
+  }
+ 
   const data = {
-    labels: "",
+    labels: labelSatisfaction,
     datasets: [
       {
         barThickness: 25,
-        data: "",
+        data: dataSatisfaction,
         backgroundColor: "#13eecc",
       },
     ],
   };
   const option = {
+    labels:{
+          textAlign: 'center',
+
+    },
     legend: {
       display: false,
     },
@@ -24,12 +34,9 @@ const BarResidence = ({ dataSource }) => {
       yAxes: [
         {
           ticks: {
-            callback: function (value, index, values) {
-              return value + "K";
-            },
             min: 0,
-            max: 10,
-            stepSize: 2,
+            max: 5,
+            stepSize: 1,
           },
         },
       ],
@@ -38,13 +45,13 @@ const BarResidence = ({ dataSource }) => {
 
   return (
     <Col >
-      <h1 style={{ fontSize: "25px", color: "#171717", }}>ที่พักอาศัย</h1>
+      <h1 style={{ fontSize: "25px", color: "#171717", }}>แบบสอบถาม</h1>
       <h6 style={{
         fontSize: "16px",
         color: "#292766",
+        paddingLeft:"30px",
         opacity: 0.5,
-
-      }}>คน</h6>
+     }}>ระดับ</h6>
       <div style={{ marginRight: "50px" }}>
         <Bar data={data} options={option} />
       </div>
@@ -55,10 +62,12 @@ const BarResidence = ({ dataSource }) => {
         opacity: "50%",
         transform: "rotate(-90deg)",
         transformOrigin: "2% 90%",
-        marginLeft: "350px",
-      }}>สถานที่</div>
+        marginLeft: "325px",
+        width:"100px",
+        marginTop:"-40px"
+      }}>ความพึงพอใจ</div>
     </Col>
   );
 };
 
-export default BarResidence
+export default BarSatisfaction;

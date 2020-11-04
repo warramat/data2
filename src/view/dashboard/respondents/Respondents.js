@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { Col, Row, Card } from 'antd'
-import BarResidence from './bar/Bar'
+import Residence from './bar/Residence'
 import RadarC from './Chart1/RadarC'
+import Region from './pie/Region'
 import { GET_RESPONDENT } from "../../../service/api"
+import Continent from './pie/Continent'
 
 
 const Respondents = () => {
@@ -58,7 +60,7 @@ const Respondents = () => {
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><BarResidence dataSource={dataSource} /></Card>
+                    <Card><Residence dataSource={dataSource} /></Card>
                 </Col>
                 <Col lg={8}>
                     <Card>3</Card>
@@ -69,10 +71,10 @@ const Respondents = () => {
                     <Card><RadarC dataSource={dataSource} /></Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>2</Card>
+                    <Card><Region dataSource={dataSource}/></Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>3</Card>
+                    <Card><Continent dataSource={dataSource} /></Card>
                 </Col>
             </Row>
         </div >
