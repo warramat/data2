@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { Doughnut, Chart } from 'react-chartjs-2';
-
+import {  Col } from 'react-bootstrap';
 
 const RadarC = ({ dataSource }) => {
   console.log("dataSource>>", dataSource)
+  
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
   Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
     draw: function () {
@@ -66,17 +67,11 @@ const RadarC = ({ dataSource }) => {
       <div style={{ fontSize: 20 }}>
         <b>คนในพื้นที่เชียงใหม่</b>
       </div >
-
-      {/* {
-                   labelChartOne.map((item,index)=>{
-                   return <div key={index}>{item}</div>
-                   })
-               } */}
-
-      <Doughnut data={data} options={options} />
-
-    </div>
-  )
+              <Col style={{left: 70}}>
+                   <Doughnut  data={data}  options={options} />
+              </Col>
+            </div>
+    )
 }
 
 export default RadarC

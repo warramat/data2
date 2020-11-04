@@ -34,14 +34,14 @@ const options = {
 
 const RadarChart = () => (
  
-  <Row style={{ width: "450px", height: "250px" }}>
+  <Row style={{ width: "480px", height: "300px" }}>
     
     <Col >
-    <div className='header'>
+    <div >
     <b style={{font: "normal normal bold 20px/35px Sukhumvit Set" , color: "#292766", marginLeft: 5 }}>ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
     <b style={{font: "normal normal bold 15px/35px Sukhumvit Set" , color: "#292766", marginLeft: 5 }}>ตามประเภทผู้ประเมิน</b>
    
-    <div><Radar  data={data} options={options}  /></div>
+    <div style={{left: 20}}><Radar  data={data} options={options}  /></div>
 
     </Col>
 
