@@ -4,13 +4,14 @@ import { Col, Row, Card } from 'antd'
 import Residence from './bar/Residence'
 import RadarC from './Chart1/RadarC'
 import Region from './pie/Region'
+import Gender from './bar/Gender'
 import { GET_RESPONDENT } from "../../../service/api"
 import Continent from './pie/Continent'
-
+import Job from "./Progress/Career";
 
 const Respondents = () => {
+    const [dataSource, setDataSource] = useState({});
 
-    const [dataSource, setDataSource] = useState({})
     useEffect(() => {
         GetRespondent()
     }, [])
@@ -31,8 +32,9 @@ const Respondents = () => {
         }
     }
 
+
     return (
-        <div >
+        <div>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={4}>
                     <Card>1</Card>
@@ -56,30 +58,35 @@ const Respondents = () => {
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>
                     <Card>
-                        1
+                        <Gender></Gender>
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><Residence dataSource={dataSource} /></Card>
+                    <Card>
+                        <Residence dataSource={dataSource} />
+                    </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>3</Card>
+                    <Card>
+                        <Job></Job>
+                    </Card>
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>
-                    <Card><RadarC dataSource={dataSource} /></Card>
+                    <Card>
+                        <RadarC dataSource={dataSource} />
+                    </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><Region dataSource={dataSource}/></Card>
+                    <Card><Region /></Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><Continent dataSource={dataSource} /></Card>
+                    <Card><Continent /></Card>
                 </Col>
             </Row>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-
-export default Respondents
+export default Respondents;
