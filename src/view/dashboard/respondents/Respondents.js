@@ -2,6 +2,14 @@
 import React, { useState, useEffect } from 'react'
 import { Col, Row, Card } from 'antd'
 import Residence from './bar/Residence'
+import Total from './question/Total'
+import Artboard1 from "../../../assets/image/Artboard1.png"
+import Artboard4 from "../../../assets/image/Artboard4.png"
+import Artboard3 from "../../../assets/image/Artboard3.png"
+import Artboard5 from "../../../assets/image/Artboard5.png"
+import Artboard6 from "../../../assets/image/Artboard6.png"
+import Artboard7 from "../../../assets/image/Artboard7.png"
+
 import RadarC from './Chart1/RadarC'
 import Region from './pie/Region'
 import Gender from './bar/Gender'
@@ -10,8 +18,13 @@ import Continent from './pie/Continent'
 import Job from "./Progress/Career";
 
 const Respondents = () => {
-    const [dataSource, setDataSource] = useState({});
 
+    const [quesionNairGroup, setQuesionNairGroup] = useState([]);
+    const [residence, setResident] = useState({});
+    const [liveCountinent, setLiveContinent] = useState({});
+    const [liveInChiangmai, setLiveInChiangmai] = useState({});
+    const [liveRegion, setLiveRegion] = useState({});
+    const [carrier, setCarrier] = useState({});
     useEffect(() => {
         GetRespondent()
     }, [])
@@ -22,7 +35,12 @@ const Respondents = () => {
             const qrs = { evaluatortype: "all" }
             const res = await GET_RESPONDENT(qrs)
             if (res.code === 200) {
-                setDataSource(res.result[0])
+                setCarrier(res.result[0].career)
+                setLiveInChiangmai(res.result[0].liveInChiangmai)
+                setLiveContinent(res.result[0].live.continent)
+                setQuesionNairGroup(res.result[0].questionnaireGroup)
+                setLiveRegion(res.result[0].live.region)
+                setResident(res.result[0].residence)
             } else {
                 alert("ERROR")
             }
@@ -37,22 +55,34 @@ const Respondents = () => {
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={4}>
-                    <Card>1</Card>
+                    <Card>
+                        <Total toppic="ทั้งหมดแบบสอบถาม" num="12461" image={Artboard1}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>2</Card>
+                    <Card>
+                        <Total toppic="นักกีฬาไทย" num="12461" image={Artboard4}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>3</Card>
+                    <Card>
+                        <Total toppic="นักกีฬาต่างชาติ" num="12461" image={Artboard3}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>4</Card>
+                    <Card>
+                        <Total toppic="ผู้จัดการแข่งขัน" num="12461" image={Artboard5}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>5</Card>
+                    <Card>
+                        <Total toppic="อาสาสมัคร" num="12461" image={Artboard6}></Total>
+                    </Card>
                 </Col>
                 <Col lg={4}>
-                    <Card>6</Card>
+                    <Card>
+                        <Total toppic="ผู้ติดตาม/ผู้ชม/ร้านอาหาร" num="12461" image={Artboard7}></Total>
+                    </Card>
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
@@ -63,26 +93,26 @@ const Respondents = () => {
                 </Col>
                 <Col lg={8}>
                     <Card>
-                        <Residence dataSource={dataSource} />
+                        <Residence residence={residence} />
                     </Card>
                 </Col>
                 <Col lg={8}>
                     <Card>
-                        <Job></Job>
+                        <Job carrier={carrier} />
                     </Card>
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>
                     <Card>
-                        <RadarC dataSource={dataSource} />
+                        <RadarC liveInChiangmai={liveInChiangmai} />
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><Region /></Card>
+                    <Card><Region liveRegion={liveRegion} /></Card>
                 </Col>
                 <Col lg={8}>
-                    <Card><Continent /></Card>
+                    <Card><Continent liveCountinent={liveCountinent} /></Card>
                 </Col>
             </Row>
         </div>

@@ -1,30 +1,30 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Col} from "antd";
+import { Col } from "antd";
 
 
 
 const Residence = ({ dataSource }) => {
-  const labelResidence = ""
-  const dataResidence = ""
-  if(dataSource.residence) {
-    labelResidence = dataSource.residence.label 
-    dataResidence = dataSource.residence.data
-  }
-  
+  // const labelResidence = ""
+  // const dataResidence = ""
+  // if(dataSource.residence) {
+  //   labelResidence = dataSource.residence.label 
+  //   dataResidence = dataSource.residence.data
+  // }
+
   const data = {
-    labels: labelResidence,
+    labels: "",
     datasets: [
       {
         barThickness: 25,
-        data: dataResidence,
+        data: "",
         backgroundColor: "#13eecc",
       },
     ],
   };
   const option = {
-    labels:{
-          textAlign: 'center',
+    labels: {
+      textAlign: 'center',
 
     },
     legend: {
@@ -52,9 +52,9 @@ const Residence = ({ dataSource }) => {
       <h6 style={{
         fontSize: "16px",
         color: "#292766",
-        paddingLeft:"30px",
+        paddingLeft: "30px",
         opacity: 0.5,
-     }}>คน</h6>
+      }}>คน</h6>
       <div style={{ marginRight: "50px" }}>
         <Bar data={data} options={option} />
       </div>
@@ -66,8 +66,8 @@ const Residence = ({ dataSource }) => {
         transform: "rotate(-90deg)",
         transformOrigin: "2% 90%",
         marginLeft: "325px",
-        width:"50px",
-        marginTop:"-40px"
+        width: "50px",
+        marginTop: "-40px"
       }}>สถานที่</div>
     </Col>
   );
