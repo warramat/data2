@@ -1,41 +1,14 @@
-import React,{useEffect,useState} from "react";
+import React from "react";
 import { Pie } from "react-chartjs-2";
-import { Row,Col } from "antd";
-import { GET_BARDATA,} from '../../../../service/api'
+import { Row,Col,Card } from "antd";
 
-const Region = () => {
-  const[labelRegion,setLabelRegion] = useState([])
-  const[dataRegion,setDataRegion] = useState([])
- 
-
-  useEffect(()=>{
-     GetDataResource()
-  },[])
-
-  const GetDataResource =async()=>{
-     await GetPieData()
- };
-
-  const GetPieData = async() =>{
-       try {
-            const res = await GET_BARDATA()
-            if(res.code === 200){
-              setLabelRegion(res.result[0].live.region.label)
-              setDataRegion(res.result[0].live.region.data)
-            }else{
-                 alert("ERROR")
-            }
-            console.log("RES>>>",res)
-       } catch (error) {
-            console.log(error)
-       }
-  }
-
+const Region = ({dataSource}) => {
+console.log("dataSource>>", dataSource.residence)
   const data = {
-    labels: labelRegion,
+    labels: "",
     datasets: [
       {
-        data: dataRegion,
+        data: "",
         backgroundColor:[
           "#13EECC",
           "#3B88FD",
@@ -84,9 +57,9 @@ const Region = () => {
     <Row >
 
         <div style={{letterSpacing: "0.68px",fontSize:'25px',color:'#171717',marginLeft:'20px',marginRight:"8px"}}>นักกีฬาไทย</div>
-        <div className="cad" style={{width:"157px",height:"46px",left:'20px',borderRadius:"5px",backgroundColor:"#f6f8fe"}}>
+        <Card style={{fontSize: "19px",color: "#292766",height:"46px",left:'20px',borderRadius:"5px",backgroundColor:"#f6f8fe"}}>
             1,461 คน
-        </div>
+        </Card>
 
       <Row>
             <Col style={{ paddingLeft:"30px",paddingTop:"40px"}}>

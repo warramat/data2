@@ -13,21 +13,21 @@ const Dashboard = () => {
   return (
     <div className="BG-forms font-kanit">
 
-      <Row className="w-100 nav p-15" justify={"center"} align={"middle"}>
-        <Col lg={6}>
-          <div className="pl-40">
-            <img src={iSat} alt="iSat" width={"60%"} />
-            <img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
+      <Row className="w-100 nav p-15 h-25 " align={"middle"}>
+        <Col lg={7}>
+          <div className="pl-40 align-items-center">
+            <img src={iSat} alt="iSat" width={"53%"} className="pr-2" />
+            <span className="hr-horizon"></span><img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
           </div>
         </Col>
-        <Col lg={12} className="d-flex justify-content-center">
+        <Col lg={10} className="d-flex justify-content-center">
           <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} >
             <Radio.Button value="respon">ผู้ตอบแบบสอบถาม</Radio.Button>
             <Radio.Button value="economic">มูลค่าทางเศรษฐกิจ</Radio.Button>
             <Radio.Button value="satis">ระดับความพึงพอใจ</Radio.Button>
           </Radio.Group>
         </Col>
-        <Col lg={6}></Col>
+        <Col lg={7}></Col>
       </Row>
       <div className="p-layout">
         <Row >
@@ -39,7 +39,7 @@ const Dashboard = () => {
               : <Satisfaction />
         }
       </div>
-    </div>
+    </div >
   )
 }
 

@@ -36,3 +36,8 @@ label.ant-radio-button-wrapper {
 .ant-radio-button.ant-radio-button-checked:focus-within {
   display: none;
 }
+
+label.ant-radio-button-wrapper {
+  font-size: 1.25rem !important;
+  color: #dee2ec;
+}
