@@ -4,14 +4,11 @@ import { Row, Col, Card } from "antd"
 
 const Continent = ({ liveCountinent }) => {
 
-     console.log("read", liveCountinent)
-
-  const sumDataLiveCountinent = liveCountinent.data.reduce((sum, num) => {
-    console.log("sum ", sum)
-    return sum + num
+  
+  const sumDataLiveCountinent = liveCountinent.data.reduce((sum, data) => {
+    return sum + data
   }, 0)
 
-  console.log(sumDataLiveCountinent)
 
   const data = {
     labels: liveCountinent.label,

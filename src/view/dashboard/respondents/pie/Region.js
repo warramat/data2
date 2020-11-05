@@ -3,14 +3,11 @@ import { Pie } from "react-chartjs-2"
 import { Row, Col, Card } from "antd"
 
 const Region = ({ liveRegion }) => {
-  console.log("read", liveRegion)
-
-  const sumDataLiveRegion = liveRegion.data.reduce((sum, num) => {
-    console.log("sum ", sum)
-    return sum + num
+    
+  const sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
+    return sum + Data
   }, 0)
 
-  console.log(sumDataLiveRegion)
 
   const data = {
     labels: liveRegion.label,
@@ -47,12 +44,13 @@ const Region = ({ liveRegion }) => {
     ],
   };
   const options = {
+    labels: false,
     legend: {
       display: false,
       position: "bottom",
       labels: {
         boxWidth: 15,
-        fontSize: 15,
+        fontSize: 50,
         fontColor: "#000000",
         fontFamily: "Sukhumvit Set",
       },
