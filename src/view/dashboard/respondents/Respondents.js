@@ -25,6 +25,7 @@ const Respondents = () => {
     const [liveInChiangmai, setLiveInChiangmai] = useState({});
     const [liveRegion, setLiveRegion] = useState({});
     const [carrier, setCarrier] = useState({});
+
     useEffect(() => {
         GetRespondent()
     }, [])
@@ -51,40 +52,21 @@ const Respondents = () => {
         }
     }
 
-
+    
     return (
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
-                <Col lg={4}>
-                    <Card>
-                        <Total toppic="ทั้งหมดแบบสอบถาม" num="12461" image={Artboard1}></Total>
-                    </Card>
-                </Col>
-                <Col lg={4}>
-                    <Card>
-                        <Total toppic="นักกีฬาไทย" num="12461" image={Artboard4}></Total>
-                    </Card>
-                </Col>
-                <Col lg={4}>
-                    <Card>
-                        <Total toppic="นักกีฬาต่างชาติ" num="12461" image={Artboard3}></Total>
-                    </Card>
-                </Col>
-                <Col lg={4}>
-                    <Card>
-                        <Total toppic="ผู้จัดการแข่งขัน" num="12461" image={Artboard5}></Total>
-                    </Card>
-                </Col>
-                <Col lg={4}>
-                    <Card>
-                        <Total toppic="อาสาสมัคร" num="12461" image={Artboard6}></Total>
-                    </Card>
-                </Col>
-                <Col lg={4}>
-                    <Card>
-                        <Total toppic="ผู้ติดตาม/ผู้ชม/ร้านอาหาร" num="12461" image={Artboard7}></Total>
-                    </Card>
-                </Col>
+                {
+                    quesionNairGroup.map((item)=>{
+                    return <div>
+                        <Col lg={6}>
+                            <Card>
+                                <Total toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}></Total>
+                            </Card>
+                        </Col>
+                    </div>
+                    })
+                }
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>

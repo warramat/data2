@@ -1,17 +1,19 @@
 import React from 'react'
+import { Row, Col } from "antd"
 
-const ValueEco = () => {
+const ValueEco = ({toppic, num, image, persen}) => {
     return (
         <>
         <Row >    
                 <Col span={24}>
-                    <div className="text-sport">{toppic}</div>
+                    <div>{toppic}</div>
                 </Col>
             </Row>
             <Row >
-            <Col span={12}>
+            <Col span={12} style={{marginTop:50}}>
                 <span className="f-13">{num}</span>
                 <span className="f-1">คน</span>
+                <div className="f-1">{persen}%</div>
                 
             </Col>
 

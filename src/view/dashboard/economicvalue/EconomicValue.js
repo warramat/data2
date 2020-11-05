@@ -4,6 +4,7 @@ import RadarChart from "./Chart2/RadarChart";
 import StackedBar from "./Chart2/StackBar";
 import Spending from "./Spending";
 import { GET_ECONOMICVALUE } from "../../../service/api"
+import ValueEco from "./value/ValueEco";
 
 
 const EconomicValue = () => {
@@ -45,10 +46,15 @@ const GetEconomicValue = async () => {
   return (
     <div>
       <Row justify={"center"} gutter={[15, 15]}>
+        {
+          
+        }
         <Col lg={4}>
-          <Card>1</Card>
+          <Card>
+            <ValueEco toppic="sdgjf" num="133"/>
+          </Card>
         </Col>
-        <Col lg={4}>
+        {/* <Col lg={4}>
           <Card>2</Card>
         </Col>
         <Col lg={4}>
@@ -62,7 +68,7 @@ const GetEconomicValue = async () => {
         </Col>
         <Col lg={4}>
           <Card>6</Card>
-        </Col>
+        </Col> */}
       </Row>
       <Row justify={"center"} gutter={[15, 15]}>
         <Col lg={8}>
