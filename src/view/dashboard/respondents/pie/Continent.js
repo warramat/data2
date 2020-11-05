@@ -1,23 +1,23 @@
-import React from "react";
-import { Pie } from "react-chartjs-2";
-import { Row, Col, Card } from "antd";
+import React from "react"
+import { Pie } from "react-chartjs-2"
+import { Row, Col, Card } from "antd"
 
 const Continent = ({ liveCountinent }) => {
 
-     console.log("read", liveCountinent);
+     console.log("read", liveCountinent)
 
-  const sumDataLiveCountinent = [liveCountinent.data].reduce((sum, num) => {
-    console.log("sum ", sum);
-    return sum + num;
-  }, 0);
+  const sumDataLiveCountinent = liveCountinent.data.reduce((sum, num) => {
+    console.log("sum ", sum)
+    return sum + num
+  }, 0)
 
-  console.log(sumDataLiveCountinent);
+  console.log(sumDataLiveCountinent)
 
   const data = {
-    labels: [liveCountinent.label],
+    labels: liveCountinent.label,
     datasets: [
       {
-        data: [liveCountinent.data],
+        data: liveCountinent.data,
         backgroundColor: [
           "#13EECC",
           "#3B88FD",

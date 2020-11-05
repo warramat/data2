@@ -6,11 +6,11 @@ const Residence = ({ residence }) => {
   console.log("read", residence);
 
   const data = {
-    labels: ["บ้านตัวเอง(ไม่เสียค่าใช้จ่าย)","บ้านตัวเอง","บ้านตัวเอง","บ้านตัวเอง","บ้านตัวเอง"],
+    labels: residence.label,
     datasets: [
       {
         barThickness: 25,
-        data: ["1","1","1","1","1"],
+        data: residence.data,
         backgroundColor: "#13eecc",
       },
     ],
@@ -22,19 +22,13 @@ const Residence = ({ residence }) => {
     legend: {
       display: false,
     },
+    xAxes:{
+      scaleLabel:{
+      display: false,
+    },
+    },
+    
     scales: {
-      xAxes: [
-        {
-          ticks:{
-            
-              fornColor:"#171717",
-              fornFamily:"Sukhumvit Set",
-              fornSize: 12,
-  
-           
-          }
-        },
-      ],
       yAxes: [
         {
           ticks: {

@@ -4,7 +4,7 @@ import { Col} from "antd";
 
 
 
-const BarSatisfaction = ({ dataSource }) => {
+const BarSatisfaction = ({ satisfaction }) => {
      
  
   const data = {

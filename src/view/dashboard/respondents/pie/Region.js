@@ -1,22 +1,22 @@
-import React from "react";
-import { Pie } from "react-chartjs-2";
-import { Row, Col, Card } from "antd";
+import React from "react"
+import { Pie } from "react-chartjs-2"
+import { Row, Col, Card } from "antd"
 
 const Region = ({ liveRegion }) => {
-  console.log("read", liveRegion);
+  console.log("read", liveRegion)
 
-  const sumDataLiveRegion = [liveRegion.data].reduce((sum, num) => {
-    console.log("sum ", sum);
-    return sum + num;
-  }, 0);
+  const sumDataLiveRegion = liveRegion.data.reduce((sum, num) => {
+    console.log("sum ", sum)
+    return sum + num
+  }, 0)
 
-  console.log(sumDataLiveRegion);
+  console.log(sumDataLiveRegion)
 
   const data = {
-    labels: [liveRegion.label],
+    labels: liveRegion.label,
     datasets: [
       {
-        data: [liveRegion.data],
+        data: liveRegion.data,
         backgroundColor: [
           "#13EECC",
           "#3B88FD",

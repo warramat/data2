@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { Card, Row, Col } from "antd"
 import Amount from './amount/Amount'
 import Artboard7 from "../../../assets/image/Artboard7.png"
@@ -7,6 +7,8 @@ import Artboard5 from "../../../assets/image/Artboard5.png"
 import BarSatisfaction from './bar/BarSatisfaction'
 
 const Satisfaction = () => {
+
+
     return (
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
@@ -29,7 +31,7 @@ const Satisfaction = () => {
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={24}>
                     <Card>
-                    <BarSatisfaction/>
+                    <BarSatisfaction />
                 </Card>
                 </Col>
             </Row>
