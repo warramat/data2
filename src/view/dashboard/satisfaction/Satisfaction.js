@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, {useState , useEffect} from 'react'
+=======
+import React, { useState, useEffect } from 'react'
+>>>>>>> 560afc630d8c28b64237781ecb8906f6b4b3f90f
 import { Card, Row, Col } from "antd"
 import Amount from './amount/Amount'
 import BarSatisfaction from './bar/BarSatisfaction'

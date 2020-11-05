@@ -4,6 +4,7 @@ import RadarChart from "./Chart2/RadarChart";
 import StackedBar from "./Chart2/StackBar";
 import Spending from "./Spending";
 import { GET_ECONOMICVALUE } from "../../../service/api"
+import ValueEco from "./value/ValueEco";
 
 
 const EconomicValue = () => {
