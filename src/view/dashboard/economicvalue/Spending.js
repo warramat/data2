@@ -1,21 +1,21 @@
 import { Card, Row, Col } from "antd";
 import React, { useState } from "react";
 
-function Spending() {
+function Spending({ economicEffect }) {
   const [infoSource, setInfoSource] = useState([
     {
       toppic: "รวม",
-      amount: 2.3,
+      amount: [economicEffect.all],
       info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
     {
       toppic: "นักกีฬา",
-      amount: 1.2,
+      amount: [economicEffect.athlete],
       info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
     {
       toppic: "ไม่ใช่นักกีฬา",
-      amount: 1.1,
+      amount: [economicEffect.notAthlete],
       info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
   ]);

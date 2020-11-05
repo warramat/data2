@@ -1,42 +1,37 @@
-import React, {useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card } from "antd";
 import RadarChart from "./Chart2/RadarChart";
 import StackedBar from "./Chart2/StackBar";
 import Spending from "./Spending";
-import { GET_ECONOMICVALUE } from "../../../service/api"
-
+import { GET_ECONOMICVALUE } from "../../../service/api";
 
 const EconomicValue = () => {
-  const [economicEffect, setEconomicEffect] = useState({})
-    const [economicImpact, setEconomicImpact] = useState({})
-    const [economicIncreaseInValue, setEconomicIncreaseInValue] = useState({})
-    const [questionnaireGroup, setQuestionnaireGroup] = useState([])
+  const [economicEffect, setEconomicEffect] = useState({});
+  const [economicImpact, setEconomicImpact] = useState({});
+  const [economicIncreaseInValue, setEconomicIncreaseInValue] = useState({});
+  const [questionnaireGroup, setQuestionnaireGroup] = useState([]);
 
   useEffect(() => {
-    GetEconomicValue()
-}, [])
+    GetEconomicValue();
+  }, []);
 
-const GetEconomicValue = async () => {
-
-  try {
-
-      const qrs = { evaluatortype: "all" }
-      const res = await GET_ECONOMICVALUE(qrs)
+  const GetEconomicValue = async () => {
+    try {
+      const qrs = { evaluatortype: "all" };
+      const res = await GET_ECONOMICVALUE(qrs);
       if (res.code === 200) {
-        setEconomicEffect (res.result[0].economicEffect)
-        setEconomicImpact (res.result[0].economicImpact)
-        setEconomicIncreaseInValue (res.result[0].economicIncreaseInValue)
-        setQuestionnaireGroup (res.result[0].questionnaireGroup)
-         
+        setEconomicEffect(res.result[0].economicEffect);
+        setEconomicImpact(res.result[0].economicImpact);
+        setEconomicIncreaseInValue(res.result[0].economicIncreaseInValue);
+        setQuestionnaireGroup(res.result[0].questionnaireGroup);
       } else {
-          alert("ERROR")
+        alert("ERROR");
       }
-      console.log("RES>>>", res)
-  } catch (error) {
-      console.log(error)
-  }
-}
-
+      console.log("RES>>>", res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -68,12 +63,12 @@ const GetEconomicValue = async () => {
         </Col>
         <Col lg={8}>
           <Card>
-            <RadarChart  economicRadar = {economicIncreaseInValue}/>
+            <RadarChart economicRadar={economicIncreaseInValue} />
           </Card>
         </Col>
         <Col lg={8}>
           <Card>
-            <Spending economicSpending={economicEffect}/>
+            <Spending economicEffect={economicEffect} />
           </Card>
         </Col>
       </Row>

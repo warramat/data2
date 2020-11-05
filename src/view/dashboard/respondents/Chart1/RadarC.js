@@ -1,17 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react'
-import { Doughnut, Chart } from 'react-chartjs-2';
-import { Col } from 'react-bootstrap';
-
+import React from "react";
+import { Doughnut, Chart } from "react-chartjs-2";
+import { Col } from "react-bootstrap";
 
 const RadarC = ({ liveInChiangmai }) => {
-  
-  console.log("liveInChiangmai",liveInChiangmai)
+  console.log("liveInChiangmai", liveInChiangmai);
 
-  let rest = liveInChiangmai.all - liveInChiangmai.count
-
-
-
+  // let rest = liveInChiangmai.all - liveInChiangmai.count
 
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
   Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
@@ -37,49 +32,44 @@ const RadarC = ({ liveInChiangmai }) => {
         textY = height / 2;
 
       ctx.fillText(text, textX, textY);
-    }
+    },
   });
 
   const data = {
     labels: "",
     datasets: [
       {
-        data: [ rest, liveInChiangmai.count],
-        backgroundColor: ['#13EECC'],
-        borderColor: ['#13EECC',],
+        // data: [ rest, liveInChiangmai.count],
+        backgroundColor: ["#13EECC"],
+        borderColor: ["#13EECC"],
         borderWidth: 0,
         hoverBorderWidth: 5,
-        borderAlign: 'inner'
+        borderAlign: "inner",
       },
-
-
     ],
-
-  }
+  };
 
   const options = {
     legend: {
       display: false,
-      borderAlign: 'inner'
+      borderAlign: "inner",
     },
     cutoutPercentage: 75,
     rotation: 50,
-    borderAlign: 'inner'
-
-  }
-
+    borderAlign: "inner",
+  };
 
   return (
     <div style={{ height: 245, padding: 50 }}>
       <Col style={{ fontSize: 20 }}>
         <b>คนในพื้นที่เชียงใหม่</b>
-      </Col >
+      </Col>
 
       <Col style={{ left: 5 }}>
         <Doughnut data={data} options={options} />
       </Col>
     </div>
-  )
-}
+  );
+};
 
-export default RadarC
+export default RadarC;

@@ -24,6 +24,7 @@ const Respondents = () => {
   const [liveInChiangmai, setLiveInChiangmai] = useState({});
   const [liveRegion, setLiveRegion] = useState({});
   const [carrier, setCarrier] = useState({});
+
   useEffect(() => {
     GetRespondent();
   }, []);
