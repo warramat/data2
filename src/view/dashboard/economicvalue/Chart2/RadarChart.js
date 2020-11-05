@@ -20,8 +20,7 @@ const RadarChart = ({economicLabels ,  economicData}) => {
 
     legend: {
       display: false,
-      borderRadius: 20
-
+      borderRadius: 20 ,
 
     },
     scale: {

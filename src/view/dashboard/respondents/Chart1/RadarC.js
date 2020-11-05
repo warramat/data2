@@ -41,7 +41,7 @@ const RadarC = ({ liveInChiangmai }) => {
   });
 
   const data = {
-    labels: "",
+    labels: ["เชียงใหม่" , "ทั้งหมด"],
     datasets: [
       {
         data: [ rest, liveInChiangmai.count],
@@ -70,12 +70,12 @@ const RadarC = ({ liveInChiangmai }) => {
 
 
   return (
-    <div style={{ height: 245, padding: 50 }}>
-      <Col style={{ fontSize: 20 }}>
+    <div style={{ height: 200, padding: 35 }}>
+      <Col style={{ fontSize: 20 , right: 50 , bottom: 40 }}>
         <b>คนในพื้นที่เชียงใหม่</b>
       </Col >
 
-      <Col style={{ left: 5 }}>
+      <Col style={{ bottom: 25 }}>
         <Doughnut data={data} options={options} />
       </Col>
     </div>
