@@ -9,14 +9,14 @@ const Total = ({toppic, num, image, persen}) => {
         <>
         <Row >    
             <Col span={24}>
-                <div>{toppic}</div>
+                <div className="f-1">{toppic}</div>
             </Col>
         </Row>
         <Row >
-        <Col span={12} style={{marginTop:20}}>
-            <span className="f-13">{num}</span>
+        <Col span={12} style={{marginTop:10}}>
+            <span className="f-18">{num}</span>
             <span className="f-1" style={{marginLeft:5}}>คน</span>
-            <div className="f-1">{persen}%</div>
+            <div className="f-07">{persen}%</div>
         </Col>
 
         <Col span={12}>
