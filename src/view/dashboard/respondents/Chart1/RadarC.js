@@ -11,8 +11,6 @@ const RadarC = ({ liveInChiangmai }) => {
   let rest = liveInChiangmai.all - liveInChiangmai.count
 
 
-
-
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
   Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
     draw: function () {
@@ -41,7 +39,7 @@ const RadarC = ({ liveInChiangmai }) => {
   });
 
   const data = {
-    labels: ["เชียงใหม่" , "ทั้งหมด"],
+    labels: ["เชียงใหม่" , "อื่นๆ"],
     datasets: [
       {
         data: [ rest, liveInChiangmai.count],
