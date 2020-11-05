@@ -3,11 +3,14 @@ import { Pie } from "react-chartjs-2"
 import { Row, Col, Card } from "antd"
 
 const Continent = ({ liveCountinent }) => {
+ let sumDataLiveCountinent= []
 
+  if (liveCountinent.data){
+     sumDataLiveCountinent = liveCountinent.data.reduce((sum, data) => {
+      return sum + data
+    }, 0)
+  }
   
-  const sumDataLiveCountinent = liveCountinent.data.reduce((sum, data) => {
-    return sum + data
-  }, 0)
 
 
   const data = {

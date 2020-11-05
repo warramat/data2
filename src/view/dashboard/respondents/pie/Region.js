@@ -3,10 +3,14 @@ import { Pie } from "react-chartjs-2"
 import { Row, Col, Card } from "antd"
 
 const Region = ({ liveRegion }) => {
-    
-  const sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
-    return sum + Data
-  }, 0)
+  
+  let sumDataLiveRegion= []
+
+  if (liveRegion.data){
+     sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
+      return sum + Data
+    }, 0)
+  }  
 
 
   const data = {
@@ -44,6 +48,9 @@ const Region = ({ liveRegion }) => {
     ],
   };
   const options = {
+    plugins: { 
+      labels: false,
+  },
     labels: false,
     legend: {
       display: false,
@@ -81,7 +88,7 @@ const Region = ({ liveRegion }) => {
           }}
         >
           <div style={{ marginTop: "-15px", textAlign: "center" }}>
-            {sumDataLiveRegion} คน
+            {sumDataLiveRegion}คน
           </div>
         </Card>
       </Row>

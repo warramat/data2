@@ -8,16 +8,22 @@ const BarSatisfaction = ({ satisfaction }) => {
      
  
   const data = {
-    labels: "",
+    labels: satisfaction.label,
     datasets: [
       {
         barThickness: 25,
-        data: "",
+        data: satisfaction.data,
         backgroundColor: "#13eecc",
       },
     ],
   };
   const option = {
+    layout: {
+      padding: {
+          top: 150,
+          right: 20,
+      }
+    },
     labels:{
           textAlign: 'center',
 
@@ -45,12 +51,11 @@ const BarSatisfaction = ({ satisfaction }) => {
         fontSize: "16px",
         color: "#292766",
         paddingLeft:"20px",
+        marginBottom:"-150px",
         opacity: 0.5,
      }}>ระดับ</h6>
-      <div style={{ marginRight: "40px" }}>
-          <Col style={{ marginRight: "40px",paddingTop:"30px",paddingBottom:"30px",paddingRight:"30px"}}>
-               <Bar data={data} options={option} />
-          </Col>
+      <div >
+          <Bar data={data} options={option} />
           <Col>
                <div style={{
                     fontSize: "16px",
@@ -59,8 +64,8 @@ const BarSatisfaction = ({ satisfaction }) => {
                     transform: "rotate(-90deg)",
                     transformOrigin: "2% 90%",
                     marginLeft: "100%",
-                    width:"100px",
-                    marginTop:"-55px"
+                    width: "300px",
+                    marginTop:"-70px"
                }}>ความพึงพอใจ</div>
           </Col>
       </div>

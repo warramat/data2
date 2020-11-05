@@ -16,18 +16,28 @@ const Residence = ({ residence }) => {
     ],
   };
   const option = {
-    labels: {
-      textAlign: "center",
-    },
+    scaleFontFamily : "'Sukhumvit Set'",
     legend: {
       display: false,
     },
-    xAxes:{
-      scaleLabel:{
-      display: false,
+    xAxes: [{
+      stacked: true,
+      beginAtZero: true,
+      scaleLabel: {
+          labelString: 'Month'
+      },
+      ticks: {
+          autoSkip: true
+      }
+  }],
+    layout: {
+      padding: {
+        left: -50,
+        right: 10,
+        top: 10,
+        bottom: 10
+    }
     },
-    },
-    
     scales: {
       yAxes: [
         {
@@ -46,7 +56,7 @@ const Residence = ({ residence }) => {
 
   return (
     <Col>
-      <h1 style={{ fontSize: "25px", color: "#171717" }}>ที่พักอาศัย</h1>
+      <h1 style={{ fontSize: "25px", color: "#171717",marginLeft:"-10px" }}>ที่พักอาศัย</h1>
       <h6
         style={{
           fontSize: "16px",
@@ -58,9 +68,11 @@ const Residence = ({ residence }) => {
         คน
       </h6>
       <div >
-        <Col >
-          <Bar data={data} options={option} />
+        <Col style={{marginLeft:"-25px"}}>
+        <Bar data={data} options={option} />
         </Col>
+          
+
         <Col>
           <div
             style={{
@@ -69,7 +81,7 @@ const Residence = ({ residence }) => {
               opacity: "50%",
               transform: "rotate(-90deg)",
               transformOrigin: "2% 90%",
-              marginLeft: "360px",
+              marginLeft: "100%",
               width: "50px",
               marginTop: "-70px",
             }}
