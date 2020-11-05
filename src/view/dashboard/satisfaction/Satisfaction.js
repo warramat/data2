@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, {useState , useEffect} from 'react'
-=======
 import React, { useState, useEffect } from 'react'
->>>>>>> 560afc630d8c28b64237781ecb8906f6b4b3f90f
 import { Card, Row, Col } from "antd"
 import Amount from './amount/Amount'
 import BarSatisfaction from './bar/BarSatisfaction'
@@ -12,11 +8,12 @@ import Artboard5 from "../../../assets/image/Artboard5.png"
 import { GET_SATISFACTION } from "../../../service/api"
 
 
+
 const Satisfaction = () => {
 
     const [athlete, setAthlete] = useState({});
     const [satisfaction, setSatisfaction] = useState({})
-
+    
     useEffect(() => {
         GetSatisfaction()
     }, [])
@@ -41,9 +38,6 @@ const Satisfaction = () => {
         }
     }
 
-
-
-
     return (
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
@@ -52,7 +46,7 @@ const Satisfaction = () => {
                         <Amount toppic="จำนวนผู้ตอบแบบสอบถาม" num="1000" image={Artboard7}></Amount>
                     </Card>
                 </Col>
-                <Col lg={8}>
+                {/* <Col lg={8}>
                     <Card>
                         <Amount toppic="นักกีฬา" num="500" image={Artboard6}></Amount>
                     </Card>
@@ -61,7 +55,7 @@ const Satisfaction = () => {
                     <Card>
                         <Amount toppic="ไม่ใช่นักกีฬา" num="500" image={Artboard5}></Amount>
                     </Card>
-                </Col>
+                </Col> */}
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={24}>

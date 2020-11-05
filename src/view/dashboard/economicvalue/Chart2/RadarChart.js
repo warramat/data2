@@ -21,7 +21,7 @@ const RadarChart = ({economicLabels ,  economicData}) => {
     legend: {
       display: false,
       borderRadius: 20 ,
-
+      fontFamily: "Sukhumvit Set",
     },
     scale: {
       ticks: { beginAtZero: true },
