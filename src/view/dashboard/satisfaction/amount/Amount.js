@@ -18,7 +18,7 @@ const Amount = ({toppic, num, image}) => {
                 </Col>
                     
                 <Col span={12}>
-                    <img src={image} className="rounded float-right"></img>
+                    <img src={image} className="rounded float-right" width= {90}></img>
                 </Col>
             </Row>
         </>
