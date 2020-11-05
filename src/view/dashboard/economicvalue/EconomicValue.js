@@ -48,14 +48,14 @@ const EconomicValue = () => {
     <div>
       <Row justify={"center"} gutter={[15, 15]}>
         {
-          questionnaireGroup.map((item)=>{
-            return <>
-              <Col lg={4}>
+          questionnaireGroup.map((item,index)=>{
+            return (
+              <Col lg={4} key={index}>
                 <Card>
-                  <ValueEco toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}/>
+                  <ValueEco  toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}/>
                 </Card>
               </Col>
-            </>
+            )
           })
         }
       </Row>

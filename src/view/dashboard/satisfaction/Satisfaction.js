@@ -4,7 +4,7 @@ import Amount from './amount/Amount'
 import BarSatisfaction from './bar/BarSatisfaction'
 import Artboard11 from "../../../assets/image/Artboard11.png"
 import Artboard12 from "../../../assets/image/Artboard12.png"
-import Artboard13 from "../../../assets/image/Artboard13.png"
+import Artboard5 from "../../../assets/image/Artboard5.png"
 import { GET_SATISFACTION } from "../../../service/api"
 import Item from 'antd/lib/list/Item'
 
@@ -14,7 +14,7 @@ const Satisfaction = () => {
 
     const [athlete, setAthlete] = useState({});
     const [satisfaction, setSatisfaction] = useState({})
-    
+
     useEffect(() => {
         GetSatisfaction()
     }, [])
@@ -39,6 +39,9 @@ const Satisfaction = () => {
         }
     }
 
+
+
+
     return (
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
@@ -55,7 +58,7 @@ const Satisfaction = () => {
                 </Col>
                 <Col lg={8}>
                     <Card>
-                        <Amount toppic="ไม่ใช่นักกีฬา" num={athlete.notAthlete} image={Artboard13}></Amount>
+                        <Amount toppic="ไม่ใช่นักกีฬา" num={athlete.notAthlete} image={Artboard5}></Amount>
                     </Card>
                 </Col>
             </Row>
