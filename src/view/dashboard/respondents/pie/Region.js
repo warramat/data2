@@ -101,7 +101,7 @@ const Region = ({ liveRegion }) => {
           }}
         >
           <div style={{ marginTop: "-18px", textAlign: "center" }}>
-            {sumDataLiveRegion} คน
+            {sumDataLiveRegion}คน
           </div>
         </Card>
       </Row>
