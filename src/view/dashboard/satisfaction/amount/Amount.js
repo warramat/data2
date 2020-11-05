@@ -12,13 +12,13 @@ const Amount = ({toppic, num, image}) => {
                 </Col>
                 </Row>
                 <Row >
-                <Col span={12} style={{marginTop:"10%"}}>
+                <Col span={12} style={{marginTop:30}}>
                     <span className="f-21">{num}</span>
                     <span className="f-13" style={{marginLeft:5}}>คน</span>
                 </Col>
                     
                 <Col span={12}>
-                    <img src={image} className="rounded float-right" width= {90}></img>
+                    <img src={image} className="rounded float-right" style={{display:"flex"}} width= {90}></img>
                 </Col>
             </Row>
         </>
