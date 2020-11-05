@@ -12,3 +12,11 @@ export const GET_SATISFACTION = async (queryObj) => {
   const res = await Fetch("GET", `${apiV1}/dashboard/satisfaction${param}`);
   return res;
 };
+
+
+export const GET_ECONOMICVALUE = async (queryObj) => {
+  const param = convertSearchParams(queryObj);
+  const res = await Fetch("GET", `${apiV1}/dashboard/economicValue${param}`);
+  return res;
+};
+

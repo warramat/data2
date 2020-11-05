@@ -24,7 +24,6 @@ const Satisfaction = () => {
             const qrs = { type: "all" }
             const res = await GET_SATISFACTION(qrs)
             if (res.code === 200) {
-              console.log("resss", res)
                  
               setAthlete (res.result[0].athlete)
               setSatisfaction (res.result[0].satisfaction)
