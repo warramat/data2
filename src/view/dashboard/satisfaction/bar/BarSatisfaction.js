@@ -64,17 +64,6 @@ const BarSatisfaction = ({ dataSource }) => {
                }}>ความพึงพอใจ</div>
           </Col>
       </div>
-
-      {/* <div style={{
-        fontSize: "16px",
-        color: "#292766",
-        opacity: "50%",
-        transform: "rotate(-90deg)",
-        transformOrigin: "2% 90%",
-        marginLeft: "100%",
-        width:"100px",
-        marginTop:"-40px"
-      }}>ความพึงพอใจ</div> */}
     </Col>
   );
 };
