@@ -6,21 +6,19 @@ const StackedBar = ({ economicStackedBar }) => {
     labels: ["ข้อมูลทางเศรษฐกิจ"],
     datasets: [
       {
-        barPercentage: 0.5,
-
+        barThickness: 50,
         label: "ก่อนการแข่งขัน",
         data: [economicStackedBar.costsBefore],
         backgroundColor: "rgba(242, 230, 53, 1)",
       },
       {
-        barPercentage: 0.5,
-
+        barThickness: 50,
         label: "ระหว่างการแข่งขัน",
         data: [economicStackedBar.costsDuring],
         backgroundColor: "rgba(59, 136, 253, 1)",
       },
       {
-        barPercentage: 0.5,
+        barThickness: 50,
 
         label: "หลังการแข่งขัน",
         data: [economicStackedBar.costsAfter],
@@ -44,7 +42,7 @@ const StackedBar = ({ economicStackedBar }) => {
             beginAtZero: true,
 
             callback: function (value, index, values) {
-              return value + "M";
+              return value / 100 + "M";
             },
             min: 0,
             max: 20000,

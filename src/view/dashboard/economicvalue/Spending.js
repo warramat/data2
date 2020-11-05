@@ -6,17 +6,14 @@ function Spending({ economicEffect }) {
     {
       toppic: "รวม",
       amount: [economicEffect.all],
-      info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
     {
       toppic: "นักกีฬา",
       amount: [economicEffect.athlete],
-      info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
     {
       toppic: "ไม่ใช่นักกีฬา",
       amount: [economicEffect.notAthlete],
-      info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
   ]);
   return (
@@ -44,7 +41,7 @@ function Spending({ economicEffect }) {
                 <div className="text-toppic">
                   <b>{item.toppic}</b>
                 </div>
-                <div className="text-title">{item.info}</div>
+                <div className="text-title">ก่อให้เกิดผลกระทบทางเศรษฐกิจ</div>
               </Col>
               <Col className="col-job2" style={{ justifyContent: "center" }}>
                 <Row className="card-impact">

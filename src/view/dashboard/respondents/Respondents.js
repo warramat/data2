@@ -24,6 +24,7 @@ const Respondents = () => {
   const [liveInChiangmai, setLiveInChiangmai] = useState({});
   const [liveRegion, setLiveRegion] = useState({});
   const [carrier, setCarrier] = useState({});
+  const [gender, setGender] = useState({});
 
   useEffect(() => {
     GetRespondent();
@@ -40,6 +41,7 @@ const Respondents = () => {
         setQuesionNairGroup(res.result[0].questionnaireGroup);
         setLiveRegion(res.result[0].live.region);
         setResident(res.result[0].residence);
+        setGender(res.result[0].age);
       } else {
         alert("ERROR");
       }
@@ -102,7 +104,7 @@ const Respondents = () => {
       <Row justify={"center"} gutter={[15, 15]}>
         <Col lg={8}>
           <Card>
-            <Gender />
+            <Gender gender={gender} />
           </Card>
         </Col>
         <Col lg={8}>
