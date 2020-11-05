@@ -14,7 +14,7 @@ const Amount = ({toppic, num, image}) => {
                 <Row >
                 <Col span={12} style={{marginTop:"10%"}}>
                     <span className="f-13">{num}</span>
-                    <span className="f-1">คน</span>
+                    <span className="f-1" style={{marginLeft:5}}>คน</span>
                 </Col>
                     
                 <Col span={12}>

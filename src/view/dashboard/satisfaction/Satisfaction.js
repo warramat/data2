@@ -6,6 +6,7 @@ import Artboard7 from "../../../assets/image/Artboard7.png"
 import Artboard6 from "../../../assets/image/Artboard6.png"
 import Artboard5 from "../../../assets/image/Artboard5.png"
 import { GET_SATISFACTION } from "../../../service/api"
+import Item from 'antd/lib/list/Item'
 
 
 
@@ -44,21 +45,22 @@ const Satisfaction = () => {
     return (
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
+                
                 <Col lg={8}>
                     <Card>
-                        <Amount toppic="จำนวนผู้ตอบแบบสอบถาม" num="1000" image={Artboard7}></Amount>
-                    </Card>
-                </Col>
-                {/* <Col lg={8}>
-                    <Card>
-                        <Amount toppic="นักกีฬา" num="500" image={Artboard6}></Amount>
+                        <Amount toppic="จำนวนผู้ตอบแบบสอบถาม" num={athlete.total} image={Artboard7}></Amount>
                     </Card>
                 </Col>
                 <Col lg={8}>
                     <Card>
-                        <Amount toppic="ไม่ใช่นักกีฬา" num="500" image={Artboard5}></Amount>
+                        <Amount toppic="นักกีฬา" num={athlete.athlete} image={Artboard6}></Amount>
                     </Card>
-                </Col> */}
+                </Col>
+                <Col lg={8}>
+                    <Card>
+                        <Amount toppic="ไม่ใช่นักกีฬา" num={athlete.notAthlete} image={Artboard5}></Amount>
+                    </Card>
+                </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={24}>
