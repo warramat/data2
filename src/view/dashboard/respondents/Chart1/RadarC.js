@@ -4,13 +4,13 @@ import { Doughnut, Chart } from 'react-chartjs-2';
 import { Col } from 'react-bootstrap';
 
 
-const RadarC = ({ dataSource }) => {
-  // let rest = ""
-  // let liveInChiangMai = ""
-  // if (dataSource.live) {
-  //   rest = dataSource.live.liveInChiangMai.all - dataSource.live.liveInChiangMai.count
-  //   liveInChiangMai = dataSource.live.liveInChiangMai.count
-  // }
+const RadarC = ({ liveInChiangmai }) => {
+  
+  console.log("liveInChiangmai",liveInChiangmai)
+
+  let rest = liveInChiangmai.all - liveInChiangmai.count
+
+
 
 
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
@@ -41,10 +41,10 @@ const RadarC = ({ dataSource }) => {
   });
 
   const data = {
-    labels: "",
+    labels: ["เชียงใหม่" , "ทั้งหมด"],
     datasets: [
       {
-        data: ["", ""],
+        data: [ rest, liveInChiangmai.count],
         backgroundColor: ['#13EECC'],
         borderColor: ['#13EECC',],
         borderWidth: 0,
@@ -70,12 +70,12 @@ const RadarC = ({ dataSource }) => {
 
 
   return (
-    <div style={{ height: 245, padding: 50 }}>
-      <Col style={{ fontSize: 20 }}>
+    <div style={{ height: 200, padding: 35 }}>
+      <Col style={{ fontSize: 20 , right: 50 , bottom: 40 }}>
         <b>คนในพื้นที่เชียงใหม่</b>
       </Col >
 
-      <Col style={{ left: 5 }}>
+      <Col style={{ bottom: 25 }}>
         <Doughnut data={data} options={options} />
       </Col>
     </div>
