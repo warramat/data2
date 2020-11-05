@@ -4,9 +4,10 @@ import { Col } from "antd";
 
 const Residence = ({ residence }) => {
   console.log("read", residence);
+  
 
   const data = {
-    labels: residence.label,
+    labels: ["บ้านตนเอง","โรงแรม","รีสอร์ท","อุทยาน","อื่นๆ"],
     datasets: [
       {
         barThickness: 25,
@@ -16,38 +17,19 @@ const Residence = ({ residence }) => {
     ],
   };
   const option = {
-    scaleFontFamily : "'Sukhumvit Set'",
     legend: {
       display: false,
-    },
-    xAxes: [{
-      stacked: true,
-      beginAtZero: true,
-      scaleLabel: {
-          labelString: 'Month'
-      },
-      ticks: {
-          autoSkip: true
-      }
-  }],
-    layout: {
-      padding: {
-        left: -50,
-        right: 10,
-        top: 10,
-        bottom: 10
-    }
     },
     scales: {
       yAxes: [
         {
           ticks: {
             callback: function (value, index, values) {
-              return value + "K";
+              return (value/1000) + "K";
             },
             min: 0,
-            max: 10,
-            stepSize: 2,
+            max: 10000,
+            stepSize: 2000,
           },
         },
       ],

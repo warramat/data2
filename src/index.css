@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -30,13 +31,15 @@ code {
   color: #292766;
 }
 .fo {
-  font-size: 20px;
+  font-size: 16px;
   color: #292766;
   padding-left: 20px;
+  font-family: "Sukhumvit Set";
 }
 .cad {
   font-size: 19px;
   color: #292766;
+  font-family: "Sukhumvit Set";
   /* text-align: center; */
 }
 
