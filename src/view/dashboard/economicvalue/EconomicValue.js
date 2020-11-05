@@ -5,6 +5,7 @@ import StackedBar from "./Chart2/StackBar";
 import Spending from "./Spending";
 import { GET_ECONOMICVALUE } from "../../../service/api"
 import ValueEco from "./value/ValueEco";
+import Artboard1 from "../../../assets/image/Artboard1.png"
 
 
 const EconomicValue = () => {
@@ -47,28 +48,16 @@ const GetEconomicValue = async () => {
     <div>
       <Row justify={"center"} gutter={[15, 15]}>
         {
-          
+          questionnaireGroup.map((item)=>{
+            return <>
+              <Col lg={4}>
+                <Card>
+                  <ValueEco toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}/>
+                </Card>
+              </Col>
+            </>
+          })
         }
-        <Col lg={4}>
-          <Card>
-            <ValueEco toppic="sdgjf" num="133"/>
-          </Card>
-        </Col>
-        {/* <Col lg={4}>
-          <Card>2</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>3</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>4</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>5</Card>
-        </Col>
-        <Col lg={4}>
-          <Card>6</Card>
-        </Col> */}
       </Row>
       <Row justify={"center"} gutter={[15, 15]}>
         <Col lg={8}>
