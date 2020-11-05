@@ -6,3 +6,9 @@ export const GET_RESPONDENT = async (queryObj) => {
   const res = await Fetch("GET", `${apiV1}/dashboard/evaluation/${param}`);
   return res;
 };
+
+export const GET_SATISFACTION = async (queryObj) => {
+  const param = convertSearchParams(queryObj);
+  const res = await Fetch("GET", `${apiV1}/dashboard/satisfaction${param}`);
+  return res;
+};

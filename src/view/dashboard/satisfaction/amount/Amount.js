@@ -2,11 +2,11 @@ import React from 'react'
 import { Row, Col } from "antd"
 
 
-const Amount = ({toppic, num, image}) => {
-    console.log(image)
+const Amount = () => {
+ 
     return (
         <>
-            <Row >    
+            {/* <Row >    
                 <Col span={24}>
                     <div className="text-sport">{toppic}</div>
                 </Col>
@@ -20,7 +20,7 @@ const Amount = ({toppic, num, image}) => {
                 <Col span={12}>
                     <img src={image} className="rounded float-right"></img>
                 </Col>
-            </Row>
+            </Row> */}
         </>
     )
 }
