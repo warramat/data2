@@ -61,7 +61,7 @@ const Region = ({ liveRegion }) => {
   };
 
   return (
-    <Row style={{ fontFamily: "Sukhumvit Set", height: "245px" }}>
+    <Row style={{ fontFamily: "Sukhumvit Set"}}>
       <Row>
         <div
           style={{
@@ -88,7 +88,7 @@ const Region = ({ liveRegion }) => {
           </div>
         </Card>
       </Row>
-      <Row>
+      <Row style={{height:"155px"}}>
         <Col style={{ paddingTop: "40px" }}>
           <div
             style={{
@@ -169,7 +169,7 @@ const Region = ({ liveRegion }) => {
           <span className="fo">ตะวันตก</span>
         </Col>
 
-        <Col style={{ top: "-60%", left: "40%" }}>
+        <Col style={{ top: "-150px", left: "40%" }}>
           <Pie data={data} options={options} />
         </Col>
       </Row>

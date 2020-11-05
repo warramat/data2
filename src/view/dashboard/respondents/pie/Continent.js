@@ -62,7 +62,7 @@ const Continent = ({ liveCountinent }) => {
   };
 
   return (
-    <Row style={{fontFamily: "Sukhumvit Set",height:"245px"}}>
+    <Row style={{fontFamily: "Sukhumvit Set",minHeight:"200px"}}>
       <Row>
         <div
           style={{
@@ -89,7 +89,7 @@ const Continent = ({ liveCountinent }) => {
           </div>
         </Card>
       </Row>
-      <Row>
+      <Row style={{height:"155px"}}>
         <Col style={{ paddingTop: "40px" }}>
           <div
             style={{
@@ -170,7 +170,7 @@ const Continent = ({ liveCountinent }) => {
           <span className="fo">อเมริกาใต้</span>
         </Col>
 
-        <Col style={{  top: "-65%", left: "35%" }}>
+        <Col style={{top: "-160px", left: "40%" }}>
           <Pie data={data} options={options} />
         </Col>
       </Row>
