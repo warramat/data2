@@ -47,19 +47,20 @@ function Spending() {
                 <div className="text-title">{item.info}</div>
               </Col>
               <Col className="col-job2" style={{ justifyContent: "center" }}>
-                <Card
-                  className="card-impact"
-                  style={{
-                    background: "rgba(255, 255, 255, 1)",
-                    border: "1px solid rgba(235, 242, 247, 1)",
-                    borderRadius: 16,
-                  }}
-                >
-                  <b className="text-percent">
+                <Row className="card-impact">
+                  <b
+                    className="text-percent"
+                    style={{
+                      background: "rgba(255, 255, 255, 1)",
+                      border: "1px solid rgba(235, 242, 247, 1)",
+                      borderRadius: 16,
+                      padding: 25,
+                    }}
+                  >
                     {item.amount}
                     บาท
                   </b>
-                </Card>
+                </Row>
               </Col>
             </Row>
           </Card>
