@@ -39,14 +39,14 @@ const StackedBar = ({ economicStackedBar }) => {
         {
           stacked: true,
           ticks: {
-            beginAtZero: true,
+            // beginAtZero: true,
 
             callback: function (value, index, values) {
-              return value / 100 + "M";
+              return value;
             },
-            min: 0,
-            max: 20000,
-            stepSize: 2000,
+            // min: 0,
+            // max: 60000000,
+            // stepSize: 20000000,
           },
         },
       ],
@@ -60,19 +60,17 @@ const StackedBar = ({ economicStackedBar }) => {
 
   return (
     <Col>
-      <h1 style={{ fontSize: "25px", color: "#171717", marginLeft: "-10px" }}>
-        ผลกระทบทางเศรษฐกิจ
-      </h1>
-      <h6
+      <b className="text-toppic">ผลกระทบทางเศรษฐกิจ</b>
+      <div
         style={{
-          fontSize: "16px",
+          fontSize: 16,
           color: "#292766",
           paddingLeft: "10px",
           opacity: 0.5,
         }}
       >
         จำนวนเงิน
-      </h6>
+      </div>
       <div>
         <Col style={{ marginLeft: "-25px" }}>
           <Bar data={data} options={options} />
@@ -81,7 +79,7 @@ const StackedBar = ({ economicStackedBar }) => {
         <Col>
           <div
             style={{
-              fontSize: "16px",
+              fontSize: 16,
               color: "#292766",
               opacity: "50%",
               transform: "rotate(-90deg)",
