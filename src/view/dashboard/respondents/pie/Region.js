@@ -4,7 +4,6 @@ import { Row, Col, Card } from "antd"
 
 const Region = ({ liveRegion }) => {
   
-   
   let sumDataLiveRegion= []
 
   if (liveRegion.data){
@@ -51,8 +50,8 @@ const Region = ({ liveRegion }) => {
   const options = {
     plugins: { 
       labels: false,
-      
   },
+  title:{text:"yyy"},
     labels: false,
     legend: {
       display: false,

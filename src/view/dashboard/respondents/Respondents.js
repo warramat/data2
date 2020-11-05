@@ -9,11 +9,11 @@ import Artboard3 from "../../../assets/image/Artboard3.png"
 import Artboard5 from "../../../assets/image/Artboard5.png"
 import Artboard6 from "../../../assets/image/Artboard6.png"
 import Artboard7 from "../../../assets/image/Artboard7.png"
+import { GET_RESPONDENT } from "../../../service/api"
 
-import RadarC from './Chart1/RadarC'
+import RadarC from './Donut/RadarC'
 import Region from './pie/Region'
 import Gender from './bar/Gender'
-import { GET_RESPONDENT } from "../../../service/api"
 import Continent from './pie/Continent'
 import Job from "./Progress/Career";
 
