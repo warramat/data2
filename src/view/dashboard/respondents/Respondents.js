@@ -59,7 +59,7 @@ const Respondents = () => {
                 {
                     quesionNairGroup.map((item)=>{
                     return <div>
-                        <Col lg={6}>
+                        <Col lg={4}>
                             <Card>
                                 <Total toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}></Total>
                             </Card>
