@@ -9,7 +9,8 @@ import { GET_ECONOMICVALUE } from "../../../service/api"
 const EconomicValue = () => {
   const [economicEffect, setEconomicEffect] = useState({})
     const [economicImpact, setEconomicImpact] = useState({})
-    const [economicIncreaseInValue, setEconomicIncreaseInValue] = useState({})
+    const [economicIncreaseLabels, setEconomicIncreaseLabels] = useState([])
+    const [economicIncreaseData, setEconomicIncreaseData] = useState([])
     const [questionnaireGroup, setQuestionnaireGroup] = useState([])
 
   useEffect(() => {
@@ -22,10 +23,13 @@ const GetEconomicValue = async () => {
 
       const qrs = { evaluatortype: "all" }
       const res = await GET_ECONOMICVALUE(qrs)
+      // console.log("economic>>>",res.result[0])
+
       if (res.code === 200) {
         setEconomicEffect (res.result[0].economicEffect)
         setEconomicImpact (res.result[0].economicImpact)
-        setEconomicIncreaseInValue (res.result[0].economicIncreaseInValue)
+        setEconomicIncreaseLabels (res.result[0].economicIncreaseInValue.label)
+        setEconomicIncreaseData (res.result[0].economicIncreaseInValue.data)
         setQuestionnaireGroup (res.result[0].questionnaireGroup)
          
       } else {
@@ -68,7 +72,7 @@ const GetEconomicValue = async () => {
         </Col>
         <Col lg={8}>
           <Card>
-            <RadarChart  economicRadar = {economicIncreaseInValue}/>
+            <RadarChart  economicLabels = {economicIncreaseLabels}  economicData = {economicIncreaseData}/>
           </Card>
         </Col>
         <Col lg={8}>
