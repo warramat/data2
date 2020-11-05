@@ -1,11 +1,17 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Col, Row } from "antd";
+import { Col } from "antd";
 
 
 
-const BarResidence = ({ dataSource }) => {
-  console.log("dataSource>>", dataSource)
+const Residence = ({ dataSource }) => {
+  // const labelResidence = ""
+  // const dataResidence = ""
+  // if(dataSource.residence) {
+  //   labelResidence = dataSource.residence.label 
+  //   dataResidence = dataSource.residence.data
+  // }
+
   const data = {
     labels: "",
     datasets: [
@@ -17,6 +23,10 @@ const BarResidence = ({ dataSource }) => {
     ],
   };
   const option = {
+    labels: {
+      textAlign: 'center',
+
+    },
     legend: {
       display: false,
     },
@@ -42,8 +52,8 @@ const BarResidence = ({ dataSource }) => {
       <h6 style={{
         fontSize: "16px",
         color: "#292766",
+        paddingLeft: "30px",
         opacity: 0.5,
-
       }}>คน</h6>
       <div style={{ marginRight: "50px" }}>
         <Bar data={data} options={option} />
@@ -55,10 +65,12 @@ const BarResidence = ({ dataSource }) => {
         opacity: "50%",
         transform: "rotate(-90deg)",
         transformOrigin: "2% 90%",
-        marginLeft: "350px",
+        marginLeft: "325px",
+        width: "50px",
+        marginTop: "-40px"
       }}>สถานที่</div>
     </Col>
   );
 };
 
-export default BarResidence
+export default Residence;
