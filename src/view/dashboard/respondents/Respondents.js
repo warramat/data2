@@ -35,9 +35,9 @@ const Respondents = () => {
             const qrs = { evaluatortype: "all" }
             const res = await GET_RESPONDENT(qrs)
             if (res.code === 200) {
-                console.log(res.result[0].live.region)
+              
                 setCarrier(res.result[0].career)
-                setLiveInChiangmai(res.result[0].liveInChiangmai)
+                setLiveInChiangmai(res.result[0].live.liveInChiangMai)
                 setLiveContinent(res.result[0].live.continent)
                 setQuesionNairGroup(res.result[0].questionnaireGroup)
                 setLiveRegion(res.result[0].live.region)

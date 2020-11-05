@@ -2,12 +2,12 @@ import React from 'react'
 import { Radar } from '@reactchartjs/react-chart.js'
 import { Col, Row } from 'react-bootstrap';
 
-const RadarChart = () => {
+const RadarChart = (economicRadar) => {
   const data = {
-    labels: ['ผู้จัดการแข่งขัน ', 'นักกีฬาต่างชาติ', 'ผู้ติดตาม / ผู้ชม / ร้านอาหาร', 'อาสาสมัคร', 'นักกีฬาไทย'],
+    labels: [economicRadar.label],
     datasets: [
       {
-        data: [4.9, 4.2, 4.0, 4.0, 4.1],
+        data: [economicRadar.data],
         borderColor: '#13EECC',
         backgroundColor: '#13EECC70',
         borderWidth: 2,
