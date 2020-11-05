@@ -8,7 +8,7 @@ const Region = ({ liveRegion }) => {
 
   if (liveRegion.data){
      sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
-      return sum + Data
+      return []
     }, 0)
   }  
 
@@ -44,6 +44,7 @@ const Region = ({ liveRegion }) => {
           "#F2E635",
           "#F205CB",
         ],
+        display: false
       },
     ],
   };
@@ -58,7 +59,7 @@ const Region = ({ liveRegion }) => {
       labels: {
         boxWidth: 15,
         fontSize: 50,
-        fontColor: "#000000",
+        fontColor: "#fff",
         fontFamily: "Sukhumvit Set",
       },
     },

@@ -52,8 +52,7 @@ const RadarC = ({ liveInChiangmai }) => {
   const options = {
     legend: {
       display: false,
-      borderAlign: 'inner' ,
-      fontFamily: "Sukhumvit Set",
+      borderAlign: "inner",
     },
     cutoutPercentage: 75,
     rotation: 50,
