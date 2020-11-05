@@ -55,14 +55,14 @@ const Respondents = () => {
 
     
     return (
-        <div>
+        <div  >
             <Row justify={"center"} gutter={[15, 15]}>
                 {
-                    quesionNairGroup.map((item)=>{
+                    quesionNairGroup.map((item,index)=>{
                     return <>
                         <Col lg={4}>
                             <Card>
-                                <Total toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}/>
+                                <Total key={index} toppic={item.choiceTh} num={item.count} persen={item.percent} image={Artboard1}/>
                             </Card>
                         </Col>
                     </>
