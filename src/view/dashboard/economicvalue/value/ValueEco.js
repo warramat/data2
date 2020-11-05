@@ -11,7 +11,7 @@ const ValueEco = ({toppic, num, image, persen}) => {
             </Row>
             <Row >
             <Col span={12} style={{marginTop:15}}>
-                <span className="f-18">฿{num}K</span>
+                <span className="f-18">{num}</span>
                 <div className="f-07">{persen}%</div>
                 
             </Col>
