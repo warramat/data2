@@ -48,14 +48,14 @@ const Continent = ({ liveCountinent }) => {
     ],
   };
   const options = {
-    layout: {
-      padding: {
-          left: 10,
-          right: 10,
-          top: 10,
-          bottom: 10
-      }
-  },
+  //   layout: {
+  //     padding: {
+  //         left: 10,
+  //         right: 10,
+  //         top: 10,
+  //         bottom: 10
+  //     }
+  // },
     legend: {
       display: false,
     },
@@ -170,7 +170,7 @@ const Continent = ({ liveCountinent }) => {
           <span className="fo">อเมริกาใต้</span>
         </Col>
 
-        <Col style={{ top: "-150px", left: "145px" }}>
+        <Col style={{  top: "-65%", left: "35%" }}>
           <Pie data={data} options={options} />
         </Col>
       </Row>
