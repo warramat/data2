@@ -4,18 +4,18 @@ import React, { useState } from "react";
 function Spending() {
   const [infoSource, setInfoSource] = useState([
     {
-      toppic: "รัฐบาล/รัฐวิสาหกิจ",
-      amount: 45,
+      toppic: "รวม",
+      amount: 2.3,
       info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
     {
-      toppic: "เจ้าของธุรกิจ/ธุรกิจส่วนตัว",
-      amount: 54,
+      toppic: "นักกีฬา",
+      amount: 1.2,
       info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
     {
-      toppic: "นักเรียน/นักศึกษา",
-      amount: 45,
+      toppic: "ไม่ใช่นักกีฬา",
+      amount: 1.1,
       info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
     },
   ]);
@@ -36,18 +36,29 @@ function Spending() {
               marginTop: 18,
               borderRadius: 9,
               background: "rgba(253, 253, 253, 1)",
+              border: "1px solid rgba(235, 242, 247, 1)",
             }}
           >
-            <Row style={{ marginBottom: 20 }} >
+            <Row>
               <Col className="col-job">
                 <div className="text-toppic">
                   <b>{item.toppic}</b>
                 </div>
                 <div className="text-title">{item.info}</div>
               </Col>
-              <Col className="col-job2">
-                <Card>
-                  <b className="text-percent">{item.amount}</b>
+              <Col className="col-job2" style={{ justifyContent: "center" }}>
+                <Card
+                  className="card-impact"
+                  style={{
+                    background: "rgba(255, 255, 255, 1)",
+                    border: "1px solid rgba(235, 242, 247, 1)",
+                    borderRadius: 16,
+                  }}
+                >
+                  <b className="text-percent">
+                    {item.amount}
+                    บาท
+                  </b>
                 </Card>
               </Col>
             </Row>

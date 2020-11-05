@@ -12,10 +12,10 @@ code {
     monospace;
 }
 .col-job {
-  width: 55%;
+  width: 60%;
 }
 .col-job2 {
-  width: 45%;
+  width: 40%;
 }
 .text-toppic {
   font-size: 22px;
@@ -50,4 +50,12 @@ code {
   font-size: 19px;
   font-family: "Sukhumvit Set";
   color: #292766;
+}
+.card-impact{
+ 
+position: relative;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
