@@ -1,27 +1,25 @@
 import React from "react";
-import { HorizontalBar } from "react-chartjs-2";
+import { Bar } from "@reactchartjs/react-chart.js";
+import { Col } from "antd";
 
-const Gender = () => {
+const Gender = ({ gender }) => {
   const data = {
-    labels: ["มากกว่า 60 ปี", "41-60", "31-40", "21-30", "ต่ำกว่า 20 ปี"],
+    labels: gender.label,
     datasets: [
       {
-        barPercentage: 0.5,
-        barThickness: 20,
+        type: "bar",
         label: "ชาย",
-        data: [5, 10, 15, 13, 10],
-        backgroundColor: "#3B88FD",
+        backgroundColor: "rgba(59, 136, 253, 1)",
+        data: gender.dataMale,
       },
       {
-        barPercentage: 0.5,
-        barThickness: 20,
+        type: "bar",
         label: "หญิง",
-        data: [-5, -10, -15, -13, -10],
-        backgroundColor: "#13EECC",
+        backgroundColor: "rgba(19, 238, 204, 1)",
+        data: gender.dataFemale,
       },
     ],
   };
-
   const options = {
     legend: {
       position: "top",
@@ -29,27 +27,15 @@ const Gender = () => {
       fullWidth: true,
       display: false,
     },
-    layout: {
-      padding: {
-        left: 50,
-        right: 50,
-        top: 50,
-        bottom: 50,
-      },
-    },
+
     scales: {
       yAxes: [
         {
-          stacked: true,
-        },
-      ],
-      xAxes: [
-        {
-          stacked: true,
           ticks: {
             beginAtZero: true,
-            min: -15,
+            min: 0,
             max: 15,
+            stepSize: 5,
 
             callback: function (value, index, values) {
               return value + "K";
@@ -57,12 +43,45 @@ const Gender = () => {
           },
         },
       ],
+      xAxes: [{}],
     },
   };
   return (
-    <>
-      <HorizontalBar data={data} options={options} />
-    </>
+    <Col>
+      <b className="text-toppic">เพศและช่วงอายุ</b>
+      <h6
+        style={{
+          fontSize: "16px",
+          color: "#292766",
+          paddingLeft: "10px",
+          opacity: 0.5,
+        }}
+      >
+        จำนวนคน
+      </h6>
+      <div>
+        <Col style={{ marginLeft: "-25px" }}>
+          <Bar data={data} options={options} />
+        </Col>
+
+        <Col>
+          <div
+            style={{
+              fontSize: "16px",
+              color: "#292766",
+              opacity: "50%",
+              transform: "rotate(-90deg)",
+              transformOrigin: "2% 90%",
+              marginLeft: "100%",
+              width: "50px",
+              marginTop: "-70px",
+            }}
+          >
+            อายุ
+          </div>
+        </Col>
+      </div>
+    </Col>
   );
 };
 

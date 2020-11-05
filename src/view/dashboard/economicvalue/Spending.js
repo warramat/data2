@@ -1,22 +1,19 @@
 import { Card, Row, Col } from "antd";
 import React, { useState } from "react";
 
-function Spending() {
+function Spending({ economicEffect }) {
   const [infoSource, setInfoSource] = useState([
     {
-      toppic: "รัฐบาล/รัฐวิสาหกิจ",
-      amount: 45,
-      info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
+      toppic: "รวม",
+      amount: [economicEffect.all],
     },
     {
-      toppic: "เจ้าของธุรกิจ/ธุรกิจส่วนตัว",
-      amount: 54,
-      info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
+      toppic: "นักกีฬา",
+      amount: [economicEffect.athlete],
     },
     {
-      toppic: "นักเรียน/นักศึกษา",
-      amount: 45,
-      info: "ก่อให้เกิดผลกระทบทางเศรษฐกิจ",
+      toppic: "ไม่ใช่นักกีฬา",
+      amount: [economicEffect.notAthlete],
     },
   ]);
   return (
@@ -36,19 +33,31 @@ function Spending() {
               marginTop: 18,
               borderRadius: 9,
               background: "rgba(253, 253, 253, 1)",
+              border: "1px solid rgba(235, 242, 247, 1)",
             }}
           >
-            <Row style={{ marginBottom: 20 }} >
+            <Row>
               <Col className="col-job">
                 <div className="text-toppic">
                   <b>{item.toppic}</b>
                 </div>
-                <div className="text-title">{item.info}</div>
+                <div className="text-title">ก่อให้เกิดผลกระทบทางเศรษฐกิจ</div>
               </Col>
-              <Col className="col-job2">
-                <Card>
-                  <b className="text-percent">{item.amount}</b>
-                </Card>
+              <Col className="col-job2" style={{ justifyContent: "center" }}>
+                <Row className="card-impact">
+                  <b
+                    className="text-percent"
+                    style={{
+                      background: "rgba(255, 255, 255, 1)",
+                      border: "1px solid rgba(235, 242, 247, 1)",
+                      borderRadius: 16,
+                      padding: 25,
+                    }}
+                  >
+                    {item.amount}
+                    บาท
+                  </b>
+                </Row>
               </Col>
             </Row>
           </Card>

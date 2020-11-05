@@ -18,39 +18,39 @@ import Continent from './pie/Continent'
 import Job from "./Progress/Career";
 
 const Respondents = () => {
+  const [quesionNairGroup, setQuesionNairGroup] = useState([]);
+  const [residence, setResident] = useState({});
+  const [liveCountinent, setLiveContinent] = useState({});
+  const [liveInChiangmai, setLiveInChiangmai] = useState({});
+  const [liveRegion, setLiveRegion] = useState({});
+  const [carrier, setCarrier] = useState({});
+  const [gender, setGender] = useState({});
 
-    const [quesionNairGroup, setQuesionNairGroup] = useState([]);
-    const [residence, setResident] = useState({});
-    const [liveCountinent, setLiveContinent] = useState({});
-    const [liveInChiangmai, setLiveInChiangmai] = useState({});
-    const [liveRegion, setLiveRegion] = useState({});
-    const [carrier, setCarrier] = useState({});
-
+  
     useEffect(() => {
         GetRespondent()
     }, [])
 
-    const GetRespondent = async () => {
-        try {
-
-            const qrs = { evaluatortype: "all" }
-            const res = await GET_RESPONDENT(qrs)
-            if (res.code === 200) {
-              
-                setCarrier(res.result[0].career)
-                setLiveInChiangmai(res.result[0].live.liveInChiangMai)
-                setLiveContinent(res.result[0].live.continent)
-                setQuesionNairGroup(res.result[0].questionnaireGroup)
-                setLiveRegion(res.result[0].live.region)
-                setResident(res.result[0].residence)
-            } else {
-                alert("ERROR")
-            }
-            console.log("RES>>>", res)
-        } catch (error) {
-            console.log(error)
-        }
+  const GetRespondent = async () => {
+    try {
+      const qrs = { evaluatortype: "all" };
+      const res = await GET_RESPONDENT(qrs);
+      if (res.code === 200) {
+        setCarrier(res.result[0].career);
+        setLiveInChiangmai(res.result[0].liveInChiangmai);
+        setLiveContinent(res.result[0].live.continent);
+        setQuesionNairGroup(res.result[0].questionnaireGroup);
+        setLiveRegion(res.result[0].live.region);
+        setResident(res.result[0].residence);
+        setGender(res.result[0].age);
+      } else {
+        alert("ERROR");
+      }
+      console.log("RES>>>", res);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
     
     return (
@@ -71,7 +71,7 @@ const Respondents = () => {
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8}>
                     <Card>
-                        <Gender></Gender>
+                        <Gender gender ={gender}/>
                     </Card>
                 </Col>
                 <Col lg={8}>

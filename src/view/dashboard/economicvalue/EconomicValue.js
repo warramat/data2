@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card } from "antd";
 import RadarChart from "./Chart2/RadarChart";
 import StackedBar from "./Chart2/StackBar";
@@ -16,12 +16,11 @@ const EconomicValue = () => {
     const [questionnaireGroup, setQuestionnaireGroup] = useState([])
 
   useEffect(() => {
-    GetEconomicValue()
-}, [])
+    GetEconomicValue();
+  }, []);
 
-const GetEconomicValue = async () => {
-
-  try {
+  const GetEconomicValue = async () => {
+    try {
 
       const qrs = { evaluatortype: "all" }
       const res = await GET_ECONOMICVALUE(qrs)
@@ -35,14 +34,15 @@ const GetEconomicValue = async () => {
         setQuestionnaireGroup (res.result[0].questionnaireGroup)
          
       } else {
-          alert("ERROR")
+        alert("ERROR");
       }
-      console.log("RES>>>", res)
-  } catch (error) {
-      console.log(error)
-  }
-}
+      console.log("RES>>>", res);
+    } catch (error) {
+      console.log(error);
+    }
 
+
+  }
 
   return (
     <div>
@@ -72,12 +72,13 @@ const GetEconomicValue = async () => {
         </Col>
         <Col lg={8}>
           <Card>
-            <Spending economicSpending={economicEffect}/>
+            <Spending economicEffect={economicEffect} />
           </Card>
         </Col>
       </Row>
     </div>
   );
 };
+
 
 export default EconomicValue;
