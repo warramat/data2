@@ -1,17 +1,15 @@
-import React from "react"
-import { Pie } from "react-chartjs-2"
-import { Row, Col, Card } from "antd"
+import React from "react";
+import { Pie } from "react-chartjs-2";
+import { Row, Col, Card } from "antd";
 
 const Region = ({ liveRegion }) => {
-  
-  let sumDataLiveRegion= []
+  let sumDataLiveRegion = [];
 
-  if (liveRegion.data){
-     sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
-      return []
-    }, 0)
-  }  
-
+  if (liveRegion.data) {
+    sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
+      return sum + Data
+    }, 0);
+  }
 
   const data = {
     labels: liveRegion.label,
@@ -44,41 +42,26 @@ const Region = ({ liveRegion }) => {
           "#F2E635",
           "#F205CB",
         ],
-        display: false
+        display: false,
       },
     ],
   };
   const options = {
     layout: {
       padding: {
-          left: 10,
-          right: 10,
-          top: 10,
-          bottom: 10
-      }
-  },
-    scales:{
-      title:[{
-        scaleLabel: {
-          display: false,
-        },
-      }]
+        left: 10,
+        right: 10,
+        top: 10,
+        bottom: 10,
+      },
     },
-    labels: false,
     legend: {
       display: false,
-      position: "bottom",
-      labels: {
-        boxWidth: 15,
-        fontSize: 50,
-        fontColor: "#fff",
-        fontFamily: "Sukhumvit Set",
-      },
     },
   };
 
   return (
-    <Row style={{fontFamily: "Sukhumvit Set",height:"245px"}}>
+    <Row style={{ fontFamily: "Sukhumvit Set", height: "245px" }}>
       <Row>
         <div
           style={{
@@ -101,7 +84,7 @@ const Region = ({ liveRegion }) => {
           }}
         >
           <div style={{ marginTop: "-18px", textAlign: "center" }}>
-            {sumDataLiveRegion}คน
+            {sumDataLiveRegion} คน
           </div>
         </Card>
       </Row>
@@ -146,7 +129,7 @@ const Region = ({ liveRegion }) => {
           ></div>
           <span className="fo">ตะวันออก</span>
         </Col>
-        <Col style={{ paddingLeft: "30px", paddingTop: "40px" }}>
+        <Col style={{ paddingLeft: "20px", paddingTop: "40px" }}>
           <div
             style={{
               width: 13,

@@ -6,7 +6,7 @@ import { Col } from "react-bootstrap";
 const RadarC = ({ liveInChiangmai }) => {
   console.log("liveInChiangmai", liveInChiangmai);
 
-  // let rest = liveInChiangmai.all - liveInChiangmai.count
+   let rest = liveInChiangmai.all - liveInChiangmai.count
 
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
   Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
@@ -39,7 +39,7 @@ const RadarC = ({ liveInChiangmai }) => {
     labels: ["เชียงใหม่" , "ทั้งหมด"],
     datasets: [
       {
-        // data: [ rest, liveInChiangmai.count],
+         data: [ rest, liveInChiangmai.count],
         backgroundColor: ["#13EECC"],
         borderColor: ["#13EECC"],
         borderWidth: 0,

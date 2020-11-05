@@ -48,14 +48,14 @@ const Continent = ({ liveCountinent }) => {
     ],
   };
   const options = {
-  //   layout: {
-  //     padding: {
-  //         left: 10,
-  //         right: 10,
-  //         top: 10,
-  //         bottom: 10
-  //     }
-  // },
+    layout: {
+      padding: {
+          left: 10,
+          right: 10,
+          top: 10,
+          bottom: 10
+      }
+  },
     legend: {
       display: false,
     },

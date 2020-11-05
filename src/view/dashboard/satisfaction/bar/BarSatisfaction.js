@@ -21,11 +21,11 @@ const BarSatisfaction = ({ satisfaction }) => {
     layout: {
       padding: {
           top: 150,
-          right: 20,
+          right: 30,
       }
     },
     labels:{
-          textAlign: 'center',
+      textAlign: 'center',
 
     },
     legend: {
