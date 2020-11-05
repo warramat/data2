@@ -51,7 +51,6 @@ const Region = ({ liveRegion }) => {
     plugins: { 
       labels: false,
   },
-  title:{text:"yyy"},
     labels: false,
     legend: {
       display: false,
