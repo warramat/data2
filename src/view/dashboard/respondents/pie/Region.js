@@ -48,9 +48,21 @@ const Region = ({ liveRegion }) => {
     ],
   };
   const options = {
-    plugins: { 
-      labels: false,
+    layout: {
+      padding: {
+          left: 10,
+          right: 10,
+          top: 10,
+          bottom: 10
+      }
   },
+    scales:{
+      title:[{
+        scaleLabel: {
+          display: false,
+        },
+      }]
+    },
     labels: false,
     legend: {
       display: false,
@@ -65,12 +77,12 @@ const Region = ({ liveRegion }) => {
   };
 
   return (
-    <Row>
+    <Row style={{fontFamily: "Sukhumvit Set",height:"245px"}}>
       <Row>
         <div
           style={{
             letterSpacing: "0.68px",
-            fontSize: "25px",
+            fontSize: "22px",
             color: "#171717",
           }}
         >
@@ -80,15 +92,15 @@ const Region = ({ liveRegion }) => {
           style={{
             fontSize: "19px",
             color: "#292766",
-            width: "157px",
+            width: "120px",
             height: "46px",
             left: "20px",
             borderRadius: "5px",
             backgroundColor: "#f6f8fe",
           }}
         >
-          <div style={{ marginTop: "-15px", textAlign: "center" }}>
-            {sumDataLiveRegion}คน
+          <div style={{ marginTop: "-18px", textAlign: "center" }}>
+            {sumDataLiveRegion} คน
           </div>
         </Card>
       </Row>
@@ -173,7 +185,7 @@ const Region = ({ liveRegion }) => {
           <span className="fo">ตะวันตก</span>
         </Col>
 
-        <Col style={{ top: "-130px", left: "160px" }}>
+        <Col style={{ top: "-140px", left: "150px" }}>
           <Pie data={data} options={options} />
         </Col>
       </Row>

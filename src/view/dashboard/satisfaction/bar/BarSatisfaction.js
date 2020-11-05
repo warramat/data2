@@ -11,7 +11,7 @@ const BarSatisfaction = ({ satisfaction }) => {
     labels: satisfaction.label,
     datasets: [
       {
-        barThickness: 25,
+        barThickness: 75,
         data: satisfaction.data,
         backgroundColor: "#13eecc",
       },
