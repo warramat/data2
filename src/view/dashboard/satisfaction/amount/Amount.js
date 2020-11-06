@@ -2,23 +2,23 @@ import React from 'react'
 import { Row, Col } from "antd"
 
 
-const Amount = ({toppic, num, image}) => {
+const Amount = ({ toppic, num, image }) => {
     console.log(image)
     return (
         <>
-            <Row >    
+            <Row >
                 <Col span={24}>
-                    <div>{toppic}</div>
+                    <div className="f-15">{toppic}</div>
                 </Col>
-                </Row>
-                <Row >
-                <Col span={12} style={{marginTop:"10%"}}>
-                    <span className="f-13">{num}</span>
-                    <span className="f-1" style={{marginLeft:5}}>คน</span>
+            </Row>
+            <Row >
+                <Col span={12} style={{ marginTop: 30 }}>
+                    <span className="f-21">{num}</span>
+                    <span className="f-13" style={{ marginLeft: 5 }}>คน</span>
                 </Col>
-                    
+
                 <Col span={12}>
-                    <img src={image} className="rounded float-right" width= {90}></img>
+                    <img src={image} className="rounded float-right" style={{ display: "flex" }} width={"50%"}></img>
                 </Col>
             </Row>
         </>

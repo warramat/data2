@@ -1,8 +1,8 @@
 import { Card, Row, Col } from "antd";
-import React, { useState } from "react";
+import React from "react";
 
 function Spending({ economicEffect }) {
-  const [infoSource, setInfoSource] = useState([
+  const infoSource = [
     {
       toppic: "รวม",
       amount: [economicEffect.all],
@@ -15,7 +15,7 @@ function Spending({ economicEffect }) {
       toppic: "ไม่ใช่นักกีฬา",
       amount: [economicEffect.notAthlete],
     },
-  ]);
+  ];
   return (
     <div>
       <div className="text-toppic">

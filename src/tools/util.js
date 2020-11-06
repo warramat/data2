@@ -19,3 +19,15 @@ export const NumberRegX = (language = "") => {
   const regex = { number };
   return regex[language.toLowerCase()];
 };
+
+export const float1Point = (floatValue) => {
+  const converted = parseFloat(floatValue).toFixed(1);
+  return converted
+}
+
+
+export const ChangeToK = (num) => {
+  return Math.abs(num) > 999999 ? Math.sign(num) * ((Math.abs(num) / 1000000).toFixed(1)) + 'm' :
+    Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' :
+      Math.sign(num) * Math.abs(num)
+}

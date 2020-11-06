@@ -1,16 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Row } from "antd";
 import { Progress } from "antd";
 
-const Job = () => {
-  const [dataSource, setDataSource] = useState([
-    { job: "รัฐบาล/รัฐวิสาหกิจ", percent: 45, color: "#13EECC" },
-    { job: "เจ้าของธุรกิจ/ธุรกิจส่วนตัว", percent: 54, color: "#3B88FD" },
-    { job: "นักเรียน/นักศึกษา", percent: 45, color: "#13EECC" },
-    { job: "พนักงานบริษัท", percent: 30, color: "#F205CB" },
-    { job: "นักกีฬาอาชีพ", percent: 20, color: "#F2E635" },
-    { job: "อื่นๆ ระบุ", percent: 10, color: "#3B88FD" },
-  ]);
+const Job = ({ carrier }) => {
+  console.log("data", carrier);
+  const dataSource = [
+    {
+      job: "รัฐบาล/รัฐวิสาหกิจ",
+      percent: carrier.government,
+      color: "#13EECC",
+    },
+    {
+      job: "เจ้าของธุรกิจ/ธุรกิจส่วนตัว",
+      percent: carrier.businessOwners,
+      color: "#3B88FD",
+    },
+    {
+      job: "นักเรียน/นักศึกษา",
+      percent: carrier.student,
+      color: "rgba(11, 80, 150, 1)",
+    },
+    {
+      job: "พนักงานบริษัท",
+      percent: carrier.companyEmployee,
+      color: "#F205CB",
+    },
+    {
+      job: "นักกีฬาอาชีพ",
+      percent: carrier.professionalAthlete,
+      color: "#F2E635",
+    },
+    { job: "อื่นๆ ระบุ", percent: carrier.others, color: "#3B88FD" },
+  ];
   return (
     <>
       <b className="text-toppic">อาชีพ</b>

@@ -41,3 +41,37 @@ label.ant-radio-button-wrapper {
   font-size: 1.25rem !important;
   color: #dee2ec;
 }
+
+.ant-modal-content {
+  border-radius: 8px !important;
+}
+
+.ant-modal-header {
+  border-top-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+}
+
+.ant-modal-header {
+  border: unset !important;
+}
+
+.ant-modal-footer {
+  border: unset !important;
+}
+
+.ant-modal-body {
+  padding: 80px 100px 120px 100px !important;
+}
+
+// .ant-spin-nested-loading > div > .ant-spin {
+//   max-height: 100vh !important;
+// }
+
+.ant-spin-lg .ant-spin-dot i {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.ant-spin-lg .ant-spin-dot {
+  font-size: 75px !important;
+}

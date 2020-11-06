@@ -20,3 +20,10 @@ export const GET_ECONOMICVALUE = async (queryObj) => {
   return res;
 };
 
+export const GET_ECONOMIC_TYPE = async (queryObj) => {
+  const param = convertSearchParams(queryObj);
+  const res = await Fetch("GET", `${apiV1}/dashboard/economicValue/InterActive${param}`);
+  return res;
+};
+
+
