@@ -4,8 +4,8 @@ import { Col, Row, Card } from "antd";
 import Residence from "./bar/Residence";
 import Total from "./question/Total";
 import { GET_RESPONDENT } from "../../../service/api";
-import { float1Point } from "../../../tools/util"
-import { ChangeToK } from "../../../tools/util"
+import { float1Point } from "../../../tools/util";
+import { ChangeToK } from "../../../tools/util";
 import RadarC from "./Donut/RadarC";
 
 import Region from "./pie/Region";
@@ -14,47 +14,47 @@ import Continent from "./pie/Continent";
 import Job from "./Progress/Career";
 
 const Respondents = ({ setLoading }) => {
-    const [quesionNairGroup, setQuesionNairGroup] = useState([]);
-    const [residence, setResident] = useState({});
-    const [liveCountinent, setLiveContinent] = useState({});
-    const [liveInChiangmai, setLiveInChiangmai] = useState({});
-    const [liveRegion, setLiveRegion] = useState({});
-    const [carrier, setCarrier] = useState({});
-    const [gender, setGender] = useState({});
-    const [filterItem, setFilterItem] = useState("all")
+  const [quesionNairGroup, setQuesionNairGroup] = useState([]);
+  const [residence, setResident] = useState({});
+  const [liveCountinent, setLiveContinent] = useState({});
+  const [liveInChiangmai, setLiveInChiangmai] = useState({});
+  const [liveRegion, setLiveRegion] = useState({});
+  const [competitionType, setCompetitionType] = useState({});
+  const [gender, setGender] = useState({});
+  const [filterItem, setFilterItem] = useState("all");
 
-    useEffect(() => {
-        GetRespondent();
-    }, []);
+  useEffect(() => {
+    GetRespondent();
+  }, []);
 
-    const GetRespondent = async (params = "all") => {
-        setLoading(true)
-        try {
-            const qrs = { evaluatortype: params };
-            const res = await GET_RESPONDENT(qrs);
-            if (res.code === 200) {
-                
-                setCarrier(res.result[0].career);
-                setLiveInChiangmai(res.result[0].live.liveInChiangMai);
-                setLiveContinent(res.result[0].live.continent);
-                setQuesionNairGroup(res.result[0].questionnaireGroup);
-                setLiveRegion(res.result[0].live.region);
-                setResident(res.result[0].residence);
-                setGender(res.result[0].age);
-            } else {
-                alert("ERROR");
-            }
-        } catch (error) {
-            console.log(error);
-            setLoading(false)
-        }
-        setLoading(false)
-    };
-
-    const handleClickCard = (item) => {
-        setFilterItem(item.evaluatortype)
-        GetRespondent(item.evaluatortype)
+  const GetRespondent = async (params = "all") => {
+    setLoading(true);
+    try {
+      const qrs = { evaluatortype: params };
+      const res = await GET_RESPONDENT(qrs);
+      if (res.code === 200) {
+     
+        setCompetitionType(res.result[0].competitionType);
+        setLiveInChiangmai(res.result[0].live.liveInChiangMai);
+        setLiveContinent(res.result[0].live.continent);
+        setQuesionNairGroup(res.result[0].questionnaireGroup);
+        setLiveRegion(res.result[0].live.region);
+        setResident(res.result[0].residence);
+        setGender(res.result[0].age);
+      } else {
+        alert("ERROR");
+      }
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
     }
+    setLoading(false);
+  };
+
+  const handleClickCard = (item) => {
+    setFilterItem(item.evaluatortype);
+    GetRespondent(item.evaluatortype);
+  };
 
     return (
         <div>
@@ -90,7 +90,7 @@ const Respondents = ({ setLoading }) => {
                 </Col>
                 <Col lg={8} md={24} sm={24} xs={24}>
                     <Card style={{ minHeight: "33em" }}>
-                        <Job carrier={carrier} />
+                        <Job carrier={competitionType} />
                     </Card>
                 </Col>
             </Row>
