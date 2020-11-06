@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import { Doughnut, Chart } from "react-chartjs-2";
-import { Col } from "react-bootstrap";
+import { Doughnut, } from "react-chartjs-2";
 import { showTextInside } from '../Donut/pluginDN';
 import { Row } from "antd";
 

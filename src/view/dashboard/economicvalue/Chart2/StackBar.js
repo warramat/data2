@@ -69,7 +69,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
   return (
     <Col>
       <b className="text-toppic">{title}</b>
-      <Row style={{ paddingTop: 20 }}>
+      <Row style={{ paddingTop: 14 }}>
         <Col>
           <div
             style={{

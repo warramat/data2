@@ -1,6 +1,6 @@
 import React from 'react'
 import { Radar } from '@reactchartjs/react-chart.js'
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'antd';
 
 const RadarChart = ({economicLabels ,  economicData}) => {
   const data = {
@@ -16,13 +16,21 @@ const RadarChart = ({economicLabels ,  economicData}) => {
       },
     ],
   }
-  const options = {
 
+  const options = {
+    // layout: {
+    //   padding: {
+    //     left: 10,
+    //     right: 10,
+    //     top: 10,
+    //     bottom: 10,
+    //   },
+    // },
+    
     legend: {
       display: false,
-      borderRadius: 20 ,
-      fontFamily: "Sukhumvit Set",
     },
+   
     scale: {
       ticks: { beginAtZero: true },
 
@@ -30,15 +38,20 @@ const RadarChart = ({economicLabels ,  economicData}) => {
 
   }
   return (
-    <Row style={{ width: "480px", height: "300px" }}>
-      <Col >
-        <div >
-          <b className="text-toppic">ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
-        <b className="text-title">ตามประเภทผู้ประเมิน</b>
-
-        <div style={{ left: 20 }}><Radar data={data} options={options} /></div>
-
+    <Row style={{ fontFamily: "Sukhumvit Set" }}>
+      <Col>
+      <Row >
+        <Col>
+        <div><b className="text-toppic" >ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
+        <div className="text-title">ตามประเภทผู้ประเมิน</div>
+        </Col>
+      </Row>
       </Col>
+      <Col >
+        <Radar data={data} options={options} width={385} height={385}/>
+      </Col>
+      
+      
     </Row>
   )
 }
