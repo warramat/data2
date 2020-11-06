@@ -35,7 +35,6 @@ const Satisfaction = ({ setLoading }) => {
             } else {
                 alert("ERROR")
             }
-            console.log("RES>>>", res)
         } catch (error) {
             console.log(error)
             setLoading(false)

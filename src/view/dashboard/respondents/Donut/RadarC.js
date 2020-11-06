@@ -5,7 +5,6 @@ import { showTextInside } from '../Donut/pluginDN';
 import { Row , Col } from "antd";
 
 const RadarC = ({ liveInChiangmai }) => {
-  console.log("liveInChiangmai", liveInChiangmai);
 
   let rest = liveInChiangmai.all - liveInChiangmai.count
 
