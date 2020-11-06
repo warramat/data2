@@ -26,8 +26,8 @@ const Dashboard = () => {
             <span className="hr-horizon"></span><img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
           </div>
         </Col>
-        <Col xs={24} sm={24} md={24} lg={10} className="d-flex justify-content-center">
-          <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} >
+        <Col xs={24} sm={24} md={24} lg={10} >
+          <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} className="d-flex justify-content-center" >
             <Radio.Button value="respon">ผู้ตอบแบบสอบถาม</Radio.Button>
             <Radio.Button value="economic">มูลค่าทางเศรษฐกิจ</Radio.Button>
             <Radio.Button value="satis">ระดับความพึงพอใจ</Radio.Button>
