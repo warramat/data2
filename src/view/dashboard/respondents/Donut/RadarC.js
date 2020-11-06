@@ -3,6 +3,7 @@ import React from "react";
 import { Doughnut, Chart } from "react-chartjs-2";
 import { Col } from "react-bootstrap";
 import { showTextInside } from '../Donut/pluginDN';
+import { Row } from "antd";
 
 const RadarC = ({ liveInChiangmai }) => {
   console.log("liveInChiangmai", liveInChiangmai);
@@ -30,6 +31,16 @@ const RadarC = ({ liveInChiangmai }) => {
         text: liveInChiangmai.all +  " ทั้งหมด",
       },
     },
+
+    layout: {
+      padding: {
+        left: 5,
+        right: 5,
+        top: 5,
+        bottom: 5,
+      },
+    },
+
     legend: {
       display: false,
       borderAlign: "inner",
@@ -42,15 +53,21 @@ const RadarC = ({ liveInChiangmai }) => {
   
 
   return (
-    <div style={{ height: 200, padding: 35 }}>
-      <Col style={{ fontSize: 20, right: 50, bottom: 40 }}>
-        <b>คนในพื้นที่เชียงใหม่</b>
-      </Col>
+    <Row style={{ fontFamily: "Sukhumvit Set" }}>
+      <Row>
 
-      <Col style={{ bottom: 25 }}>
+         <b className="text-toppic">คนในพื้นที่เชียงใหม่</b>
+      </Row>
+       
+     
+    <Row className="pt-1" style={{paddingLeft: 50}} >
+
         <Doughnut data={data} options={options} plugins={[showTextInside]} />
-      </Col>
-    </div>
+  
+
+    </Row>
+      
+    </Row>
   );
 };
 
