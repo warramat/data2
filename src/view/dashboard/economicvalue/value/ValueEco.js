@@ -3,7 +3,6 @@ import { Row, Col } from "antd"
 
 
 const ValueEco = ({ toppic, num, imageIndex, persen }) => {
-    console.log("imageIndex", imageIndex)
     return (
         <>
             <Row >

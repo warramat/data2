@@ -6,7 +6,7 @@ import Satisfaction from "./satisfaction/Satisfaction"
 import { Row, Col, Radio, } from 'antd'
 import Doiintanon from '../../assets/image/logo/doiintanon.svg'
 import iSat from '../../assets/image/logo/Sat.svg'
-import { Spin, Space } from 'antd';
+import { Spin } from 'antd';
 
 const Dashboard = () => {
   const [key, setKey] = useState("respon")

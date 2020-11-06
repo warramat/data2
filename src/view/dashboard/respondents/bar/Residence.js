@@ -1,11 +1,11 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Col } from "antd";
-import {ChangeToK} from '../../../../tools/util'
+import { ChangeToK } from "../../../../tools/util";
 
-const Residence = ({ residence, }) => {
+const Residence = ({ residence }) => {
   const data = {
-    labels: ["บ้านตนเอง","โรงแรม","รีสอร์ท","อุทยาน","อื่นๆ"],
+    labels: ["บ้านตนเอง", "โรงแรม", "รีสอร์ท", "อุทยาน", "อื่นๆ"],
     datasets: [
       {
         barThickness: 25,
@@ -18,6 +18,7 @@ const Residence = ({ residence, }) => {
     legend: {
       display: false,
     },
+
     scales: {
       yAxes: [
         {
@@ -37,7 +38,7 @@ const Residence = ({ residence, }) => {
   return (
     <Col>
       <b className="text-toppic">ที่พักอาศัย</b>
-      <h6
+      <div
         style={{
           fontSize: "16px",
           color: "#292766",
@@ -46,22 +47,24 @@ const Residence = ({ residence, }) => {
         }}
       >
         คน
-      </h6>
-      <div >
-        <Col >
-          <div className="pad">
+      </div>
+      <div>
+        <Col>
+          <div>
             <Bar data={data} options={option} />
           </div>
+        </Col>
+        <Col>
           <div
             style={{
               fontSize: "16px",
               color: "#292766",
               opacity: "50%",
               transform: "rotate(-90deg)",
-              transformOrigin: "2% 90%",
-              marginLeft: "105%",
+              transformOrigin: "40% 90%",
+              marginLeft: "100%",
               width: "50px",
-              marginTop: "-107px",
+              marginTop: "-80px",
             }}
           >
             สถานที่
