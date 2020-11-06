@@ -14,22 +14,26 @@ const Dashboard = () => {
 
   return (
     <div className="BG-forms font-kanit spinner">
-  
-      <Row className="w-100 nav p-15 h-25 " align={"middle"}>
+      {/* <Space size="middle"> */}
+
+
+      {/* <Space size="middle"> */}
+
+      <Row className="w-100 nav p-15 h-25 " align={"middle"} justify={"center"}>
         <Col lg={7}>
           <div className="pl-40 align-items-center">
             <img src={iSat} alt="iSat" width={"53%"} className="pr-2" />
             <span className="hr-horizon"></span><img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
           </div>
         </Col>
-        <Col lg={10} xs={24}  className="d-flex justify-content-center">
+        <Col xs={24} sm={24} md={24} lg={10} className="d-flex justify-content-center">
           <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} >
             <Radio.Button value="respon">ผู้ตอบแบบสอบถาม</Radio.Button>
             <Radio.Button value="economic">มูลค่าทางเศรษฐกิจ</Radio.Button>
             <Radio.Button value="satis">ระดับความพึงพอใจ</Radio.Button>
           </Radio.Group>
         </Col>
-        <Col lg={7}></Col>
+        <Col lg={7} xs={24} sm={24} md={24}></Col>
       </Row>
       <Spin size="large" spinning={loading} >
         <div className="p-layout">
