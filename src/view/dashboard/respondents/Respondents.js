@@ -6,6 +6,7 @@ import Total from "./question/Total";
 import { GET_RESPONDENT } from "../../../service/api";
 import { float1Point } from "../../../tools/util"
 import RadarC from "./Donut/RadarC";
+
 import Region from "./pie/Region";
 import Gender from "./bar/Gender";
 import Continent from "./pie/Continent";
