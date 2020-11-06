@@ -21,7 +21,7 @@ function Spending({ economicEffect }) {
       <div className="text-toppic">
         <b>ผลกระทบทางเศรษฐกิจ</b>
       </div>
-      <div className="text-title" style={{ marginBottom: 20 }}>
+      <div className="text-title" style={{ marginBottom: 10 }}>
         การลงทุนของการกีฬาแห่งประเทศไทย 1 บาท
         ก่อให้เกิดผลกระทบทางเศรษฐกิจต่อไปนี้
       </div>
@@ -30,7 +30,7 @@ function Spending({ economicEffect }) {
           <div
             key={index}
             style={{
-              marginTop: 18,
+              marginTop: 17,
               borderRadius: 9,
               background: "rgba(253, 253, 253, 1)",
               border: "1px solid rgba(235, 242, 247, 1)",

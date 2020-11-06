@@ -50,36 +50,36 @@ const Gender = ({ gender }) => {
   return (
     <Col>
       <b className="text-toppic">เพศและช่วงอายุ</b>
-      <Row>
-        <Col>
-          <div
-            style={{
-              letterSpacing: "0.68px",
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "rgba(59, 136, 253, 1)",
-              border: "#13EECC",
-              marginBottom: "-20px",
-            }}
-          ></div>
-          <span className="fo3">ชาย</span>
-        </Col>
-        <Col>
-          <div
-            style={{
-              letterSpacing: "0.68px",
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "rgba(19, 238, 204, 1)",
-              border: "#13EECC",
-              marginBottom: "-20px",
-            }}
-          ></div>
-          <span className="fo3">หญิง</span>
-        </Col>
-      </Row>
+
+      <Col>
+        <div
+          style={{
+            letterSpacing: "0.68px",
+            width: 13,
+            height: 13,
+            borderRadius: 10,
+            backgroundColor: "rgba(59, 136, 253, 1)",
+            border: "#13EECC",
+            marginBottom: "-20px",
+          }}
+        ></div>
+        <span className="fo3">ชาย</span>
+      </Col>
+      <Col>
+        <div
+          style={{
+            letterSpacing: "0.68px",
+            width: 13,
+            height: 13,
+            borderRadius: 10,
+            backgroundColor: "rgba(19, 238, 204, 1)",
+            border: "#13EECC",
+            marginBottom: "-20px",
+          }}
+        ></div>
+        <span className="fo3">หญิง</span>
+      </Col>
+
       <h6
         style={{
           fontSize: "16px",
