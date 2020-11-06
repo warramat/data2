@@ -2,7 +2,7 @@
 import React from "react";
 import { Doughnut, } from "react-chartjs-2";
 import { showTextInside } from '../Donut/pluginDN';
-import { Row } from "antd";
+import { Row , Col } from "antd";
 
 const RadarC = ({ liveInChiangmai }) => {
   console.log("liveInChiangmai", liveInChiangmai);
@@ -54,18 +54,19 @@ const RadarC = ({ liveInChiangmai }) => {
 
   return (
     <Row style={{ fontFamily: "Sukhumvit Set" }}>
-      <Row>
+      
+      <Col>
 
          <b className="text-toppic">คนในพื้นที่เชียงใหม่</b>
-      </Row>
+      </Col>
        
      
-    <Row className="pt-1" style={{paddingLeft: 50}} >
+    <Col style={{display: 'flex' , justifyContent: 'right'}} >
 
         <Doughnut data={data} options={options} plugins={[showTextInside]} />
   
 
-    </Row>
+    </Col>
       
     </Row>
   );
