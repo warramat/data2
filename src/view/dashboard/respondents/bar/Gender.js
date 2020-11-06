@@ -34,9 +34,6 @@ const Gender = ({ gender }) => {
         {
           ticks: {
             beginAtZero: true,
-            // min: 0,
-            // max: 15,
-            // stepSize: 5,
 
             callback: function (value, index, values) {
               return ChangeToK(value);
@@ -50,49 +47,62 @@ const Gender = ({ gender }) => {
   return (
     <Col>
       <b className="text-toppic">เพศและช่วงอายุ</b>
-      <Row style={{ paddingLeft: "190px", paddingBottom: 50, marginTop: -22 }}>
-        <Col>
+
+      <Row>
+        <Col className="col-job">
           <div
             style={{
-              letterSpacing: "0.68px",
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "rgba(59, 136, 253, 1)",
-              border: "#13EECC",
-              marginBottom: "-20px",
+              fontSize: "16px",
+              color: "#292766",
+              paddingLeft: "10px",
+              opacity: 0.5,
             }}
-          ></div>
-          <span className="fo3">ชาย</span>
+          >
+            จำนวนคน
+          </div>
         </Col>
-        <Col>
-          <div
-            style={{
-              letterSpacing: "0.68px",
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "rgba(19, 238, 204, 1)",
-              border: "#13EECC",
-              marginBottom: "-20px",
-            }}
-          ></div>
-          <span className="fo3">หญิง</span>
+        <Col
+          className="col-job2"
+          style={{ paddingLeft: "35%", paddingTop: 10 }}
+        >
+          <Row>
+            <Col>
+              <div
+                style={{
+                  letterSpacing: "0.68px",
+                  width: 13,
+                  height: 13,
+                  borderRadius: 10,
+                  backgroundColor: "rgba(59, 136, 253, 1)",
+                  border: "#13EECC",
+                  marginBottom: "-19px",
+                }}
+              ></div>
+              <span className="fo3">ชาย</span>
+            </Col>
+            <Col>
+              <div
+                style={{
+                  letterSpacing: "0.68px",
+                  width: 13,
+                  height: 13,
+                  borderRadius: 10,
+                  backgroundColor: "rgba(19, 238, 204, 1)",
+                  border: "#13EECC",
+                  marginBottom: "-19px",
+                }}
+              ></div>
+              <span className="fo3">หญิง</span>
+            </Col>
+          </Row>
         </Col>
       </Row>
-      <div
-        style={{
-          fontSize: "16px",
-          color: "#292766",
-          paddingLeft: "10px",
-          opacity: 0.5,
-        }}
-      >
-        จำนวนคน
-      </div>
+
       <div>
         <Col>
-          <Bar data={data} options={options} />
+          <div>
+            <Bar data={data} options={options} />
+          </div>
         </Col>
 
         <Col>
