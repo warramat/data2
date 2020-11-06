@@ -43,12 +43,14 @@ const Residence = ({ residence, }) => {
           color: "#292766",
           paddingLeft: "10px",
           opacity: 0.5,
+          paddingTop: "20px",
         }}
       >
         คน
       </h6>
       <div >
         <Col >
+        
           <div className="pad">
             <Bar data={data} options={option} />
           </div>

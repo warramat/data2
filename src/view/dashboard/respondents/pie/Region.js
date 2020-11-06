@@ -76,7 +76,7 @@ const Region = ({ liveRegion }) => {
           {ChangeToK(sumDataLiveRegion)} คน
         </span>
       </Row>
-      <Row style={{ height: "155px" }}>
+      <Row >
         <Col style={{ paddingTop: "40px" }}>
           <div
             style={{
@@ -156,11 +156,11 @@ const Region = ({ liveRegion }) => {
           ></div>
           <span className="fo">ตะวันตก</span>
         </Col>
-
-        <Col style={{ top: "-150px", left: "35%" }}>
-          <Pie data={data} options={options} />
+        <Col><Pie data={data} options={options} width={200}/>
         </Col>
-      </Row>
+        
+      </Row> 
+      
     </Row>
   );
 };
