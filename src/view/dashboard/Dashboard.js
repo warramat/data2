@@ -6,7 +6,7 @@ import Satisfaction from "./satisfaction/Satisfaction"
 import { Row, Col, Radio, } from 'antd'
 import Doiintanon from '../../assets/image/logo/doiintanon.svg'
 import iSat from '../../assets/image/logo/Sat.svg'
-import { Spin, Space } from 'antd';
+import { Spin } from 'antd';
 
 const Dashboard = () => {
   const [key, setKey] = useState("respon")
@@ -14,11 +14,7 @@ const Dashboard = () => {
 
   return (
     <div className="BG-forms font-kanit spinner">
-      {/* <Space size="middle"> */}
-
-
-      {/* <Space size="middle"> */}
-
+  
       <Row className="w-100 nav p-15 h-25 " align={"middle"}>
         <Col lg={7}>
           <div className="pl-40 align-items-center">

@@ -3,7 +3,6 @@ import { Col, Row } from "antd";
 import { Progress } from "antd";
 import { float1Point } from "../../../../tools/util";
 const Job = ({ carrier }) => {
-  console.log("data", carrier);
   const dataSource = [
     {
       job: "อินทนนท์ 10 km",

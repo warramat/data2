@@ -3,7 +3,6 @@ import { Row, Col } from "antd"
 
 
 const Amount = ({ toppic, num, image }) => {
-    console.log(image)
     return (
         <>
             <Row >
@@ -18,7 +17,7 @@ const Amount = ({ toppic, num, image }) => {
                 </Col>
 
                 <Col span={12}>
-                    <img src={image} className="rounded float-right" style={{ display: "flex" }} width={"50%"}></img>
+                    <img src={image} className="rounded float-right" style={{ display: "flex" }} width={"50%"} />
                 </Col>
             </Row>
         </>
