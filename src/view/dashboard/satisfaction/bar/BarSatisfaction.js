@@ -26,8 +26,10 @@ const BarSatisfaction = ({ satisfaction }) => {
   const option = {
     layout: {
       padding: {
-          top: 150,
-          right: 30,
+        left: 10,
+        right: 40,
+        top: 180,
+        bottom: 110,
       }
     },
     legend: {
@@ -67,7 +69,7 @@ const BarSatisfaction = ({ satisfaction }) => {
                     transformOrigin: "2% 90%",
                     marginLeft: "100%",
                     width: "300px",
-                    marginTop:"-70px"
+                    marginTop:"-180px"
                }}>ความพึงพอใจ</div>
           </Col>
       </div>
