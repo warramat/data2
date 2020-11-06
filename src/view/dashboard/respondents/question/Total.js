@@ -16,7 +16,7 @@ const Total = ({toppic, num, image, persen}) => {
         <Col span={12} style={{marginTop:10}}>
             <span className="f-18">{num}</span>
             <span className="f-1" style={{marginLeft:5}}>คน</span>
-            <div className="f-1" style={{color: "#3300FF"}}>{persen}%</div>
+            <div className="f-1" style={{color: "#36D74D"}}>{persen}%</div>
         </Col>
 
         <Col span={12}>
