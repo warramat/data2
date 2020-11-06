@@ -19,7 +19,7 @@ const Dashboard = () => {
 
       {/* <Space size="middle"> */}
 
-      <Row className="w-100 nav p-15 h-25 " align={"middle"}>
+      <Row className="w-100 nav p-15 h-25 " align={"middle"} justify={"center"}>
         <Col lg={7}>
           <div className="pl-40 align-items-center">
             <img src={iSat} alt="iSat" width={"53%"} className="pr-2" />
@@ -33,7 +33,7 @@ const Dashboard = () => {
             <Radio.Button value="satis">ระดับความพึงพอใจ</Radio.Button>
           </Radio.Group>
         </Col>
-        <Col lg={7}></Col>
+        <Col lg={7} xs={24} sm={24} md={24}></Col>
       </Row>
       <Spin size="large" spinning={loading} >
         <div className="p-layout">
