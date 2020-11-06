@@ -28,8 +28,8 @@ const BarSatisfaction = ({ satisfaction }) => {
       padding: {
         left: 10,
         right: 40,
-        top: 180,
-        bottom: 110,
+        top: 160,
+
       }
     },
     legend: {
@@ -59,7 +59,7 @@ const BarSatisfaction = ({ satisfaction }) => {
         opacity: 0.5,
      }}>ระดับ</h6>
       <div >
-          <Bar data={data} options={option} />
+          <Bar data={data} options={option}  width={500} height={150} />
           <Col>
                <div style={{
                     fontSize: "16px",
@@ -69,7 +69,7 @@ const BarSatisfaction = ({ satisfaction }) => {
                     transformOrigin: "2% 90%",
                     marginLeft: "100%",
                     width: "300px",
-                    marginTop:"-180px"
+                    marginTop:"-70px"
                }}>ความพึงพอใจ</div>
           </Col>
       </div>
