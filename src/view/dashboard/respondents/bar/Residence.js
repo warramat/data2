@@ -26,9 +26,6 @@ const Residence = ({ residence }) => {
             callback: function (value, index, values) {
               return ChangeToK(value);
             },
-            // min: 0,
-            // max: 10000,
-            // stepSize: 2000,
           },
         },
       ],
@@ -38,19 +35,19 @@ const Residence = ({ residence }) => {
   return (
     <Col>
       <b className="text-toppic">ที่พักอาศัย</b>
-      <div
-        style={{
+      <div>
+        <Col>
+          <div className="pad1">
+          <div
+          style={{
           fontSize: "16px",
           color: "#292766",
-          paddingLeft: "10px",
+          paddingLeft: "25px",
           opacity: 0.5,
         }}
       >
         คน
       </div>
-      <div>
-        <Col>
-          <div>
             <Bar data={data} options={option} />
           </div>
         </Col>
@@ -64,7 +61,7 @@ const Residence = ({ residence }) => {
               transformOrigin: "40% 90%",
               marginLeft: "100%",
               width: "50px",
-              marginTop: "-80px",
+              marginTop: "-140px",
             }}
           >
             สถานที่

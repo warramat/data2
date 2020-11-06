@@ -104,7 +104,11 @@ flex-direction: column;
 align-items: center;
 }
 
-.pad{
+.pad1{
   margin-left: -25px;
   padding: 55px 2px 55px 2px;
+}
+.pad2{
+  margin-left: -15px;
+  padding: 10px 2px 10px 2px;
 }
