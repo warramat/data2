@@ -36,6 +36,18 @@ code {
   padding-left: 20px;
   font-family: "Sukhumvit Set";
 }
+.fo2 {
+  font-size: 16px;
+  color: #292766;
+  padding: 18px;
+  font-family: "Sukhumvit Set";
+}
+.fo3 {
+  font-size: 16px;
+  color: #292766;
+  padding: 18px;
+  font-family: "Sukhumvit Set";
+}
 .cad {
   font-size: 19px;
   color: #292766;
@@ -61,4 +73,15 @@ position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.text-toppic2 {
+  font-size: 22px;
+  font-family: "Sukhumvit Set";
+  
+  color: rgba(61, 61, 61, 1);
+}
+.center{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
