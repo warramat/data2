@@ -1,9 +1,9 @@
 import React from "react";
 import { Bar } from "@reactchartjs/react-chart.js";
 import { Col } from "antd";
-const StackedBar = ({ economicStackedBar }) => {
+const StackedBar = ({ economicStackedBar, title }) => {
   const data = {
-    labels: ["ข้อมูลทางเศรษฐกิจ"],
+    labels: [title],
     datasets: [
       {
         barThickness: 50,
@@ -60,7 +60,7 @@ const StackedBar = ({ economicStackedBar }) => {
 
   return (
     <Col>
-      <b className="text-toppic">ผลกระทบทางเศรษฐกิจ</b>
+      <b className="text-toppic">{title}</b>
       <div
         style={{
           fontSize: 16,

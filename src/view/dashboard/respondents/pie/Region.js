@@ -47,21 +47,13 @@ const Region = ({ liveRegion }) => {
     ],
   };
   const options = {
-    layout: {
-      padding: {
-        left: 10,
-        right: 10,
-        top: 10,
-        bottom: 10,
-      },
-    },
     legend: {
       display: false,
     },
   };
 
   return (
-    <Row style={{ fontFamily: "Sukhumvit Set"}}>
+    <Row style={{ fontFamily: "Sukhumvit Set" }}>
       <Row>
         <div
           style={{
@@ -88,7 +80,7 @@ const Region = ({ liveRegion }) => {
           </div>
         </Card>
       </Row>
-      <Row style={{height:"155px"}}>
+      <Row style={{ height: "155px" }}>
         <Col style={{ paddingTop: "40px" }}>
           <div
             style={{

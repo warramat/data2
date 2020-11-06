@@ -6,7 +6,7 @@ import { Col } from "react-bootstrap";
 const RadarC = ({ liveInChiangmai }) => {
   console.log("liveInChiangmai", liveInChiangmai);
 
-   let rest = liveInChiangmai.all - liveInChiangmai.count
+  let rest = liveInChiangmai.all - liveInChiangmai.count
 
   var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
   Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
@@ -36,10 +36,10 @@ const RadarC = ({ liveInChiangmai }) => {
   });
 
   const data = {
-    labels: ["เชียงใหม่" , "ทั้งหมด"],
+    labels: ["เชียงใหม่", "ทั้งหมด"],
     datasets: [
       {
-         data: [ rest, liveInChiangmai.count],
+        data: [rest, liveInChiangmai.count],
         backgroundColor: ["#13EECC"],
         borderColor: ["#13EECC"],
         borderWidth: 0,
@@ -57,11 +57,12 @@ const RadarC = ({ liveInChiangmai }) => {
     cutoutPercentage: 75,
     rotation: 50,
     borderAlign: "inner",
+
   };
 
   return (
     <div style={{ height: 200, padding: 35 }}>
-      <Col style={{ fontSize: 20 , right: 50 , bottom: 40 }}>
+      <Col style={{ fontSize: 20, right: 50, bottom: 40 }}>
         <b>คนในพื้นที่เชียงใหม่</b>
       </Col>
 

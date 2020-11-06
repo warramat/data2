@@ -25,8 +25,8 @@
   font-size: 1.8rem !important;
 }
 
-.f-11 {
-  font-size: 1.1rem;
+.f-10 {
+  font-size: 1rem;
 }
 
 .f-21 {
@@ -60,4 +60,18 @@ p {
 
 .f-left {
   float: left !important;
+}
+
+.interactive {
+  background-color: white;
+}
+
+.interactive:hover {
+  background-color: $primary;
+  color: white !important;
+  opacity: 80%;
+}
+
+.t-percent {
+  color: $green;
 }
