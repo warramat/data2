@@ -47,8 +47,12 @@ const RadarC = ({ liveInChiangmai }) => {
         <b>คนในพื้นที่เชียงใหม่</b>
       </Col>
 
-      <Col style={{ bottom: 25 }}>
-        <Doughnut data={data} options={options} plugins={[showTextInside]} />
+      <Col style={{ bottom: 25 }}>  
+       
+     
+         < Doughnut data={data} options={options} plugins={[showTextInside]} />
+     
+       
       </Col>
     </div>
   );
