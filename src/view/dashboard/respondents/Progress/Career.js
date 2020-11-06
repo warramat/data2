@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "antd";
 import { Progress } from "antd";
-
+import { float1Point } from "../../../../tools/util";
 const Job = ({ carrier }) => {
   console.log("data", carrier);
   const dataSource = [
@@ -42,7 +42,7 @@ const Job = ({ carrier }) => {
               <div className="text-title">{item.job}</div>
             </Col>
             <Col className="col-job2">
-              <b className="text-percent">{item.percent}%</b>
+              <b className="text-percent">{float1Point(item.percent)}%</b>
             </Col>
             <Progress
               percent={item.percent}

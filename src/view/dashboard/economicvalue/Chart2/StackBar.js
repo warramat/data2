@@ -1,6 +1,7 @@
 import React from "react";
 import { Bar } from "@reactchartjs/react-chart.js";
 import { Col } from "antd";
+import { ChangeToK } from "../../../../tools/util";
 const StackedBar = ({ economicStackedBar, title }) => {
   const data = {
     labels: [title],
@@ -42,7 +43,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
             // beginAtZero: true,
 
             callback: function (value, index, values) {
-              return value;
+              return ChangeToK(value);
             },
             // min: 0,
             // max: 60000000,

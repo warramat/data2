@@ -1,6 +1,7 @@
 import React from "react";
 import { Bar } from "@reactchartjs/react-chart.js";
 import { Col } from "antd";
+import { ChangeToK } from "../../../../tools/util";
 
 const Gender = ({ gender }) => {
   const data = {
@@ -33,12 +34,12 @@ const Gender = ({ gender }) => {
         {
           ticks: {
             beginAtZero: true,
-            min: 0,
-            max: 15,
-            stepSize: 5,
+            // min: 0,
+            // max: 15,
+            // stepSize: 5,
 
             callback: function (value, index, values) {
-              return value + "K";
+              return ChangeToK(value);
             },
           },
         },
