@@ -1,18 +1,24 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Col} from "antd";
-
+import {float1Point} from '../../../../tools/util'
 
 
 const BarSatisfaction = ({ satisfaction }) => {
-     
+  let change2Point = []  
+
+ if(satisfaction.data){
+  change2Point = satisfaction.data.map((item)=>{
+    return float1Point(item)
+  })
+ } 
  
   const data = {
     labels: satisfaction.label,
     datasets: [
       {
         barThickness: 75,
-        data: satisfaction.data,
+        data: change2Point,
         backgroundColor: "#13eecc",
       },
     ],
@@ -23,10 +29,6 @@ const BarSatisfaction = ({ satisfaction }) => {
           top: 150,
           right: 30,
       }
-    },
-    labels:{
-      textAlign: 'center',
-
     },
     legend: {
       display: false,

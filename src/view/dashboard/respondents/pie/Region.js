@@ -1,6 +1,7 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { Row, Col, Card } from "antd";
+import { Row, Col,} from "antd";
+import {ChangeToK} from '../../../../tools/util'
 
 const Region = ({ liveRegion }) => {
   let sumDataLiveRegion = [];
@@ -72,7 +73,7 @@ const Region = ({ liveRegion }) => {
           ไทย
         </b>
         <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
-          {sumDataLiveRegion} คน
+          {ChangeToK(sumDataLiveRegion)} คน
         </span>
       </Row>
       <Row style={{ height: "155px" }}>

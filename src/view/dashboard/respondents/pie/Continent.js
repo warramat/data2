@@ -1,6 +1,7 @@
 import React from "react"
 import { Pie } from "react-chartjs-2"
-import { Row, Col, Card } from "antd"
+import { Row, Col,} from "antd"
+import {ChangeToK} from '../../../../tools/util'
 
 const Continent = ({ liveCountinent }) => {
  let sumDataLiveCountinent= []
@@ -73,7 +74,7 @@ const Continent = ({ liveCountinent }) => {
           ต่างชาติ
         </b>
         <span className="ca-select" style={{textAlign:"center",paddingTop:"8px"}}>
-          {sumDataLiveCountinent} คน
+          {ChangeToK(sumDataLiveCountinent)} คน
         </span>
        
       </Row>
