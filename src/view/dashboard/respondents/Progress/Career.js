@@ -6,35 +6,34 @@ const Job = ({ carrier }) => {
   console.log("data", carrier);
   const dataSource = [
     {
-      job: "รัฐบาล/รัฐวิสาหกิจ",
-      percent: carrier.government,
+      job: "อินทนนท์ 10 km",
+      percent: carrier.inthanon10,
       color: "#13EECC",
     },
     {
-      job: "เจ้าของธุรกิจ/ธุรกิจส่วนตัว",
-      percent: carrier.businessOwners,
+      job: "อินทนนท์ 1 (25 km)",
+      percent: carrier.inthanon25,
       color: "#3B88FD",
     },
     {
-      job: "นักเรียน/นักศึกษา",
-      percent: carrier.student,
+      job: "อินทนนท์ 4 (80 km)",
+      percent: carrier.inthanon80,
       color: "rgba(11, 80, 150, 1)",
     },
     {
-      job: "พนักงานบริษัท",
-      percent: carrier.companyEmployee,
+      job: "อินทนนท์ 5 (120 km)",
+      percent: carrier.inthanon120,
       color: "#F205CB",
     },
     {
-      job: "นักกีฬาอาชีพ",
-      percent: carrier.professionalAthlete,
+      job: "อินทนนท์ 6 (175 km)",
+      percent: carrier.inthanon175,
       color: "#F2E635",
     },
-    { job: "อื่นๆ ระบุ", percent: carrier.others, color: "#3B88FD" },
   ];
   return (
     <>
-      <b className="text-toppic">อาชีพ</b>
+      <b className="text-toppic">การแข่งขัน</b>
       {dataSource.map((item, index) => {
         return (
           <Row style={{ marginBottom: 12 }} key={index}>
