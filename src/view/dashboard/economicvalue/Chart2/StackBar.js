@@ -3,6 +3,13 @@ import { Bar } from "@reactchartjs/react-chart.js";
 import { Col, Row } from "antd";
 import { ChangeToK } from "../../../../tools/util";
 const StackedBar = ({ economicStackedBar, title }) => {
+  let totalCost = "";
+  if (economicStackedBar) {
+    totalCost =
+      economicStackedBar.costsBefore +
+      economicStackedBar.costsDuring +
+      economicStackedBar.costsAfter;
+  }
   const data = {
     labels: [title],
     datasets: [
@@ -62,7 +69,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
   return (
     <Col>
       <b className="text-toppic">{title}</b>
-      <Row>
+      <Row style={{ paddingTop: 14 }}>
         <Col>
           <div
             style={{
@@ -114,10 +121,10 @@ const StackedBar = ({ economicStackedBar, title }) => {
         }}
       >
         <Col className="center">
-          <Row>
-            <h2>฿423,245K</h2>
+          <Row style={{ paddingTop: 20 }}>
+            <b className="f-21">฿{ChangeToK(totalCost)}</b>
           </Row>
-          <Row>มูลค่าทั้งหมด</Row>
+          <Row className="text-title">มูลค่าทั้งหมด</Row>
         </Col>
       </Row>
       <div
@@ -131,7 +138,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
         จำนวนเงิน
       </div>
       <div>
-        <Col style={{ marginLeft: "-25px" }}>
+        <Col style={{ marginLeft: "-25px", paddingLeft: 10 }}>
           <Bar data={data} options={options} />
         </Col>
 
