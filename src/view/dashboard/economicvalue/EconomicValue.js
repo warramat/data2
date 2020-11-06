@@ -5,6 +5,8 @@ import StackedBar from "./Chart2/StackBar";
 import Spending from "./Spending";
 import { GET_ECONOMICVALUE, GET_ECONOMIC_TYPE } from "../../../service/api"
 import ValueEco from "./value/ValueEco";
+import { float1Point } from "../../../tools/util"
+import { ChangeToK } from "../../../tools/util"
 
 
 
@@ -83,7 +85,12 @@ const EconomicValue = ({ setLoading }) => {
             return (
               <Col lg={4} key={index}>
                 <Card onClick={() => handleModal(item)} className="interactive">
-                  <ValueEco toppic={item.choiceTh} num={item.count} persen={item.percent} imageIndex={index} />
+                  <ValueEco 
+                        toppic={item.choiceTh} 
+                        num={ChangeToK(item.count)} 
+                        persen={float1Point(item.percent)} 
+                        imageIndex={index} 
+                  />
                 </Card>
               </Col>
             )

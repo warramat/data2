@@ -5,6 +5,7 @@ import Residence from "./bar/Residence";
 import Total from "./question/Total";
 import { GET_RESPONDENT } from "../../../service/api";
 import { float1Point } from "../../../tools/util"
+import { ChangeToK } from "../../../tools/util"
 import RadarC from "./Donut/RadarC";
 
 import Region from "./pie/Region";
@@ -59,7 +60,7 @@ const Respondents = ({ setLoading }) => {
                                 <Total
                                     key={index}
                                     toppic={item.choiceTh}
-                                    num={item.count}
+                                    num={ChangeToK(item.count)}
                                     persen={float1Point(item.percent)}
                                     imageIndex={index}
                                 />
