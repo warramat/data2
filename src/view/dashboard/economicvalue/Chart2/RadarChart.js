@@ -33,8 +33,8 @@ const RadarChart = ({economicLabels ,  economicData}) => {
     <Row style={{ width: "480px", height: "300px" }}>
       <Col >
         <div >
-          <b style={{ font: "normal normal bold 20px/35px Sukhumvit Set", color: "#292766", marginLeft: 5 }}>ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
-        <b style={{ font: "normal normal bold 15px/25px Sukhumvit Set", color: "#292766", marginLeft: 5 }}>ตามประเภทผู้ประเมิน</b>
+          <b className="text-toppic">ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
+        <b className="text-title">ตามประเภทผู้ประเมิน</b>
 
         <div style={{ left: 20 }}><Radar data={data} options={options} /></div>
 
