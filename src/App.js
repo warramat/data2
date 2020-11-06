@@ -3,7 +3,6 @@ import {
   HashRouter, Route, Switch
 } from 'react-router-dom'
 import { routes } from '../src/routes'
-// import 'antd/dist/antd.css';
 import "../src/assets/scss/style.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
