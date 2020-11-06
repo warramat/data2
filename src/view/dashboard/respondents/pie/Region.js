@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { CChart } from "@coreui/react-chartjs";
 import { Row, Col, Card } from "antd";
 
 const Region = ({ liveRegion }) => {
@@ -11,7 +11,7 @@ const Region = ({ liveRegion }) => {
     }, 0);
   }
 
-  const data = {
+  const Pie = {
     labels: liveRegion.label,
     datasets: [
       {
@@ -169,8 +169,8 @@ const Region = ({ liveRegion }) => {
           <span className="fo">ตะวันตก</span>
         </Col>
 
-        <Col style={{ top: "-150px", left: "40%" }}>
-          <Pie data={data} options={options} />
+        <Col style={{ top: "-130px", left: "40%" }}>
+          <CChart type="pie" datasets={Pie.datasets} labels={Pie.labels} />
         </Col>
       </Row>
     </Row>
