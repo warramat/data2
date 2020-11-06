@@ -157,9 +157,8 @@ const Region = ({ liveRegion }) => {
           <span className="fo">ตะวันตก</span>
         </Col>
 
-        <Col style={{ top: "-150px", left: "35%" }}>
+        {/* <Col style={{ top: "-150px", left: "35%" }}> */}
           <Pie data={data} options={options} />
-        </Col>
       </Row>
     </Row>
   );
