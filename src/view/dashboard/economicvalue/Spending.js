@@ -1,6 +1,7 @@
-import { Card, Row, Col } from "antd";
+import { Row, Col } from "antd";
 import React from "react";
 import { float1Point } from "../../../tools/util";
+import { ChangeToK } from "../../../tools/util";
 function Spending({ economicEffect }) {
   const infoSource = [
     {
@@ -59,7 +60,7 @@ function Spending({ economicEffect }) {
                       padding: 20,
                     }}
                   >
-                    {float1Point(item.amount)}
+                    {ChangeToK(float1Point(item.amount))}
                     บาท
                   </b>
                 </Row>
