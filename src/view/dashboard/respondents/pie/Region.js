@@ -1,5 +1,5 @@
 import React from "react";
-import { CChart } from "@coreui/react-chartjs";
+import { Pie } from "react-chartjs-2";
 import { Row, Col, Card } from "antd";
 
 const Region = ({ liveRegion }) => {
@@ -7,11 +7,11 @@ const Region = ({ liveRegion }) => {
 
   if (liveRegion.data) {
     sumDataLiveRegion = liveRegion.data.reduce((sum, Data) => {
-      return sum + Data
+      return sum + Data;
     }, 0);
   }
 
-  const Pie = {
+  const data = {
     labels: liveRegion.label,
     datasets: [
       {
@@ -47,6 +47,14 @@ const Region = ({ liveRegion }) => {
     ],
   };
   const options = {
+    layout: {
+      padding: {
+        left: 10,
+        right: 10,
+        top: 10,
+        bottom: 10,
+      },
+    },
     legend: {
       display: false,
     },
@@ -55,30 +63,17 @@ const Region = ({ liveRegion }) => {
   return (
     <Row style={{ fontFamily: "Sukhumvit Set" }}>
       <Row>
-        <div
+        <b
+          className="text-toppic"
           style={{
             letterSpacing: "0.68px",
-            fontSize: "22px",
-            color: "#171717",
           }}
         >
           ไทย
-        </div>
-        <Card
-          style={{
-            fontSize: "19px",
-            color: "#292766",
-            width: "120px",
-            height: "46px",
-            left: "20px",
-            borderRadius: "5px",
-            backgroundColor: "#f6f8fe",
-          }}
-        >
-          <div style={{ marginTop: "-18px", textAlign: "center" }}>
-            {sumDataLiveRegion} คน
-          </div>
-        </Card>
+        </b>
+        <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
+          {sumDataLiveRegion} คน
+        </span>
       </Row>
       <Row style={{ height: "155px" }}>
         <Col style={{ paddingTop: "40px" }}>
@@ -90,7 +85,7 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#13EECC",
               border: "#13EECC",
-              marginBottom: "-23px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">เหนือ</span>
@@ -102,8 +97,8 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#0a5bb4",
               border: "#0a5bb4",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "20px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">อีสาน</span>
@@ -115,8 +110,8 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#f2e635",
               border: "#f2e635",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "20px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">ตะวันออก</span>
@@ -129,7 +124,7 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#3b88fd",
               border: "#3b88fd",
-              marginBottom: "-23px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">กลาง</span>
@@ -141,8 +136,8 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#6204bf",
               border: "#6204bf",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "20px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">ใต้</span>
@@ -154,15 +149,15 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#f205cb",
               border: "#f205cb",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "20px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">ตะวันตก</span>
         </Col>
 
-        <Col style={{ top: "-130px", left: "40%" }}>
-          <CChart type="pie" datasets={Pie.datasets} labels={Pie.labels} />
+        <Col style={{ top: "-150px", left: "35%" }}>
+          <Pie data={data} options={options} />
         </Col>
       </Row>
     </Row>

@@ -1,11 +1,9 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Col } from "antd";
+import {ChangeToK} from '../../../../tools/util'
 
-const Residence = ({ residence }) => {
-  console.log("read", residence);
-  
-
+const Residence = ({ residence, }) => {
   const data = {
     labels: ["บ้านตนเอง","โรงแรม","รีสอร์ท","อุทยาน","อื่นๆ"],
     datasets: [
@@ -25,11 +23,11 @@ const Residence = ({ residence }) => {
         {
           ticks: {
             callback: function (value, index, values) {
-              return (value/1000) + "K";
+              return ChangeToK(value);
             },
-            min: 0,
-            max: 10000,
-            stepSize: 2000,
+            // min: 0,
+            // max: 10000,
+            // stepSize: 2000,
           },
         },
       ],
@@ -38,7 +36,7 @@ const Residence = ({ residence }) => {
 
   return (
     <Col>
-      <h1 style={{ fontSize: "25px", color: "#171717",marginLeft:"-10px" }}>ที่พักอาศัย</h1>
+      <b className="text-toppic">ที่พักอาศัย</b>
       <h6
         style={{
           fontSize: "16px",
@@ -50,12 +48,10 @@ const Residence = ({ residence }) => {
         คน
       </h6>
       <div >
-        <Col style={{marginLeft:"-25px"}}>
-        <Bar data={data} options={option} />
-        </Col>
-          
-
-        <Col>
+        <Col >
+          <div className="pad">
+            <Bar data={data} options={option} />
+          </div>
           <div
             style={{
               fontSize: "16px",
@@ -63,9 +59,9 @@ const Residence = ({ residence }) => {
               opacity: "50%",
               transform: "rotate(-90deg)",
               transformOrigin: "2% 90%",
-              marginLeft: "100%",
+              marginLeft: "105%",
               width: "50px",
-              marginTop: "-70px",
+              marginTop: "-107px",
             }}
           >
             สถานที่

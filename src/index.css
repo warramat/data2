@@ -36,12 +36,28 @@ code {
   padding-left: 20px;
   font-family: "Sukhumvit Set";
 }
-.cad {
+.card-cad {
   font-size: 19px;
   color: #292766;
-  font-family: "Sukhumvit Set";
-  /* text-align: center; */
+  width: 120px;
+  height: 46px;
+  left: 20px;
+  border-radius: 5px;
+  background-color: #f6f8fe;
+  
 }
+.ca-select {
+  width: 120px;
+  height: 46px;
+  left: 20px;
+  border-radius: 7px;
+  background-color: #f6f8fe;
+  font-size: 19px;
+  color: #292766;
+  margin-left: 10px;
+  margin-top: -4px;
+}
+
 
 .font {
   font-family: "Sukhumvit Set";
@@ -61,4 +77,9 @@ position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.pad{
+  margin-left: -25px;
+  padding: 55px 2px 55px 2px;
 }
