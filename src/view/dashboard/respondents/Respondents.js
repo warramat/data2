@@ -61,7 +61,7 @@ const Respondents = ({ setLoading }) => {
             <Row justify={"center"} gutter={[15, 15]}>
                 {quesionNairGroup.map((item, index) => {
                     return (
-                        <Col lg={4} key={index}>
+                        <Col lg={4} sm={12} key={index}>
                             <Card onClick={() => handleClickCard(item)}
                                 className={item.evaluatortype === filterItem
                                     ? `card-active` : `interactive`}>
