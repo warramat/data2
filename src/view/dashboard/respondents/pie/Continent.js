@@ -1,6 +1,7 @@
 import React from "react"
 import { Pie } from "react-chartjs-2"
-import { Row, Col, Card } from "antd"
+import { Row, Col,} from "antd"
+import {ChangeToK} from '../../../../tools/util'
 
 const Continent = ({ liveCountinent }) => {
  let sumDataLiveCountinent= []
@@ -21,9 +22,9 @@ const Continent = ({ liveCountinent }) => {
         backgroundColor: [
           "#13EECC",
           "#3B88FD",
+          "#F2E635",
           "#0A5BB4",
           "#6204BF",
-          "#F2E635",
           "#F205CB",
         ],
         borderWidth: 1,
@@ -31,17 +32,17 @@ const Continent = ({ liveCountinent }) => {
         hoverBorderColor: [
           "#13EECC",
           "#3B88FD",
+          "#F2E635",
           "#0A5BB4",
           "#6204BF",
-          "#F2E635",
           "#F205CB",
         ],
         hoverBackgroundColor: [
           "#13EECC",
           "#3B88FD",
+          "#F2E635",
           "#0A5BB4",
           "#6204BF",
-          "#F2E635",
           "#F205CB",
         ],
       },
@@ -64,30 +65,18 @@ const Continent = ({ liveCountinent }) => {
   return (
     <Row style={{fontFamily: "Sukhumvit Set",minHeight:"200px"}}>
       <Row>
-        <div
+        <b
+          className="text-toppic"
           style={{
             letterSpacing: "0.68px",
-            fontSize: "22px",
-            color: "#171717",
           }}
         >
           ต่างชาติ
-        </div>
-        <Card
-          style={{
-            fontSize: "19px",
-            color: "#292766",
-            width: "120px",
-            height: "46px",
-            left: "20px",
-            borderRadius: "5px",
-            backgroundColor: "#f6f8fe",
-          }}
-        >
-          <div style={{ marginTop: "-18px", textAlign: "center" }}>
-            {sumDataLiveCountinent} คน
-          </div>
-        </Card>
+        </b>
+        <span className="ca-select" style={{textAlign:"center",paddingTop:"8px"}}>
+          {ChangeToK(sumDataLiveCountinent)} คน
+        </span>
+       
       </Row>
       <Row style={{height:"155px"}}>
         <Col style={{ paddingTop: "40px" }}>
@@ -99,7 +88,7 @@ const Continent = ({ liveCountinent }) => {
               borderRadius: 10,
               backgroundColor: "#13EECC",
               border: "#13EECC",
-              marginBottom: "-23px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">เอเชีย</span>
@@ -111,11 +100,11 @@ const Continent = ({ liveCountinent }) => {
               borderRadius: 10,
               backgroundColor: "#0a5bb4",
               border: "#0a5bb4",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "25px",
+              marginBottom: "-19px",
             }}
           ></div>
-          <span className="fo">อเมริกาเหนือ</span>
+          <span className="fo">ออสเตรเลีย</span>
 
           <div
             style={{
@@ -124,11 +113,11 @@ const Continent = ({ liveCountinent }) => {
               borderRadius: 10,
               backgroundColor: "#f2e635",
               border: "#f2e635",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "25px",
+              marginBottom: "-19px",
             }}
           ></div>
-          <span className="fo">แอฟริกา</span>
+          <span className="fo">อเมริกาเหนือ</span>
         </Col>
         <Col style={{ paddingLeft: "20px", paddingTop: "40px" }}>
           <div
@@ -138,7 +127,7 @@ const Continent = ({ liveCountinent }) => {
               borderRadius: 10,
               backgroundColor: "#3b88fd",
               border: "#3b88fd",
-              marginBottom: "-23px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">ยุโรป</span>
@@ -150,11 +139,11 @@ const Continent = ({ liveCountinent }) => {
               borderRadius: 10,
               backgroundColor: "#6204bf",
               border: "#6204bf",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "25px",
+              marginBottom: "-19px",
             }}
           ></div>
-          <span className="fo">ออสเตรเลีย</span>
+          <span className="fo">แอฟริกา</span>
 
           <div
             style={{
@@ -163,14 +152,14 @@ const Continent = ({ liveCountinent }) => {
               borderRadius: 10,
               backgroundColor: "#f205cb",
               border: "#f205cb",
-              marginTop: "10px",
-              marginBottom: "-23px",
+              marginTop: "25px",
+              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">อเมริกาใต้</span>
         </Col>
 
-        <Col style={{top: "-160px", left: "40%" }}>
+        <Col style={{top: "-150px", left: "40%" }}>
           <Pie data={data} options={options} />
         </Col>
       </Row>

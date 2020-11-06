@@ -1362,6 +1362,29 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@coreui/chartjs@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@coreui/chartjs/-/chartjs-2.0.0.tgz#0711b1bce0dc6261d376971cebc62e268ceb418d"
+  integrity sha512-degpSo1MqSWomkNwuXk2VQijEENqkaufEGI/i6/3ClVQNZQIWB5NG6QWA/aCTXt9Y/3tVfnuTzDC4YHw7E+Brg==
+  dependencies:
+    "@coreui/coreui" "^3.0.0-beta.1"
+    chart.js "^2.8.0"
+
+"@coreui/coreui@^3.0.0-beta.1":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@coreui/coreui/-/coreui-3.3.0.tgz#09e6176025cf2c430130218f915a2e448d21c5c6"
+  integrity sha512-eaLk+u64v1LzgrROrma26fBJK4wU6sW+Nj0DAJNj+7EsSFA2ge5dW2Fmo5knxBipnYZTUnhG/pDA2w1o/BLaaA==
+
+"@coreui/react-chartjs@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@coreui/react-chartjs/-/react-chartjs-1.0.1.tgz#149f5652b4369625147041332b633e189dac955c"
+  integrity sha512-QQNDgDviUBk1QFJM+x+ZVrw+Nw1WaOOms1qw1am/r2G5d1RfoHr4YeKxHCYuv9nt1zq/l0UtpUV5Xg9BjJo6UQ==
+  dependencies:
+    "@coreui/chartjs" "^2.0.0"
+    chart.js "^2.9.3"
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -3674,7 +3697,7 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chart.js@^2.9.4:
+chart.js@^2.8.0, chart.js@^2.9.3, chart.js@^2.9.4:
   version "2.9.4"
   resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.9.4.tgz#0827f9563faffb2dc5c06562f8eb10337d5b9684"
   integrity sha512-B07aAzxcrikjAPyV+01j7BmOpxtQETxTSlQ26BEYJ+3iUkbNKaOJ/nDbT6JjyqYxseM0ON12COHYdU2cTIjC7A==

@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@coreui/react-chartjs": "^1.0.1",
-    "@coreui/vue-chartjs": "^1.0.6",
     "@reactchartjs/react-chart.js": "^1.0.0-rc.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
