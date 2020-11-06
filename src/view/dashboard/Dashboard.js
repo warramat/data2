@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false)
 
   return (
-    <div className="BG-forms font-kanit spinner">
+    <div className="BG-forms font-Sukhumvit spinner">
       {/* <Space size="middle"> */}
 
 
@@ -26,7 +26,7 @@ const Dashboard = () => {
             <span className="hr-horizon"></span><img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
           </div>
         </Col>
-        <Col lg={10} className="d-flex justify-content-center">
+        <Col lg={10} xs={24}  className="d-flex justify-content-center">
           <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} >
             <Radio.Button value="respon">ผู้ตอบแบบสอบถาม</Radio.Button>
             <Radio.Button value="economic">มูลค่าทางเศรษฐกิจ</Radio.Button>

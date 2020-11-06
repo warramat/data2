@@ -28,6 +28,7 @@ const RadarC = ({ liveInChiangmai }) => {
     elements: {
       center: {
         text: liveInChiangmai.all +  " ทั้งหมด",
+        fontStyle: "Sukhumvit Set"
       },
     },
 

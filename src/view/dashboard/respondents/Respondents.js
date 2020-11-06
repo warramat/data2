@@ -61,7 +61,7 @@ const Respondents = ({ setLoading }) => {
             <Row justify={"center"} gutter={[15, 15]}>
                 {quesionNairGroup.map((item, index) => {
                     return (
-                        <Col lg={4} sm={12} key={index}>
+                        <Col lg={4}  md={8} sm={12} xs={24}  key={index}>
                             <Card onClick={() => handleClickCard(item)}
                                 className={item.evaluatortype === filterItem
                                     ? `card-active` : `interactive`}>
@@ -78,34 +78,34 @@ const Respondents = ({ setLoading }) => {
                 })}
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
-                <Col lg={8}>
+                <Col lg={8} md={12} sm={12} xs={24}>
                     <Card style={{ minHeight: "33em" }} >
                         <Gender gender={gender} />
                     </Card>
                 </Col>
-                <Col lg={8}>
+                <Col lg={8} md={12} sm={12} xs={24}>
                     <Card style={{ minHeight: "33em" }}>
                         <Residence residence={residence} />
                     </Card>
                 </Col>
-                <Col lg={8}>
+                <Col lg={8} md={24} sm={24} xs={24}>
                     <Card style={{ minHeight: "33em" }}>
                         <Job carrier={carrier} />
                     </Card>
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
-                <Col lg={8}>
+                <Col lg={8} md={12} sm={12} xs={24}>
                     <Card>
                         <RadarC liveInChiangmai={liveInChiangmai} />
                     </Card>
                 </Col>
-                <Col lg={8}>
+                <Col lg={8} md={12} sm={12} xs={24}>
                     <Card>
                         <Region liveRegion={liveRegion} />
                     </Card>
                 </Col>
-                <Col lg={8}>
+                <Col lg={8} md={24} sm={24} xs={24}>
                     <Card>
                         <Continent liveCountinent={liveCountinent} />
                     </Card>

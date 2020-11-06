@@ -18,15 +18,15 @@ const RadarChart = ({economicLabels ,  economicData}) => {
   }
 
   const options = {
-    // layout: {
-    //   padding: {
-    //     left: 10,
-    //     right: 10,
-    //     top: 10,
-    //     bottom: 10,
-    //   },
-    // },
-    
+
+    elements: {
+      center: {
+        fontStyle: "Sukhumvit Set" ,
+        maxFontSize: 40,
+        
+      },
+    },
+   
     legend: {
       display: false,
     },
@@ -38,7 +38,7 @@ const RadarChart = ({economicLabels ,  economicData}) => {
 
   }
   return (
-    <Row style={{ fontFamily: "Sukhumvit Set" }}>
+    <Row style={{ fontFamily: "Sukhumvit Set" , fontSize: 20}}>
       <Col>
       <Row >
         <Col>
@@ -48,7 +48,7 @@ const RadarChart = ({economicLabels ,  economicData}) => {
       </Row>
       </Col>
       <Col >
-        <Radar data={data} options={options} width={385} height={385}/>
+        <Radar data={data} options={options} width={385} height={385} />
       </Col>
       
       
