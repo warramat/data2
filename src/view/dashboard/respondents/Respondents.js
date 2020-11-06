@@ -21,15 +21,16 @@ const Respondents = ({ setLoading }) => {
     const [liveRegion, setLiveRegion] = useState({});
     const [carrier, setCarrier] = useState({});
     const [gender, setGender] = useState({});
+    const [filterItem, setFilterItem] = useState("all")
 
     useEffect(() => {
         GetRespondent();
     }, []);
 
-    const GetRespondent = async () => {
+    const GetRespondent = async (params = "all") => {
         setLoading(true)
         try {
-            const qrs = { evaluatortype: "all" };
+            const qrs = { evaluatortype: params };
             const res = await GET_RESPONDENT(qrs);
             if (res.code === 200) {
                 console.log("resssssss", res);
@@ -50,13 +51,20 @@ const Respondents = ({ setLoading }) => {
         setLoading(false)
     };
 
+    const handleClickCard = (item) => {
+        setFilterItem(item.evaluatortype)
+        GetRespondent(item.evaluatortype)
+    }
+
     return (
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
                 {quesionNairGroup.map((item, index) => {
                     return (
                         <Col lg={4} key={index}>
-                            <Card>
+                            <Card onClick={() => handleClickCard(item)}
+                                className={item.evaluatortype === filterItem
+                                    ? `card-active` : `interactive`}>
                                 <Total
                                     key={index}
                                     toppic={item.choiceTh}
@@ -103,7 +111,7 @@ const Respondents = ({ setLoading }) => {
                     </Card>
                 </Col>
             </Row>
-        </div>
+        </div >
     );
 };
 

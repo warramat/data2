@@ -67,11 +67,15 @@ p {
 }
 
 .interactive:hover {
-  background-color: $primary;
+  background-color: #eff5ff;
+  color: black !important;
+}
+
+.card-active {
+  background-color: #3b88fd;
   color: white !important;
   opacity: 80%;
 }
-
 .t-percent {
   color: $green;
 }
