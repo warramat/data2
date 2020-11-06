@@ -14,16 +14,18 @@ const Satisfaction = ({ setLoading }) => {
 
     const [athlete, setAthlete] = useState({});
     const [satisfaction, setSatisfaction] = useState({})
+    const [filterItem, setFilterItem] = useState("all")
+
 
     useEffect(() => {
         GetSatisfaction()
     }, [])
 
-    const GetSatisfaction = async () => {
+    const GetSatisfaction = async (typeValue = "all") => {
         setLoading(true)
         try {
 
-            const qrs = { type: "all" }
+            const qrs = { type: typeValue }
             const res = await GET_SATISFACTION(qrs)
             if (res.code === 200) {
 
@@ -42,6 +44,12 @@ const Satisfaction = ({ setLoading }) => {
 
     }
 
+    const handleClickCard = (evaluatortype) => {
+        setFilterItem(evaluatortype)
+        GetSatisfaction(evaluatortype)
+
+    }
+
 
 
 
@@ -50,17 +58,23 @@ const Satisfaction = ({ setLoading }) => {
             <Row justify={"center"} gutter={[15, 15]}>
 
                 <Col lg={8}>
-                    <Card>
+                    <Card onClick={() => handleClickCard("all")}
+                        className={"all" === filterItem
+                            ? `card-active` : `interactive`}>
                         <Amount toppic="จำนวนผู้ตอบแบบสอบถาม" num={athlete.total} image={Artboard11}></Amount>
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>
+                    <Card onClick={() => handleClickCard("athlete")}
+                        className={"athlete" === filterItem
+                            ? `interactive card-active` : `interactive`}>
                         <Amount toppic="นักกีฬา" num={athlete.athlete} image={Artboard12}></Amount>
                     </Card>
                 </Col>
                 <Col lg={8}>
-                    <Card>
+                    <Card onClick={() => handleClickCard("notAthlete")}
+                        className={"notAthlete" === filterItem
+                            ? `interactive card-active` : `interactive`}>
                         <Amount toppic="ไม่ใช่นักกีฬา" num={athlete.notAthlete} image={Artboard3}></Amount>
                     </Card>
                 </Col>
