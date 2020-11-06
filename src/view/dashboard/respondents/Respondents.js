@@ -33,7 +33,7 @@ const Respondents = ({ setLoading }) => {
             const qrs = { evaluatortype: params };
             const res = await GET_RESPONDENT(qrs);
             if (res.code === 200) {
-                console.log("resssssss", res);
+                
                 setCarrier(res.result[0].career);
                 setLiveInChiangmai(res.result[0].live.liveInChiangMai);
                 setLiveContinent(res.result[0].live.continent);
