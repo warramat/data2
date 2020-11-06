@@ -1,6 +1,6 @@
 import React from "react";
 import { Bar } from "@reactchartjs/react-chart.js";
-import { Col } from "antd";
+import { Col, Row } from "antd";
 import { ChangeToK } from "../../../../tools/util";
 const StackedBar = ({ economicStackedBar, title }) => {
   const data = {
@@ -62,6 +62,64 @@ const StackedBar = ({ economicStackedBar, title }) => {
   return (
     <Col>
       <b className="text-toppic">{title}</b>
+      <Row>
+        <Col>
+          <div
+            style={{
+              letterSpacing: "0.68px",
+              width: 13,
+              height: 13,
+              borderRadius: 10,
+              backgroundColor: "rgba(242, 230, 53, 1)",
+              border: "#13EECC",
+              marginBottom: "-20px",
+            }}
+          ></div>
+          <span className="fo2">ก่อนการแข่งขัน</span>
+        </Col>
+        <Col>
+          <div
+            style={{
+              letterSpacing: "0.68px",
+              width: 13,
+              height: 13,
+              borderRadius: 10,
+              backgroundColor: "rgba(59, 136, 253, 1)",
+              border: "#13EECC",
+              marginBottom: "-20px",
+            }}
+          ></div>
+          <span className="fo2">ระหว่างการแข่งขัน</span>
+        </Col>
+        <Col>
+          <div
+            style={{
+              letterSpacing: "0.68px",
+              width: 13,
+              height: 13,
+              borderRadius: 10,
+              backgroundColor: "rgba(19, 238, 204, 1)",
+              border: "#13EECC",
+              marginBottom: "-20px",
+            }}
+          ></div>
+          <span className="fo2">หลังการแข่งขัน</span>
+        </Col>
+      </Row>
+      <Row
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Col className="center">
+          <Row>
+            <h2>฿423,245K</h2>
+          </Row>
+          <Row>มูลค่าทั้งหมด</Row>
+        </Col>
+      </Row>
       <div
         style={{
           fontSize: 16,
