@@ -1,18 +1,18 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Col} from "antd";
-import {float1Point} from '../../../../tools/util'
+import { Col } from "antd";
+import { float1Point } from '../../../../tools/util'
 
 
 const BarSatisfaction = ({ satisfaction }) => {
-  let change2Point = []  
+  let change2Point = []
 
- if(satisfaction.data){
-  change2Point = satisfaction.data.map((item)=>{
-    return float1Point(item)
-  })
- } 
- 
+  if (satisfaction.data) {
+    change2Point = satisfaction.data.map((item) => {
+      return float1Point(item)
+    })
+  }
+
   const data = {
     labels: satisfaction.label,
     datasets: [
@@ -54,24 +54,24 @@ const BarSatisfaction = ({ satisfaction }) => {
       <h6 style={{
         fontSize: "16px",
         color: "#292766",
-        paddingLeft:"20px",
-        marginBottom:"-150px",
+        paddingLeft: "20px",
+        marginBottom: "-150px",
         opacity: 0.5,
-     }}>ระดับ</h6>
+      }}>ระดับ</h6>
       <div >
-          <Bar data={data} options={option}  width={500} height={150} />
-          <Col>
-               <div style={{
-                    fontSize: "16px",
-                    color: "#292766",
-                    opacity: "50%",
-                    transform: "rotate(-90deg)",
-                    transformOrigin: "2% 90%",
-                    marginLeft: "100%",
-                    width: "300px",
-                    marginTop:"-70px"
-               }}>ความพึงพอใจ</div>
-          </Col>
+        <Bar data={data} options={option} width={500} height={200} />
+        <Col>
+          <div style={{
+            fontSize: "16px",
+            color: "#292766",
+            opacity: "50%",
+            transform: "rotate(-90deg)",
+            transformOrigin: "2% 90%",
+            marginLeft: "100%",
+            width: "300px",
+            marginTop: "-70px"
+          }}>ความพึงพอใจ</div>
+        </Col>
       </div>
     </Col>
   );
