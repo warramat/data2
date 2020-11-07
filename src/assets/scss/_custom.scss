@@ -69,12 +69,12 @@ p {
 .interactive:hover {
   background-color: #eff5ff;
   color: black !important;
+  cursor: pointer;
 }
 
 .card-active {
   background-color: #3b88fd;
   color: white !important;
-  opacity: 80%;
 }
 .t-percent {
   color: $green;
