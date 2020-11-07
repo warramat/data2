@@ -79,34 +79,34 @@ const Respondents = ({ setLoading }) => {
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
                 <Col lg={8} md={12} sm={12} xs={24}>
-                    <Card style={{ minHeight: "33em" }} >
+                    <Card style={{ height: "100%" }}>
                         <Gender gender={gender} />
                     </Card>
                 </Col>
                 <Col lg={8} md={12} sm={12} xs={24}>
-                    <Card style={{ minHeight: "33em" }}>
+                    <Card style={{ height: "100%" }}>
                         <Residence residence={residence} />
                     </Card>
                 </Col>
                 <Col lg={8} md={24} sm={24} xs={24}>
-                    <Card style={{ minHeight: "33em" }}>
+                    <Card style={{ height: "100%" }}>
                         <Job carrier={competitionType} />
                     </Card>
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
-                <Col lg={8} md={12} sm={12} xs={24}>
-                    <Card style={{ minHeight: "18em" }} >
+                <Col lg={8} md={24} sm={12} xs={24}>
+                    <Card style={{ height: "100%" }} >
                         <RadarC liveInChiangmai={liveInChiangmai} />
                     </Card>
                 </Col>
                 <Col lg={8} md={12} sm={12} xs={24}>
-                    <Card style={{ minHeight: "18em" }} >
+                    <Card style={{ height: "100%" }} >
                         <Region liveRegion={liveRegion} />
                     </Card>
                 </Col>
                 <Col lg={8} md={24} sm={24} xs={24}>
-                    <Card style={{ minHeight: "18em" }} >
+                    <Card style={{ height: "100%" }} >
                         <Continent liveCountinent={liveCountinent} />
                     </Card>
                 </Col>

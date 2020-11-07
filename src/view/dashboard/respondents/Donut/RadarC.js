@@ -3,6 +3,7 @@ import React from "react";
 import { Doughnut, } from "react-chartjs-2";
 import { showTextInside } from '../Donut/pluginDN';
 import { Row, Col } from "antd";
+import { ChangeToK } from "../../../../tools/util"
 
 const RadarC = ({ liveInChiangmai }) => {
 
@@ -26,18 +27,14 @@ const RadarC = ({ liveInChiangmai }) => {
   const options = {
     elements: {
       center: {
-        text: liveInChiangmai.all + " ทั้งหมด",
+        text: ChangeToK(liveInChiangmai.all) + " ทั้งหมด",
         fontStyle: "Sukhumvit Set"
       },
     },
 
-    layout: {
-      padding: {
-        left: 5,
-        right: 5,
-        top: 5,
-        bottom: 5,
-      },
+
+    responsive: {
+      display: false
     },
 
     legend: {
@@ -54,14 +51,11 @@ const RadarC = ({ liveInChiangmai }) => {
   return (
     <>
       <b className="text-toppic">คนในพื้นที่เชียงใหม่</b>
-      <Row style={{ fontFamily: "Sukhumvit Set" }} justify={"center"}>
-        <div className="pt-2"><Doughnut data={data} options={options} plugins={[showTextInside]} /></div>
-
-
-
-
-
-      </Row>
+      <Row style={{ fontFamily: "Sukhumvit Set", height: "288px" }} align={"middle"}>
+        <Col span={24}><div ><Doughnut data={data} options={options} plugins={[showTextInside]}
+          width={300} height={130}
+        /></div></Col>
+      </Row >
     </>
   );
 };

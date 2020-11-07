@@ -49,15 +49,15 @@ function Spending({ economicEffect }) {
                 </div>
                 <div className="text-title">ก่อให้เกิดผลกระทบทางเศรษฐกิจ</div>
               </Col>
-              <Col className="col-job2" style={{ justifyContent: "center" }}>
-                <Row className="card-impact">
+              <Col className="col-job2" style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+                <Row className="card-impact" >
                   <b
                     className="text-percent"
                     style={{
                       background: "rgba(255, 255, 255, 1)",
                       border: "1px solid rgba(235, 242, 247, 1)",
                       borderRadius: 16,
-                      padding: 20,
+                      padding: 15,
                     }}
                   >
                     {ChangeToK(float1Point(item.amount))}

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Modal } from "antd";
 import RadarChart from "./Chart2/RadarChart";
@@ -68,7 +69,7 @@ const EconomicValue = ({ setLoading }) => {
         visible={visible}
         onCancel={() => setVisible(false)}
         footer={false}
-        width={1000}
+        width={850}
       >
         <StackedBar
           economicStackedBar={economicModalValue}
@@ -93,7 +94,7 @@ const EconomicValue = ({ setLoading }) => {
       </Row>
       <Row justify={"center"} gutter={[15, 15]}>
         <Col lg={8} sm={24} md={24} xs={24}>
-          <Card>
+          <Card style={{ height: "100%" }}>
             <StackedBar
               economicStackedBar={economicImpact}
               title={"ข้อมูลทางเศรษฐกิจ"}
@@ -101,7 +102,7 @@ const EconomicValue = ({ setLoading }) => {
           </Card>
         </Col>
         <Col lg={8} sm={24} md={24} xs={24}>
-          <Card>
+          <Card style={{ height: "100%" }}>
             <RadarChart
               economicLabels={economicIncreaseLabels}
               economicData={economicIncreaseData}
@@ -109,7 +110,7 @@ const EconomicValue = ({ setLoading }) => {
           </Card>
         </Col>
         <Col lg={8} sm={24} md={24} xs={24}>
-          <Card>
+          <Card style={{ height: "100%" }}>
             <Spending economicEffect={economicEffect} />
           </Card>
         </Col>

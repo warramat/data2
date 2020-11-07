@@ -1,7 +1,7 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { Row, Col,} from "antd";
-import {ChangeToK} from '../../../../tools/util'
+import { Row, } from "antd";
+import { ChangeToK } from '../../../../tools/util'
 
 const Region = ({ liveRegion }) => {
   let sumDataLiveRegion = [];
@@ -63,7 +63,7 @@ const Region = ({ liveRegion }) => {
 
   return (
     <Row style={{ fontFamily: "Sukhumvit Set" }}>
-      <Row>
+      <Row style={{ paddingBottom: "20px" }}>
         <b
           className="text-toppic"
           style={{
@@ -76,8 +76,14 @@ const Region = ({ liveRegion }) => {
           {ChangeToK(sumDataLiveRegion)} คน
         </span>
       </Row>
-      <Row >
-        <Col style={{ paddingTop: "40px" }}>
+      <Pie data={data} options={options} width={400} height={200} />
+      <Row style={{ width: "100%" }}>
+        <div style={{
+          paddingTop: "10px", width: "100%",
+          display: "inline-flex", alignItems: "center",
+          justifyContent: "center"
+        }}>
+
           <div
             style={{
               letterSpacing: "0.68px",
@@ -86,7 +92,7 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#13EECC",
               border: "#13EECC",
-              marginBottom: "-19px",
+
             }}
           ></div>
           <span className="fo">เหนือ</span>
@@ -98,8 +104,7 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#0a5bb4",
               border: "#0a5bb4",
-              marginTop: "20px",
-              marginBottom: "-19px",
+
             }}
           ></div>
           <span className="fo">อีสาน</span>
@@ -111,13 +116,17 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#f2e635",
               border: "#f2e635",
-              marginTop: "20px",
-              marginBottom: "-19px",
+
             }}
           ></div>
           <span className="fo">ตะวันออก</span>
-        </Col>
-        <Col style={{ paddingLeft: "20px", paddingTop: "40px" }}>
+        </div>
+        <div style={{
+          width: "100%",
+          paddingTop: "10px",
+          display: "inline-flex", alignItems: "center",
+          justifyContent: "center"
+        }}>
           <div
             style={{
               width: 13,
@@ -125,7 +134,6 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#3b88fd",
               border: "#3b88fd",
-              marginBottom: "-19px",
             }}
           ></div>
           <span className="fo">กลาง</span>
@@ -137,8 +145,7 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#6204bf",
               border: "#6204bf",
-              marginTop: "20px",
-              marginBottom: "-19px",
+
             }}
           ></div>
           <span className="fo">ใต้</span>
@@ -150,17 +157,13 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#f205cb",
               border: "#f205cb",
-              marginTop: "20px",
-              marginBottom: "-19px",
+
             }}
           ></div>
+
           <span className="fo">ตะวันตก</span>
-        </Col>
-        <Col><Pie data={data} options={options} width={200}/>
-        </Col>
-        
-      </Row> 
-      
+        </div>
+      </Row>
     </Row>
   );
 };

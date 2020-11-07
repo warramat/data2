@@ -52,9 +52,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
             callback: function (value, index, values) {
               return ChangeToK(value);
             },
-            // min: 0,
-            // max: 60000000,
-            // stepSize: 20000000,
+            // stepSize: 1000000,
           },
         },
       ],
@@ -139,7 +137,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
       </div>
       <div>
         <Col style={{ marginLeft: "-25px", paddingLeft: 10 }}>
-          <Bar data={data} options={options} />
+          <Bar data={data} options={options} width={300} height={170} />
         </Col>
 
         <Col>

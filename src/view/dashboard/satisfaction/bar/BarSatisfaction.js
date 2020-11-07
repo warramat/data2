@@ -1,6 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Col } from "antd";
 import { float1Point } from '../../../../tools/util'
 
 
@@ -25,12 +24,12 @@ const BarSatisfaction = ({ satisfaction }) => {
   };
   const option = {
     layout: {
-      padding: {
-        left: 10,
-        right: 40,
-        top: 160,
+      // padding: {
+      //   left: 10,
+      //   right: 40,
+      //   top: 160,
 
-      }
+      // }
     },
     legend: {
       display: false,
@@ -49,31 +48,35 @@ const BarSatisfaction = ({ satisfaction }) => {
   };
 
   return (
-    <Col >
+    < >
       <h1 style={{ fontSize: "25px", color: "#171717", }}>แบบสอบถาม</h1>
       <h6 style={{
-        fontSize: "16px",
-        color: "#292766",
-        paddingLeft: "20px",
-        marginBottom: "-150px",
-        opacity: 0.5,
+        // fontSize: "16px",
+        // color: "#292766",
+        // paddingLeft: "20px",
+        // // marginBottom: "-150px",
+        // opacity: 0.5,
       }}>ระดับ</h6>
       <div >
-        <Bar data={data} options={option} width={500} height={200} />
-        <Col>
-          <div style={{
-            fontSize: "16px",
+        <Bar data={data} options={option} width={500} height={150} />
+
+        <div
+          className="f-satisfaction"
+          style={{
+            // fontSize: "16px",
             color: "#292766",
             opacity: "50%",
             transform: "rotate(-90deg)",
             transformOrigin: "2% 90%",
-            marginLeft: "100%",
-            width: "300px",
+            // marginLeft: "100%",
+            // width: "300px",
+            position: "absolute",
+            right: "-59px",
+            bottom: "34px",
             marginTop: "-70px"
           }}>ความพึงพอใจ</div>
-        </Col>
       </div>
-    </Col>
+    </>
   );
 };
 
