@@ -2,6 +2,7 @@ import React from "react"
 import { Pie } from "react-chartjs-2"
 import { Row, Col } from "antd"
 import { ChangeToK } from '../../../../tools/util'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const Continent = ({ liveCountinent }) => {
   let sumDataLiveCountinent = []
