@@ -22,13 +22,31 @@ const Gender = ({ gender }) => {
     ],
   };
   const options = {
+    responsive: true,
     legend: {
       position: "top",
       align: "end",
       fullWidth: true,
       display: false,
     },
+    animation: {
+      duration: 0,
+      onComplete: function () {
+        var chartInstance = this.chart,
+          ctx = chartInstance.ctx;
 
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+
+        this.data.datasets.forEach(function (dataset, i) {
+          var meta = chartInstance.controller.getDatasetMeta(i);
+          meta.data.forEach(function (bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+          });
+        });
+      },
+    },
     scales: {
       yAxes: [
         {
