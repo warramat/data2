@@ -42,6 +42,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
       fullWidth: true,
       display: false,
     },
+
     scales: {
       yAxes: [
         {
