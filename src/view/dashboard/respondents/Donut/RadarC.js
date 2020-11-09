@@ -51,7 +51,7 @@ const RadarC = ({ liveInChiangmai }) => {
 
   return (
     <>
-      <b className="text-toppic">ผู้เข้าร่วมการแข่งขันจากจังหวัดเชียงใหม่</b>
+      <b className="text-toppic">คนในพื้นที่เชียงใหม่</b>
       <Row style={{ fontFamily: "Sukhumvit Set", height: "288px" }} align={"middle"}>
         <Col span={24}><div className="d-flex align-items-center">
           <Doughnut data={data} options={options} plugins={[showTextInside]}
