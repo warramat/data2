@@ -9,7 +9,7 @@ const Total = ({ toppic, num, imageIndex, persen }) => {
         <>
             <Row >
                 <Col span={24}>
-                    <div className="f-11">{toppic}</div>
+                    <b className="f-10">{toppic}</b>
                 </Col>
             </Row>
             <Row >
