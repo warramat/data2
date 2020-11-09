@@ -1,6 +1,8 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { float1Point } from '../../../../tools/util'
+import Chart from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 const BarSatisfaction = ({ satisfaction }) => {
@@ -22,24 +24,23 @@ const BarSatisfaction = ({ satisfaction }) => {
       },
     ],
   };
-  const option = {
-    layout: {
-      // padding: {
-      //   left: 10,
-      //   right: 40,
-      //   top: 160,
-
-      // }
+  const option = {  
+    plugins: {
+      datalabels: {
+          color: 'black',
+          align:'top',
+          anchor:'end',
+      }
     },
     legend: {
       display: false,
     },
+    
     scales: {
       yAxes: [
         {
           ticks: {
             min: 0,
-            max: 5,
             stepSize: 1,
           },
         },
@@ -58,7 +59,7 @@ const BarSatisfaction = ({ satisfaction }) => {
         // opacity: 0.5,
       }}>ระดับ</h6>
       <div >
-        <Bar data={data} options={option} width={500} height={185} />
+        <Bar data={data} options={option} width={500} height={250} />
 
         <div
           className="f-satisfaction"
@@ -72,8 +73,8 @@ const BarSatisfaction = ({ satisfaction }) => {
             // width: "300px",
             position: "absolute",
             right: "-59px",
-            bottom: "34px",
-            marginTop: "-70px"
+            bottom: "58px",
+            // marginTop: "-50px"
           }}>ความพึงพอใจ</div>
       </div>
     </>

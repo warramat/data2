@@ -18,6 +18,11 @@ const RadarChart = ({ economicLabels, economicData }) => {
   }
 
   const options = {
+    plugins: {
+      datalabels: {
+        display: false,
+      }
+    },
 
     elements: {
       center: {

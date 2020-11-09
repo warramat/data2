@@ -26,6 +26,11 @@ const RadarC = ({ liveInChiangmai }) => {
   };
 
   const options = {
+    plugins: {
+      datalabels: {
+        display: false,
+      }
+    },
     elements: {
       center: {
         text: ChangeToK(liveInChiangmai.count) + " คน",

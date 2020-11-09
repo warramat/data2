@@ -22,6 +22,13 @@ const Gender = ({ gender }) => {
     ],
   };
   const options = {
+    plugins: {
+      datalabels: {
+          color: 'black',
+          align:'top',
+          anchor:'end',
+      }
+    },
     legend: {
       position: "top",
       align: "end",
