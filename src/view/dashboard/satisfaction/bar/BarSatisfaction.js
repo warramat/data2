@@ -38,7 +38,7 @@ const BarSatisfaction = ({ satisfaction }) => {
       display: false,
     },
     animation: {
-      duration: 1,
+      duration: 0,
       onComplete: function () {
         var chartInstance = this.chart,
           ctx = chartInstance.ctx;
@@ -60,7 +60,6 @@ const BarSatisfaction = ({ satisfaction }) => {
         {
           ticks: {
             min: 0,
-            max: 5,
             stepSize: 1,
           },
         },
@@ -92,7 +91,7 @@ const BarSatisfaction = ({ satisfaction }) => {
         ระดับ
       </h6>
       <div>
-        <Bar data={data} options={option} width={500} height={185} />
+        <Bar data={data} options={option} width={500} height={250} />
 
         <div
           className="f-satisfaction"
@@ -106,8 +105,8 @@ const BarSatisfaction = ({ satisfaction }) => {
             // width: "300px",
             position: "absolute",
             right: "-59px",
-            bottom: "34px",
-            marginTop: "-70px",
+            bottom: "20%",
+
           }}
         >
           ความพึงพอใจ
