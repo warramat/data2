@@ -90,7 +90,7 @@ const BarSatisfaction = ({ satisfaction }) => {
             // width: "300px",
             position: "absolute",
             right: "-59px",
-            bottom: "58px",
+            bottom: "188px",
             // marginTop: "-50px"
           }}>ความพึงพอใจ</div>
       </div>
