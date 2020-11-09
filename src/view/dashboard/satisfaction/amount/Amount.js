@@ -3,7 +3,6 @@ import { Row, Col } from "antd"
 
 
 const Amount = ({ toppic, num, image }) => {
-    console.log(image)
     return (
         <>
             <Row >
