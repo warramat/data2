@@ -23,7 +23,7 @@ const RadarChart = ({ economicLabels, economicData }) => {
     elements: {
       
       center: {
-        fontStyle: "Sukhumvit Set",
+        fontFamily: "Sukhumvit Set",
         maxFontSize: 40,
       },
     },
@@ -37,7 +37,8 @@ const RadarChart = ({ economicLabels, economicData }) => {
     scale: {
       pointLabels: {
         fontSize: 12.5 ,
-        fontColor: '#464646'
+        fontColor: '#464646',
+        fontFamily: "Sukhumvit Set",
       },
       ticks: {
         beginAtZero: true,

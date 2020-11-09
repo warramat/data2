@@ -60,7 +60,9 @@ const BarSatisfaction = ({ satisfaction }) => {
         {
           ticks: {
             min: 0,
+            max: 5,
             stepSize: 1,
+            fontSize: 15
           },
         },
       ],
@@ -68,6 +70,7 @@ const BarSatisfaction = ({ satisfaction }) => {
         {
           ticks: {
             fontSize: 15,
+            fontFamily: "Sukhumvit Set"
           },
         },
       ],
