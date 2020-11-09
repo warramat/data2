@@ -49,6 +49,11 @@ const Continent = ({ liveCountinent }) => {
     ],
   };
   const options = {
+    plugins: {
+      datalabels: {
+        display: false,
+      }
+    },
     layout: {
       padding: {
         left: 10,

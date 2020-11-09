@@ -48,6 +48,11 @@ const Region = ({ liveRegion }) => {
     ],
   };
   const options = {
+    plugins: {
+      datalabels: {
+        display: false,
+      }
+    },
     layout: {
       padding: {
         left: 10,

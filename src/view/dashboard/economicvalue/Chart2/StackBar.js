@@ -36,6 +36,11 @@ const StackedBar = ({ economicStackedBar, title }) => {
   };
 
   const options = {
+    plugins: {
+      datalabels: {
+        display: false,
+      }
+    },
     legend: {
       position: "top",
       align: "end",

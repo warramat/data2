@@ -15,6 +15,13 @@ const Residence = ({ residence }) => {
     ],
   };
   const option = {
+    plugins: {
+      datalabels: {
+          color: 'black',
+          align:'top',
+          anchor:'end',
+      }
+    },
     legend: {
       display: false,
     },

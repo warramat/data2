@@ -26,41 +26,23 @@ const BarSatisfaction = ({ satisfaction }) => {
       },
     ],
   };
-  const option = {
-    layout: {
-      // padding: {
-      //   left: 10,
-      //   right: 40,
-      //   top: 160,
-      // }
+  const option = {  
+    plugins: {
+      datalabels: {
+          color: 'black',
+          align:'top',
+          anchor:'end',
+      }
     },
     legend: {
       display: false,
     },
-    animation: {
-      duration: 0,
-      onComplete: function () {
-        var chartInstance = this.chart,
-          ctx = chartInstance.ctx;
-
-        ctx.textAlign = "center";
-        ctx.textBaseline = "bottom";
-
-        this.data.datasets.forEach(function (dataset, i) {
-          var meta = chartInstance.controller.getDatasetMeta(i);
-          meta.data.forEach(function (bar, index) {
-            var data = dataset.data[index];
-            ctx.fillText(data, bar._model.x, bar._model.y - 5);
-          });
-        });
-      },
-    },
+    
     scales: {
       yAxes: [
         {
           ticks: {
             min: 0,
-            max: 5,
             stepSize: 1,
             fontSize: 15
           },
@@ -108,12 +90,9 @@ const BarSatisfaction = ({ satisfaction }) => {
             // width: "300px",
             position: "absolute",
             right: "-59px",
-            bottom: "20%",
-
-          }}
-        >
-          ความพึงพอใจ
-        </div>
+            bottom: "58px",
+            // marginTop: "-50px"
+          }}>ความพึงพอใจ</div>
       </div>
     </>
   );
