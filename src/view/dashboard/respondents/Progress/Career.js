@@ -3,7 +3,6 @@ import { Col, Row } from "antd";
 import { Progress } from "antd";
 import { float1Point } from "../../../../tools/util";
 const Job = ({ carrier }) => {
-  console.log("data", carrier);
   const dataSource = [
     {
       job: "อินทนนท์ 10 km",
@@ -33,7 +32,7 @@ const Job = ({ carrier }) => {
   ];
   return (
     <>
-      <b className="text-toppic">การแข่งขัน</b>
+      <b className="text-toppic">ประเภทการแข่งขัน VS ผู้เข้าแข่งขัน</b>
       {dataSource.map((item, index) => {
         return (
           <Row style={{ marginBottom: 12 }} key={index}>

@@ -15,39 +15,60 @@
 
 @import "custom_antd";
 
+.font-Sukhumvit {
+  font-family: "Sukhumvit Set";
+}
+
 .font-kanit {
-  font-family: Kanit;
-}
-@font-face {
   font-family: "Kanit";
-  src: url("../fonts/kanit/Kanit-Regular.eot");
-  src: url("../fonts/kanit/Kanit-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/kanit/Kanit-Regular.woff2") format("woff2"),
-    url("../fonts/kanit/Kanit-Regular.woff") format("woff"),
-    url("../fonts/kanit/Kanit-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
 
-@font-face {
-  font-family: "Kanit-Medium";
-  src: url("../fonts/kanit/Kanit-Medium.eot");
-  src: url("../fonts/kanit/Kanit-Medium.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/kanit/Kanit-Medium.woff2") format("woff2"),
-    url("../fonts/kanit/Kanit-Medium.woff") format("woff"),
-    url("../fonts/kanit/Kanit-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "Sukhumvit Set";
+//   // src: url("../fonts/sukhumvit-set/SukhumvitSet-Medium.eot");
+//   src: url("../fonts/sukhumvit-set/SukhumvitSet-Medium.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("../fonts/sukhumvit-set/SukhumvitSet-Medium.woff2") format("woff2"),
+//     url("../fonts/sukhumvit-set/SukhumvitSet-Medium.woff") format("woff"),
+//     url("../fonts/sukhumvit-set/SukhumvitSet-Medium.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-body {
-  height: auto !important;
-  min-height: 100vh !important;
+// @font-face {
+//   font-family: "Sukhumvit Set";
+//   src: url("../fonts/kanit/Kanit-Regular.eot");
+//   src: url("../fonts/kanit/Kanit-Regular.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("../fonts/kanit/Kanit-Regular.woff2") format("woff2"),
+//     url("../fonts/kanit/Kanit-Regular.woff") format("woff"),
+//     url("../fonts/kanit/Kanit-Regular.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-  margin: 0;
-  font-family: "Kanit", "Kanit-Medium", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // background-color: #f7f7f7 !important;
-}
+// @font-face {
+//   font-family: "Kanit-Medium";
+//   src: url("../fonts/kanit/Kanit-Medium.eot");
+//   src: url("../fonts/kanit/Kanit-Medium.eot?#iefix") format("embedded-opentype"),
+//     url("../fonts/kanit/Kanit-Medium.woff2") format("woff2"),
+//     url("../fonts/kanit/Kanit-Medium.woff") format("woff"),
+//     url("../fonts/kanit/Kanit-Medium.ttf") format("truetype");
+//   font-weight: 500;
+//   font-style: normal;
+// }
+
+// body {
+//   font-family: "Sukhumvit Set";
+// }
+
+// body {
+//   height: auto !important;
+//   min-height: 100vh !important;
+
+//   margin: 0;
+//   font-family: "Sukhumvit Set";
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   // background-color: #f7f7f7 !important;
+// }

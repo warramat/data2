@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { Card, Row, Col } from "antd"
 import Amount from './amount/Amount'
@@ -35,7 +36,6 @@ const Satisfaction = ({ setLoading }) => {
             } else {
                 alert("ERROR")
             }
-            console.log("RES>>>", res)
         } catch (error) {
             console.log(error)
             setLoading(false)
@@ -57,21 +57,21 @@ const Satisfaction = ({ setLoading }) => {
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
 
-                <Col lg={8}>
+                <Col lg={8} sm={24} xs={24} >
                     <Card onClick={() => handleClickCard("all")}
                         className={"all" === filterItem
                             ? `card-active` : `interactive`}>
                         <Amount toppic="จำนวนผู้ตอบแบบสอบถาม" num={athlete.total} image={Artboard11}></Amount>
                     </Card>
                 </Col>
-                <Col lg={8}>
+                <Col lg={8} sm={12} xs={24} >
                     <Card onClick={() => handleClickCard("athlete")}
                         className={"athlete" === filterItem
                             ? `interactive card-active` : `interactive`}>
                         <Amount toppic="นักกีฬา" num={athlete.athlete} image={Artboard12}></Amount>
                     </Card>
                 </Col>
-                <Col lg={8}>
+                <Col lg={8} sm={12} xs={24} >
                     <Card onClick={() => handleClickCard("notAthlete")}
                         className={"notAthlete" === filterItem
                             ? `interactive card-active` : `interactive`}>
@@ -80,11 +80,12 @@ const Satisfaction = ({ setLoading }) => {
                 </Col>
             </Row>
             <Row justify={"center"} gutter={[15, 15]}>
-                <Col lg={24}>
+                <Col lg={24} md={24} sm={24} xs={24}>
                     <Card>
                         <BarSatisfaction satisfaction={satisfaction} />
                     </Card>
                 </Col>
+            
             </Row>
         </div>
     )

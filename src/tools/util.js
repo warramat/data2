@@ -21,7 +21,7 @@ export const NumberRegX = (language = "") => {
 };
 
 export const float1Point = (floatValue) => {
-  const converted = parseFloat(floatValue).toFixed(1);
+  const converted = parseFloat(floatValue).toFixed(2);
   return converted
 }
 

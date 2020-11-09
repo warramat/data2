@@ -2,19 +2,20 @@
 import React from "react";
 import { Doughnut, } from "react-chartjs-2";
 import { showTextInside } from '../Donut/pluginDN';
-import { Row } from "antd";
+import { Row, Col } from "antd";
+import { ChangeToK } from "../../../../tools/util"
 
 const RadarC = ({ liveInChiangmai }) => {
-  console.log("liveInChiangmai", liveInChiangmai);
-
-  let rest = liveInChiangmai.all - liveInChiangmai.count
-
+  let rest = ""
+  if (liveInChiangmai.all) {
+    rest = liveInChiangmai.all - liveInChiangmai.count
+  }
 
   const data = {
-    labels: ["เชียงใหม่", "ทั้งหมด"],
+    labels: ["เชียงใหม่", "พื้นที่อื่นๆ"],
     datasets: [
       {
-        data: [rest, liveInChiangmai.count],
+        data: [liveInChiangmai.count, rest],
         backgroundColor: ["#13EECC"],
         borderColor: ["#13EECC"],
         borderWidth: 0,
@@ -27,17 +28,14 @@ const RadarC = ({ liveInChiangmai }) => {
   const options = {
     elements: {
       center: {
-        text: liveInChiangmai.all +  " ทั้งหมด",
+        text: ChangeToK(liveInChiangmai.count) + " คน",
+        fontStyle: "Sukhumvit Set"
       },
     },
 
-    layout: {
-      padding: {
-        left: 5,
-        right: 5,
-        top: 5,
-        bottom: 5,
-      },
+
+    responsive: {
+      display: false
     },
 
     legend: {
@@ -47,26 +45,20 @@ const RadarC = ({ liveInChiangmai }) => {
     cutoutPercentage: 75,
     rotation: 50,
     borderAlign: "inner",
-  
+
   };
-  
+
 
   return (
-    <Row style={{ fontFamily: "Sukhumvit Set" }}>
-      <Row>
-
-         <b className="text-toppic">คนในพื้นที่เชียงใหม่</b>
-      </Row>
-       
-     
-    <Row className="pt-1" style={{paddingLeft: 50}} >
-
-        <Doughnut data={data} options={options} plugins={[showTextInside]} />
-  
-
-    </Row>
-      
-    </Row>
+    <>
+      <b className="text-toppic">คนในพื้นที่เชียงใหม่</b>
+      <Row style={{ fontFamily: "Sukhumvit Set", height: "288px" }} align={"middle"}>
+        <Col span={24}><div className="d-flex align-items-center">
+          <Doughnut data={data} options={options} plugins={[showTextInside]}
+            width={300} height={140}
+          /></div></Col>
+      </Row >
+    </>
   );
 };
 
