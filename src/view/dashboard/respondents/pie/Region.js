@@ -1,7 +1,7 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { Row, Col,} from "antd";
-import {ChangeToK} from '../../../../tools/util'
+import { Row, Col } from "antd";
+import { ChangeToK } from '../../../../tools/util'
 
 const Region = ({ liveRegion }) => {
   let sumDataLiveRegion = [];
@@ -63,7 +63,7 @@ const Region = ({ liveRegion }) => {
 
   return (
     <Row style={{ fontFamily: "Sukhumvit Set" }}>
-      <Row>
+      <Row style={{ paddingBottom: "20px" }}>
         <b
           className="text-toppic"
           style={{
@@ -76,9 +76,13 @@ const Region = ({ liveRegion }) => {
           {ChangeToK(sumDataLiveRegion)} คน
         </span>
       </Row>
-      <Row >
-        <Col style={{ paddingTop: "40px" }}>
-          <div
+      <Pie data={data} options={options} width={400} height={200} />
+      <Row style={{ width: "100%" }}>
+        <Row style={{
+          paddingTop: "10px", width: "100%",
+        }}
+          className="d-flex justify-content-center">
+          <Col className="btr">   <div
             style={{
               letterSpacing: "0.68px",
               width: 13,
@@ -86,81 +90,79 @@ const Region = ({ liveRegion }) => {
               borderRadius: 10,
               backgroundColor: "#13EECC",
               border: "#13EECC",
-              marginBottom: "-19px",
-            }}
-          ></div>
-          <span className="fo">เหนือ</span>
 
-          <div
-            style={{
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "#0a5bb4",
-              border: "#0a5bb4",
-              marginTop: "20px",
-              marginBottom: "-19px",
             }}
           ></div>
-          <span className="fo">อีสาน</span>
+            <span className="fo">เหนือ</span></Col>
 
-          <div
-            style={{
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "#f2e635",
-              border: "#f2e635",
-              marginTop: "20px",
-              marginBottom: "-19px",
-            }}
-          ></div>
-          <span className="fo">ตะวันออก</span>
-        </Col>
-        <Col style={{ paddingLeft: "20px", paddingTop: "40px" }}>
-          <div
+          <Col className="btr">
+            <div
+              style={{
+                width: 13,
+                height: 13,
+                borderRadius: 10,
+                backgroundColor: "#0a5bb4",
+                border: "#0a5bb4",
+              }}
+            ></div>
+            <span className="fo">อีสาน</span>
+          </Col>
+          <Col className="btr">
+            <div
+              style={{
+                width: 13,
+                height: 13,
+                borderRadius: 10,
+                backgroundColor: "#f2e635",
+                border: "#f2e635",
+
+              }}
+            ></div>
+            <span className="fo">ตะวันออก</span>
+          </Col>
+        </Row>
+        <Row style={{
+          width: "100%",
+          paddingTop: "10px",
+
+        }} className="d-flex justify-content-center">
+          <Col className="btr"> <div
             style={{
               width: 13,
               height: 13,
               borderRadius: 10,
               backgroundColor: "#3b88fd",
               border: "#3b88fd",
-              marginBottom: "-19px",
             }}
           ></div>
-          <span className="fo">กลาง</span>
+            <span className="fo">กลาง</span></Col>
 
-          <div
-            style={{
-              width: 13,
-              height: 13,
-              borderRadius: 10,
-              backgroundColor: "#6204bf",
-              border: "#6204bf",
-              marginTop: "20px",
-              marginBottom: "-19px",
-            }}
-          ></div>
-          <span className="fo">ใต้</span>
+          <Col className="btr">
+            <div
+              style={{
+                width: 13,
+                height: 13,
+                borderRadius: 10,
+                backgroundColor: "#6204bf",
+                border: "#6204bf",
 
-          <div
+              }}
+            ></div>
+            <span className="fo">ใต้</span>
+          </Col>
+          <Col className="btr"> <div
             style={{
               width: 13,
               height: 13,
               borderRadius: 10,
               backgroundColor: "#f205cb",
               border: "#f205cb",
-              marginTop: "20px",
-              marginBottom: "-19px",
             }}
           ></div>
-          <span className="fo">ตะวันตก</span>
-        </Col>
-        <Col><Pie data={data} options={options} width={200}/>
-        </Col>
-        
-      </Row> 
-      
+            <span className="fo">ตะวันตก</span></Col>
+
+        </Row>
+      </Row>
     </Row>
   );
 };

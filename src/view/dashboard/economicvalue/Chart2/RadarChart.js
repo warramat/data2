@@ -1,8 +1,8 @@
 import React from 'react'
 import { Radar } from '@reactchartjs/react-chart.js'
-import { Col, Row } from 'antd';
 
-const RadarChart = ({economicLabels ,  economicData}) => {
+
+const RadarChart = ({ economicLabels, economicData }) => {
   const data = {
     labels: economicLabels,
     datasets: [
@@ -21,16 +21,16 @@ const RadarChart = ({economicLabels ,  economicData}) => {
 
     elements: {
       center: {
-        fontStyle: "Sukhumvit Set" ,
+        fontStyle: "Sukhumvit Set",
         maxFontSize: 40,
-        
+
       },
     },
-   
+
     legend: {
       display: false,
     },
-   
+
     scale: {
       ticks: { beginAtZero: true },
 
@@ -38,21 +38,12 @@ const RadarChart = ({economicLabels ,  economicData}) => {
 
   }
   return (
-    <Row style={{ fontFamily: "Sukhumvit Set" , fontSize: 20}}>
-      <Col>
-      <Row >
-        <Col>
-        <div><b className="text-toppic" >ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
-        <div className="text-title">ตามประเภทผู้ประเมิน</div>
-        </Col>
-      </Row>
-      </Col>
-      <Col >
-        <Radar data={data} options={options} width={385} height={385} />
-      </Col>
-      
-      
-    </Row>
+    <div style={{ fontSize: 20 }}>
+      <div><b className="text-toppic" >ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
+      <div className="text-title">ตามประเภทผู้ประเมิน</div>
+      <div> <Radar data={data} options={options} width={300} height={220} /></div>
+
+    </div>
   )
 }
 

@@ -6,18 +6,23 @@ const Amount = ({ toppic, num, image }) => {
     return (
         <>
             <Row >
-                <Col span={18}>
-                    <div className="f-13">{toppic}</div>
-                    <div>
-                        <span className="f-18 pt-5">{num} </span>
-                        <span className="f-13" style={{ marginLeft: 5 }}>คน</span>
-                    </div>
+                <Col span={14} style={{ alignContent: "space-around" }}>
+                    <Row>
+                        <b className="f-13">{toppic}</b>
+                    </Row>
+                    <Row>
+                        <div>
+                            <span className="f-18 pt-5">{num} </span>
+                            <span className="f-13" style={{ marginLeft: 5 }}>คน</span>
+                        </div>
+                    </Row>
                 </Col>
-                <Col span={6} className="d-flex align-items-center">
-                    <img src={image} alt="aligment" className="rounded mx-auto d-block"  width={"60%"}></img>
+
+                <Col span={10} className="d-flex align-items-center justify-content-end">
+                    <img src={image} alt="aligment" className="rounded  pl-2 pr-2 " width={"60%"}></img>
                 </Col>
-            </Row>
-           
+            </Row >
+
         </>
     )
 }

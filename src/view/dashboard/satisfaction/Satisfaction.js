@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { Card, Row, Col } from "antd"
 import Amount from './amount/Amount'
@@ -56,7 +57,7 @@ const Satisfaction = ({ setLoading }) => {
         <div>
             <Row justify={"center"} gutter={[15, 15]}>
 
-                <Col lg={8}  sm={24} xs={24} >
+                <Col lg={8} sm={24} xs={24} >
                     <Card onClick={() => handleClickCard("all")}
                         className={"all" === filterItem
                             ? `card-active` : `interactive`}>
@@ -70,7 +71,7 @@ const Satisfaction = ({ setLoading }) => {
                         <Amount toppic="นักกีฬา" num={athlete.athlete} image={Artboard12}></Amount>
                     </Card>
                 </Col>
-                <Col lg={8}  sm={12} xs={24} >
+                <Col lg={8} sm={12} xs={24} >
                     <Card onClick={() => handleClickCard("notAthlete")}
                         className={"notAthlete" === filterItem
                             ? `interactive card-active` : `interactive`}>
@@ -84,6 +85,14 @@ const Satisfaction = ({ setLoading }) => {
                         <BarSatisfaction satisfaction={satisfaction} />
                     </Card>
                 </Col>
+                {/* <Col lg={24} md={24} sm={24} xs={24}>
+                    <Card>
+                        <div>ggggggggggggggggggggggg</div>
+                        <div>ggggggggggggggggggggggg</div>
+                        <div>ggggggggggggggggggggggg</div>
+                        <div>ggggggggggggggggggggggg</div>
+                    </Card>
+                </Col> */}
             </Row>
         </div>
     )
