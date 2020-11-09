@@ -46,13 +46,16 @@ const StackedBar = ({ economicStackedBar, title }) => {
       yAxes: [
         {
           stacked: true,
+
           ticks: {
             // beginAtZero: true,
 
-            callback: function (value, index, values) {
+            callback: function (value) {
               return ChangeToK(value);
             },
-            // stepSize: 1000000,
+            // min: 0,
+            // max: 60000000,
+            // stepSize: 20000000,
           },
         },
       ],
@@ -137,7 +140,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
       </div>
       <div>
         <Col style={{ marginLeft: "-25px", paddingLeft: 10 }}>
-          <Bar data={data} options={options} width={300} height={170} />
+          <Bar data={data} options={options} />
         </Col>
 
         <Col>
