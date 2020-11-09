@@ -57,6 +57,8 @@ const StackedBar = ({ economicStackedBar, title }) => {
             // min: 0,
             // max: 60000000,
             // stepSize: 20000000,
+            fontSize: 15,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
@@ -64,7 +66,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
         {
           stacked: true,
           ticks: {
-            fontSize: 18,
+            fontSize: 15,
             fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },

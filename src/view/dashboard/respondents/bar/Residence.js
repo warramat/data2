@@ -27,13 +27,15 @@ const Residence = ({ residence }) => {
               return ChangeToK(value);
             },
             stepSize: 200,
+            fontSize: 15,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
       xAxes: [
         {
           ticks: {
-            fontSize: 14,
+            fontSize: 15,
             fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
