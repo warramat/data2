@@ -13,8 +13,20 @@
   display: block;
 }
 
+.f-11 {
+  font-size: 1.2rem !important;
+}
+
+.f-12 {
+  font-size: 1.2rem !important;
+}
+
 .f-13 {
   font-size: 1.3rem !important;
+}
+
+.f-14 {
+  font-size: 1.4rem !important;
 }
 
 .f-15 {
@@ -69,13 +81,33 @@ p {
 .interactive:hover {
   background-color: #eff5ff;
   color: black !important;
+  cursor: pointer;
 }
 
 .card-active {
   background-color: #3b88fd;
   color: white !important;
-  opacity: 80%;
 }
 .t-percent {
   color: $green;
+}
+
+// canvas.chartjs-render-monitor {
+//   height: 80% !important;
+//   width: 80% !important;
+// }
+.f-satisfaction {
+  font-size: 12px;
+}
+@media only screen and (min-width: 375px) {
+  .f-satisfaction {
+    font-size: 12px !important;
+  }
+}
+
+.btr {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  // width: 100% !important;
 }
