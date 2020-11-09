@@ -32,7 +32,7 @@ const Respondents = ({ setLoading }) => {
         try {
             const qrs = { evaluatortype: params };
             const res = await GET_RESPONDENT(qrs);
-            const labels = ["xxx", "yyy", "นักกีฬาต่างชาติ",
+            const labels = ["ทั้งหมดแบบสอบถาม", "นักกีฬาไทย", "นักกีฬาต่างชาติ",
                 "เจ้าหน้าที่ผู้จัดการแข่งขัน", "อาสาสมัคร", "ผู้ติดตามนักกีฬา / ผู้ชม "]
             if (res.code === 200) {
                 res.result[0].questionnaireGroup.map((item, index) => {
