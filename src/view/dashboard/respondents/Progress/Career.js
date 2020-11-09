@@ -32,7 +32,7 @@ const Job = ({ carrier }) => {
   ];
   return (
     <>
-      <b className="text-toppic">การแข่งขัน</b>
+      <b className="text-toppic">ประเภทการแข่งขัน VS ผู้เข้าแข่งขัน</b>
       {dataSource.map((item, index) => {
         return (
           <Row style={{ marginBottom: 12 }} key={index}>

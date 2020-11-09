@@ -71,7 +71,7 @@ const Continent = ({ liveCountinent }) => {
             letterSpacing: "0.68px",
           }}
         >
-          ต่างชาติ
+          ทวีปของผู้เข้าร่วมการแข่งขันชาวต่างประเทศ
         </b>
         <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
           {ChangeToK(sumDataLiveCountinent)} คน

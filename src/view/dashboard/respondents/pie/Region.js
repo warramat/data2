@@ -70,7 +70,7 @@ const Region = ({ liveRegion }) => {
             letterSpacing: "0.68px",
           }}
         >
-          ไทย
+         ภูมิภาคของผู้เข้าร่วมการแข่งขันชาวไทย
         </b>
         <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
           {ChangeToK(sumDataLiveRegion)} คน
