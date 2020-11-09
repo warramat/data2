@@ -59,6 +59,7 @@ const StackedBar = ({ economicStackedBar, title }) => {
       xAxes: [
         {
           stacked: true,
+          
         },
       ],
     },

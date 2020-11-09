@@ -42,7 +42,13 @@ const Gender = ({ gender }) => {
           },
         },
       ],
-      xAxes: [{}],
+      xAxes: [
+        {
+          ticks: {
+            fontSize: 14
+          },
+        },
+      ],
     },
   };
   return (
