@@ -85,6 +85,14 @@ const Satisfaction = ({ setLoading }) => {
                         <BarSatisfaction satisfaction={satisfaction} />
                     </Card>
                 </Col>
+                {/* <Col lg={24} md={24} sm={24} xs={24}>
+                    <Card>
+                        <div>ggggggggggggggggggggggg</div>
+                        <div>ggggggggggggggggggggggg</div>
+                        <div>ggggggggggggggggggggggg</div>
+                        <div>ggggggggggggggggggggggg</div>
+                    </Card>
+                </Col> */}
             </Row>
         </div>
     )

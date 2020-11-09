@@ -61,7 +61,9 @@ function Spending({ economicEffect }) {
                   }}
                 >
                   {ChangeToK(float1Point(item.amount))}
+                 <span style={{ marginLeft: 5 }} >
                     บาท
+                   </span>
                   </b>
                 {/* </Row> */}
               </Col>
