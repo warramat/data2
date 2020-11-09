@@ -27,13 +27,16 @@ const Residence = ({ residence }) => {
               return ChangeToK(value);
             },
             stepSize: 200,
+            fontSize: 15,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
       xAxes: [
         {
           ticks: {
-            fontSize: 15
+            fontSize: 15,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
@@ -55,7 +58,7 @@ const Residence = ({ residence }) => {
               }}
             >
               คน
-      </div>
+            </div>
             <Bar data={data} options={option} width={300} height={200} />
           </div>
         </Col>

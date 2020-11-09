@@ -1,6 +1,5 @@
-import React from 'react'
-import { Radar } from '@reactchartjs/react-chart.js'
-
+import React from "react";
+import { Radar } from "@reactchartjs/react-chart.js";
 
 const RadarChart = ({ economicLabels, economicData }) => {
   const data = {
@@ -8,22 +7,19 @@ const RadarChart = ({ economicLabels, economicData }) => {
     datasets: [
       {
         data: economicData,
-        borderColor: '#13EECC',
-        backgroundColor: '#13EECC70',
+        borderColor: "#13EECC",
+        backgroundColor: "#13EECC70",
         borderWidth: 2,
         display: false,
-
       },
     ],
-  }
+  };
 
   const options = {
-
     elements: {
       center: {
         fontStyle: "Sukhumvit Set",
         maxFontSize: 40,
-
       },
     },
 
@@ -32,22 +28,25 @@ const RadarChart = ({ economicLabels, economicData }) => {
     },
 
     scale: {
-      ticks: { beginAtZero: true,
-        fontSize: 0
+      ticks: {
+        beginAtZero: true,
+        fontSize: 15,
+        fontFamily: "'Sukhumvit Set',sans-serif",
       },
-      
     },
-
-  }
+  };
   return (
     <div style={{ fontSize: 20 }}>
-      <div><b className="text-toppic" >ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
+      <div>
+        <b className="text-toppic">ค่าตัวทวีคูณทางเศรษฐกิจ</b>
+      </div>
       <div className="text-title">ตามประเภทผู้ประเมิน</div>
-      <div> <Radar data={data} options={options} width={300} height={220} /></div>
-
+      <div>
+        {" "}
+        <Radar data={data} options={options} width={300} height={220} />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default RadarChart
-
+export default RadarChart;

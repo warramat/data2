@@ -39,13 +39,16 @@ const Gender = ({ gender }) => {
               return ChangeToK(value);
             },
             stepSize: 200,
+            fontSize: 15,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
       xAxes: [
         {
           ticks: {
-            fontSize: 14
+            fontSize: 15,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
@@ -57,7 +60,7 @@ const Gender = ({ gender }) => {
       <div>
         <Col>
           <div className="pad2">
-            <Row >
+            <Row>
               <Col lg={12} className="col-job">
                 <div
                   style={{
@@ -65,18 +68,15 @@ const Gender = ({ gender }) => {
                     color: "#292766",
                     paddingLeft: "25px",
                     opacity: 0.5,
-                    paddingTop: "4px"
+                    paddingTop: "4px",
                   }}
                 >
                   จำนวนคน
-          </div>
+                </div>
               </Col>
-              <Col
-                lg={12}
-                className="col-job2 d-flex  justify-content-end"
-              >
+              <Col lg={12} className="col-job2 d-flex  justify-content-end">
                 <Row style={{ paddingTop: 10 }}>
-                  <Col  >
+                  <Col>
                     <div
                       style={{
                         letterSpacing: "0.68px",
