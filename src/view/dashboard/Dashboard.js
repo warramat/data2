@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false)
 
   return (
-    <div className="BG-forms spinner">
+    <div className="BG-forms font-Sukhumvit spinner">
 
       <Row className="w-100 nav p-15 h-25 " align={"middle"} justify={"center"}>
         <Col lg={7}>
