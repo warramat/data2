@@ -38,7 +38,7 @@ const RadarChart = ({ economicLabels, economicData }) => {
 
   }
   return (
-    <div style={{ fontFamily: "Sukhumvit Set", fontSize: 20 }}>
+    <div style={{ fontSize: 20 }}>
       <div><b className="text-toppic" >ค่าตัวทวีคูณทางเศรษฐกิจ</b></div>
       <div className="text-title">ตามประเภทผู้ประเมิน</div>
       <div> <Radar data={data} options={options} width={300} height={220} /></div>

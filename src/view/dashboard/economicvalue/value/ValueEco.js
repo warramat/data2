@@ -12,8 +12,8 @@ const ValueEco = ({ toppic, num, imageIndex, persen }) => {
             </Row>
             <Row >
                 <Col span={12} style={{ marginTop: 10 }}>
-                    <span className="f-18">{num}</span>
-                    <span className="f-1" style={{ marginLeft: 5 }}>คน</span>
+                    <span className="f-18">฿{num}</span>
+                    {/* <span className="f-1" style={{ marginLeft: 5 }}>บาท</span> */}
                     <div className="f-1 t-percent ">{persen}%</div>
                 </Col>
 

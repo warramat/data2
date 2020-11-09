@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false)
 
   return (
-    <div className="BG-forms font-Sukhumvit spinner">
+    <div className="BG-forms spinner">
 
       <Row className="w-100 nav p-15 h-25 " align={"middle"} justify={"center"}>
         <Col lg={7}>
@@ -22,7 +22,7 @@ const Dashboard = () => {
             <span className="hr-horizon"></span><img src={Doiintanon} alt="doiintanonLogo" width={"20%"} />
           </div>
         </Col>
-        <Col lg={10} >
+        <Col lg={10} className="d-flex justify-content-center">
           <Radio.Group onChange={(e) => setKey(e.target.value)} value={key} >
             <Row justify={"center"}>
               <Col><Radio.Button value="respon"><b>ผู้ตอบแบบสอบถาม</b></Radio.Button> </Col >
@@ -45,9 +45,6 @@ const Dashboard = () => {
                 : <Satisfaction setLoading={setLoading} />
           }
         </div>
-
-
-
       </Spin>
 
     </div >

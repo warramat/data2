@@ -13,10 +13,10 @@ const BarSatisfaction = ({ satisfaction }) => {
   }
 
   const data = {
-    labels: satisfaction.label,
+    labels: ["โดยรวม", "การเดินทาง", "สถานที่การจัดการแข่งขัน", "การประชาสัมพันธ์"],
     datasets: [
       {
-        barThickness: 75,
+        barThickness: 40,
         data: change2Point,
         backgroundColor: "#13eecc",
       },
@@ -58,7 +58,7 @@ const BarSatisfaction = ({ satisfaction }) => {
         // opacity: 0.5,
       }}>ระดับ</h6>
       <div >
-        <Bar data={data} options={option} width={500} height={150} />
+        <Bar data={data} options={option} width={500} height={185} />
 
         <div
           className="f-satisfaction"

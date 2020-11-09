@@ -97,10 +97,17 @@ p {
 //   width: 80% !important;
 // }
 .f-satisfaction {
-  font-size: 16px;
+  font-size: 12px;
 }
 @media only screen and (min-width: 375px) {
   .f-satisfaction {
     font-size: 12px !important;
   }
+}
+
+.btr {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  // width: 100% !important;
 }

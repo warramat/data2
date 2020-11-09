@@ -83,7 +83,7 @@ const EconomicValue = ({ setLoading }) => {
               <Card onClick={() => handleModal(item)} className="interactive">
                 <ValueEco
                   toppic={item.choiceTh}
-                  num={ChangeToK(item.count)}
+                  num={ChangeToK(item.costs)}
                   persen={float1Point(item.percent)}
                   imageIndex={index}
                 />

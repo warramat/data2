@@ -35,7 +35,7 @@ function Spending({ economicEffect }) {
               borderRadius: 9,
               background: "rgba(253, 253, 253, 1)",
               border: "1px solid rgba(235, 242, 247, 1)",
-              height: "100px",
+              height: "100%",
               paddingTop: 10,
               paddingBottom: 5,
               paddingLeft: 20,
@@ -43,27 +43,27 @@ function Spending({ economicEffect }) {
             }}
           >
             <Row>
-              <Col className="col-job">
+              <Col span={12}>
                 <div className="text-toppic2">
                   <b>{item.toppic}</b>
                 </div>
                 <div className="text-title">ก่อให้เกิดผลกระทบทางเศรษฐกิจ</div>
               </Col>
-              <Col className="col-job2" style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-                <Row className="card-impact" >
-                  <b
-                    className="text-percent"
-                    style={{
-                      background: "rgba(255, 255, 255, 1)",
-                      border: "1px solid rgba(235, 242, 247, 1)",
-                      borderRadius: 16,
-                      padding: 15,
-                    }}
-                  >
-                    {ChangeToK(float1Point(item.amount))}
+              <Col span={12} style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+                {/* <Row className="card-impact" > */}
+                <b
+                  className="text-percent"
+                  style={{
+                    background: "rgba(255, 255, 255, 1)",
+                    border: "1px solid rgba(235, 242, 247, 1)",
+                    borderRadius: 16,
+                    padding: "0.5rem",
+                  }}
+                >
+                  {ChangeToK(float1Point(item.amount))}
                     บาท
                   </b>
-                </Row>
+                {/* </Row> */}
               </Col>
             </Row>
           </div>
