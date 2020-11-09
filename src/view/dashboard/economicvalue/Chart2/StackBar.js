@@ -63,7 +63,10 @@ const StackedBar = ({ economicStackedBar, title }) => {
       xAxes: [
         {
           stacked: true,
-          
+          ticks: {
+            fontSize: 18,
+            fontFamily: "'Sukhumvit Set',sans-serif",
+          },
         },
       ],
     },

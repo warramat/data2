@@ -33,7 +33,8 @@ const Residence = ({ residence }) => {
       xAxes: [
         {
           ticks: {
-            fontSize: 15
+            fontSize: 14,
+            fontFamily: "'Sukhumvit Set',sans-serif",
           },
         },
       ],
@@ -55,7 +56,7 @@ const Residence = ({ residence }) => {
               }}
             >
               คน
-      </div>
+            </div>
             <Bar data={data} options={option} width={300} height={200} />
           </div>
         </Col>
