@@ -3,7 +3,7 @@ import { Radar } from "@reactchartjs/react-chart.js";
 
 const RadarChart = ({ economicLabels, economicData }) => {
   const data = {
-    labels: economicLabels,
+    labels: economicLabels ,
     datasets: [
       {
         data: economicData,
@@ -11,12 +11,17 @@ const RadarChart = ({ economicLabels, economicData }) => {
         backgroundColor: "#13EECC70",
         borderWidth: 2,
         display: false,
+        
       },
+      
     ],
+    
   };
 
   const options = {
+    
     elements: {
+      
       center: {
         fontStyle: "Sukhumvit Set",
         maxFontSize: 40,
@@ -25,13 +30,16 @@ const RadarChart = ({ economicLabels, economicData }) => {
 
     legend: {
       display: false,
-    },
+      
+  },
+  
 
     scale: {
       ticks: {
         beginAtZero: true,
-        fontSize: 15,
+        fontSize: 0,
         fontFamily: "'Sukhumvit Set',sans-serif",
+        
       },
     },
   };
@@ -43,7 +51,7 @@ const RadarChart = ({ economicLabels, economicData }) => {
       <div className="text-title">ตามประเภทผู้ประเมิน</div>
       <div>
         {" "}
-        <Radar data={data} options={options} width={300} height={220} />
+        <Radar data={data} options={options} width={300} height={280} />
       </div>
     </div>
   );

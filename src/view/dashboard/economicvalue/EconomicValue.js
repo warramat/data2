@@ -108,7 +108,7 @@ const EconomicValue = ({ setLoading }) => {
             />
           </Card>
         </Col>
-        <Col lg={8} sm={24} md={24} xs={24}>
+        <Col lg={8} sm={24} md={24} xs={24} >
           <Card style={{ height: "100%" }}>
             <RadarChart
               economicLabels={economicIncreaseLabels}
