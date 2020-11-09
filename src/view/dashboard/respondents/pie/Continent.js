@@ -65,6 +65,7 @@ const Continent = ({ liveCountinent }) => {
   return (
     <Row style={{ fontFamily: "Sukhumvit Set", minHeight: "200px" }}>
       <Row style={{ paddingBottom: "20px" }}>
+        <Col>
         <b
           className="text-toppic"
           style={{
@@ -73,9 +74,14 @@ const Continent = ({ liveCountinent }) => {
         >
           ทวีปของผู้เข้าร่วมการแข่งขันชาวต่างประเทศ
         </b>
-        <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
+        </Col>
+        
+        <Col span={24} className="d-flex justify-content-center pt-2">
+         <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
           {ChangeToK(sumDataLiveCountinent)} คน
         </span>
+        </Col>
+       
 
       </Row>
       <Pie data={data} options={options} width={400} height={200} />

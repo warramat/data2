@@ -64,7 +64,8 @@ const Region = ({ liveRegion }) => {
   return (
     <Row style={{ fontFamily: "Sukhumvit Set" }}>
       <Row style={{ paddingBottom: "20px" }}>
-        <b
+        <Col>
+          <b
           className="text-toppic"
           style={{
             letterSpacing: "0.68px",
@@ -72,9 +73,15 @@ const Region = ({ liveRegion }) => {
         >
          ภูมิภาคของผู้เข้าร่วมการแข่งขันชาวไทย
         </b>
-        <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
+
+        </Col>
+      
+        <Col span={24} className="d-flex justify-content-center pt-2">
+         <span className="ca-select" style={{ textAlign: "center", paddingTop: "8px" }}>
           {ChangeToK(sumDataLiveRegion)} คน
         </span>
+        </Col>
+       
       </Row>
       <Pie data={data} options={options} width={400} height={200} />
       <Row style={{ width: "100%" }}>

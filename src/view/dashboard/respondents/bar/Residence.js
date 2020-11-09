@@ -30,6 +30,13 @@ const Residence = ({ residence }) => {
           },
         },
       ],
+      xAxes: [
+        {
+          ticks: {
+            fontSize: 15
+          },
+        },
+      ],
     },
   };
 

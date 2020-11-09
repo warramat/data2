@@ -44,6 +44,13 @@ const BarSatisfaction = ({ satisfaction }) => {
           },
         },
       ],
+      xAxes: [
+        {
+          ticks: {
+            fontSize: 15
+          },
+        },
+      ],
     },
   };
 
