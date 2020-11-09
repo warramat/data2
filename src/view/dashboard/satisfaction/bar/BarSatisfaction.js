@@ -1,8 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { float1Point } from '../../../../tools/util'
-import Chart from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 
 
 const BarSatisfaction = ({ satisfaction }) => {
