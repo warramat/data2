@@ -28,7 +28,14 @@ const EconomicValue = ({ setLoading }) => {
     try {
       const qrs = { evaluatortype: "all" };
       const res = await GET_ECONOMICVALUE(qrs);
+      const labels = ["ทั้งหมด (รวมงบลงทุน)", "นักกีฬาไทย (รวมค่าสมัคร)", "นักกีฬาต่างชาติ (รวมค่าสมัคร)",
+                "เจ้าหน้าที่ผู้จัดการแข่งขัน", "อาสาสมัคร", "ผู้ติดตามนักกีฬา / ผู้ชม "]
       if (res.code === 200) {
+
+        res.result[0].questionnaireGroup.map((item,index) => {
+          return item.choiceTh = labels[index]
+        })
+
         setEconomicEffect(res.result[0].economicEffect);
         setEconomicImpact(res.result[0].economicImpact);
         setEconomicIncreaseLabels(res.result[0].economicIncreaseInValue.label);
