@@ -32,8 +32,12 @@ const Respondents = ({ setLoading }) => {
         try {
             const qrs = { evaluatortype: params };
             const res = await GET_RESPONDENT(qrs);
+            const labels = ["xxx", "yyy", "นักกีฬาต่างชาติ",
+                "เจ้าหน้าที่ผู้จัดการแข่งขัน", "อาสาสมัคร", "ผู้ติดตามนักกีฬา / ผู้ชม "]
             if (res.code === 200) {
-
+                res.result[0].questionnaireGroup.map((item, index) => {
+                    return item.choiceTh = labels[index]
+                })
                 setCompetitionType(res.result[0].competitionType);
                 setLiveInChiangmai(res.result[0].live.liveInChiangMai);
                 setLiveContinent(res.result[0].live.continent);

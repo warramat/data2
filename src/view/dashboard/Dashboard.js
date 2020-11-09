@@ -37,7 +37,11 @@ const Dashboard = () => {
       <Spin size="large" spinning={loading} >
         <div className="p-layout">
           <Row >
-            <b className="pt-3 pb-3 f-12">ผู้ตอบแบบสอบถาม</b>
+            <b className="pt-3 pb-3 f-12">{
+            key === "respon" ? "จำนวนนักกีฬาและผู้เข้าร่วมการแข่งขัน"
+              : key === "economic" ?'การประเมินมูลค่าทางเศรษฐกิจจากการจัดการแข่งขัน'
+                : "ระดับความพึงพอใจ"
+          }</b>
           </Row>
           {
             key === "respon" ? <Respondents setLoading={setLoading} />
