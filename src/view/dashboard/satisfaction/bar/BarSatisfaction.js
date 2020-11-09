@@ -26,8 +26,10 @@ const BarSatisfaction = ({ satisfaction }) => {
   const option = {
     layout: {
       padding: {
-          top: 150,
-          right: 30,
+        left: 10,
+        right: 40,
+        top: 160,
+
       }
     },
     legend: {
@@ -57,7 +59,7 @@ const BarSatisfaction = ({ satisfaction }) => {
         opacity: 0.5,
      }}>ระดับ</h6>
       <div >
-          <Bar data={data} options={option} />
+          <Bar data={data} options={option}  width={500} height={150} />
           <Col>
                <div style={{
                     fontSize: "16px",

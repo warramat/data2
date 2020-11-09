@@ -78,7 +78,7 @@ const Continent = ({ liveCountinent }) => {
         </span>
        
       </Row>
-      <Row style={{height:"155px"}}>
+      <Row >
         <Col style={{ paddingTop: "40px" }}>
           <div
             style={{
@@ -159,8 +159,7 @@ const Continent = ({ liveCountinent }) => {
           <span className="fo">อเมริกาใต้</span>
         </Col>
 
-        <Col style={{top: "-150px", left: "40%" }}>
-          <Pie data={data} options={options} />
+        <Col><Pie data={data} options={options} width={200}/>
         </Col>
       </Row>
     </Row>
