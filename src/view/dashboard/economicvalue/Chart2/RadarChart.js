@@ -32,8 +32,10 @@ const RadarChart = ({ economicLabels, economicData }) => {
     },
 
     scale: {
-      ticks: { beginAtZero: true },
-      fontSize: 20
+      ticks: { beginAtZero: true,
+        fontSize: 0
+      },
+      
     },
 
   }
