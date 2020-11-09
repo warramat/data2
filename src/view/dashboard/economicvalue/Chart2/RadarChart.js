@@ -35,12 +35,17 @@ const RadarChart = ({ economicLabels, economicData }) => {
   
 
     scale: {
+      pointLabels: {
+        fontSize: 12.5 ,
+        fontColor: '#464646'
+      },
       ticks: {
         beginAtZero: true,
         fontSize: 0,
         fontFamily: "'Sukhumvit Set',sans-serif",
         
       },
+      
     },
   };
   return (
