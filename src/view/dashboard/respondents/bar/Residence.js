@@ -35,7 +35,7 @@ const Residence = ({ residence }) => {
 
   return (
     <Col>
-      <b className="text-toppic">ที่พักอาศัย</b>
+      <b className="text-toppic">ที่พักอาศัยระหว่างการแข่งขัน</b>
       <div>
         <Col>
           <div className="pad1">
